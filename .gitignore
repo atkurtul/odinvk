@@ -2,3 +2,4 @@ generator/target/
 *.spv
 *.o
 *.so
+main

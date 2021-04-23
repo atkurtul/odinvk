@@ -15,3 +15,6 @@ glfw.so: glfw.c
 
 cargo:
 	cd generator && cargo run > ../vk/vk.odin
+
+clean:
+	rm *.o *.so *.spv main
