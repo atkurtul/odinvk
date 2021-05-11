@@ -2845,6 +2845,7 @@ ClearValue::struct #raw_union {
 	depthStencil:  ClearDepthStencilValue,
 }
 
+
 PipelineCreationFeedbackCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,

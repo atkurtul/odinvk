@@ -1,6 +1,10 @@
 
+run: all
+	./main
+
 all: vma.so glfw.so shader.vert.spv shader.frag.spv
-	@odin build ./main.odin -extra-linker-flags:"-lglfw -ldl -lm" -debug
+	@odin build ./main.odin -extra-linker-flags:"-lglfw -ldl -lm"  -out:main #-build-mode:llvm -use-separate-modules 
+	
 
 %.spv: %
 	@glslc $^ -c
@@ -10,11 +14,11 @@ vma.so: vma.cpp
 	g++ -shared -o vma.so vma.o -g3 -static-libstdc++
 
 glfw.so: glfw.c
-	gcc -fPIC -c glfw.c -g3
-	gcc -shared -o glfw.so glfw.o -g3
+	gcc -fPIC -c glfw.c
+	gcc -shared -o glfw.so glfw.o
 
 cargo:
 	cd generator && cargo run > ../vk/vk.odin
 
 clean:
-	rm *.o *.so *.spv main
+	rm *.o *.so *.spv main *.ll

@@ -290,20 +290,32 @@ free_resources::proc() {
 }
 
 
+init_color::proc() -> vk.ClearValue{
+    clear : vk.ClearValue;
+    clear.color.float32 = { 0.1, 0.1, 0.4, 1.0 };
+
+    return clear;
+}
+
 main::proc() {
 
-  samplers = make(map[u64]vk.Sampler);
-  vk.init();
 
-  app := vk.ApplicationInfo {
-      sType = .ApplicationInfo,
-      apiVersion = vk.make_version(1,2,0),
-  };
 
   count: u32;
   ext := glfw_init(&count);
   layer: cstring = "VK_LAYER_KHRONOS_validation";
 
+  
+
+  
+
+  samplers = make(map[u64]vk.Sampler);
+  vk.init();
+  
+  app := vk.ApplicationInfo {
+      sType = .ApplicationInfo,
+      apiVersion = vk.make_version(1,2,0),
+  };
 
   info := vk.InstanceCreateInfo {
     sType = .InstanceCreateInfo,
@@ -323,7 +335,7 @@ main::proc() {
   check_result(vk.enumerate_physical_devices(inst, &count, &pdevs[0]));
   pdev = pdevs[0];
 
-
+  
   prio: f32 = 1.0;
 
   {
@@ -429,16 +441,16 @@ main::proc() {
     vk.reset_command_buffer(cmd, .ReleaseResourcesBit);
     check_result(vk.begin_command_buffer(cmd, &begin_info));
 
-    clear : vk.ClearValue;
-    clear.color.float32 = { 0.1, 0.1, 0.4, 1.0 };
-
+    clear : [2]vk.ClearValue;
+    clear   [0].color.float32 = { 0.1, 0.1, 0.4, 1.0 };
+    
     pass_begin_info := vk.RenderPassBeginInfo{
       sType = .RenderPassBeginInfo,
       renderPass = renderpass,
       framebuffer = cur.framebuffer,
       renderArea = {extent = extent},
       clearValueCount = 2,
-      pClearValues = &clear,
+      pClearValues = &clear[0],
     };
 
     vk.cmd_begin_render_pass(cmd, &pass_begin_info, .Inline);
@@ -921,20 +933,15 @@ create_texture::proc(file: cstring) -> (re: Texture) {
 
   mem.copy(rawptr(mapping), rawptr(data), int(size));
 
-
-
   arg::struct {src: vk.Buffer, dst: ^Texture, mip: u32};
-  execute(
-    proc(cmd: vk.CommandBuffer, t: arg) {
+  
+  execute(proc(cmd: vk.CommandBuffer, t: ^arg) {
       copy_texture(cmd,  t.src, t.dst.img.image, t.dst.extent);
-      generate_mip_maps(cmd, t.mip, t.dst.img.image, t.dst.extent); }, 
-    arg{src=staging, dst = &re, mip=mip},
-  );
+      generate_mip_maps(cmd, t.mip, t.dst.img.image, t.dst.extent); 
+    }, &arg{src=staging, dst = &re, mip=mip});
 
   return;
 }
-
-
 
 execute::proc(fn: proc(vk.CommandBuffer, $T), data: T) {
 
