@@ -6,11 +6,13 @@
 #include "stb_image.h"
 
 const char** glfw_init(unsigned* count) {
-  glfwInit();
+  if (!glfwInit())
+    abort();
   glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
   glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
   return glfwGetRequiredInstanceExtensions(count);
 }
+
 
 VkResult glfw_create_surface(int x,
                              int y,
@@ -23,7 +25,6 @@ VkResult glfw_create_surface(int x,
   // glfwSetInputMode(glfw, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
   return glfwCreateWindowSurface(instance, *win, 0, surface);
 }
-
 
 int glfw_poll(GLFWwindow* win) {
   glfwPollEvents();

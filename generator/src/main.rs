@@ -386,7 +386,7 @@ fn main() {
     println!(
         r##"package vk;
 import "core:dynlib";
-void::struct{{}}
+void::rawptr;
 
 make_version::proc(major: u32, minor: u32, patch: u32) -> u32 {{
   return major << 22 | minor << 12 | patch;
@@ -546,7 +546,7 @@ init::proc() {{
 
     for (name, st) in sts {
         println!(
-            "{}::{} {{\n\t{}\n}}\n",
+            "{}::{} {{\n\t{},\n}}\n",
             &name[2..],
             if st.union {
                 "struct #raw_union"
@@ -663,7 +663,7 @@ init::proc() {{
                 .join(",\n\t")
         };
 
-        println!("{}::enum u32 {{\n\t{}\n}}\n", &name[2..].replace("FlagBits", "Flags"), inner);
+        println!("{}::enum u32 {{\n\t{},\n}}\n", &name[2..].replace("FlagBits", "Flags"), inner);
     }
 }
 

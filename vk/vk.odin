@@ -1,6 +1,6 @@
 package vk;
 import "core:dynlib";
-void::struct{}
+void::rawptr;
 
 make_version::proc(major: u32, minor: u32, patch: u32) -> u32 {
   return major << 22 | minor << 12 | patch;
@@ -920,7 +920,7 @@ IndirectCommandsLayoutCreateInfoNV::struct {
 	tokenCount:  u32,
 	pTokens: ^IndirectCommandsLayoutTokenNV,
 	streamCount:  u32,
-	pStreamStrides: ^u32
+	pStreamStrides: ^u32,
 }
 
 PhysicalDeviceGroupProperties::struct {
@@ -928,13 +928,13 @@ PhysicalDeviceGroupProperties::struct {
 	pNext: ^void,
 	physicalDeviceCount:  u32,
 	physicalDevices:  [MAX_DEVICE_GROUP_SIZE]PhysicalDevice,
-	subsetAllocation:  Bool32
+	subsetAllocation:  Bool32,
 }
 
 PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	perViewPositionAllComponents:  Bool32
+	perViewPositionAllComponents:  Bool32,
 }
 
 PhysicalDeviceDepthStencilResolveProperties::struct {
@@ -943,19 +943,19 @@ PhysicalDeviceDepthStencilResolveProperties::struct {
 	supportedDepthResolveModes:  ResolveModeFlags,
 	supportedStencilResolveModes:  ResolveModeFlags,
 	independentResolveNone:  Bool32,
-	independentResolve:  Bool32
+	independentResolve:  Bool32,
 }
 
 PerformanceConfigurationAcquireInfoINTEL::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	type:  PerformanceConfigurationTypeINTEL
+	type:  PerformanceConfigurationTypeINTEL,
 }
 
 ImportAndroidHardwareBufferInfoANDROID::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	buffer: ^AHardwareBuffer
+	buffer: ^AHardwareBuffer,
 }
 
 DisplayPresentInfoKHR::struct {
@@ -963,31 +963,31 @@ DisplayPresentInfoKHR::struct {
 	pNext: ^void,
 	srcRect:  Rect2D,
 	dstRect:  Rect2D,
-	persistent:  Bool32
+	persistent:  Bool32,
 }
 
 AttachmentReferenceStencilLayout::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	stencilLayout:  ImageLayout
+	stencilLayout:  ImageLayout,
 }
 
 PhysicalDeviceCustomBorderColorPropertiesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	maxCustomBorderColorSamplers:  u32
+	maxCustomBorderColorSamplers:  u32,
 }
 
 ImagePlaneMemoryRequirementsInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	planeAspect:  ImageAspectFlags
+	planeAspect:  ImageAspectFlags,
 }
 
 SubpassBeginInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	contents:  SubpassContents
+	contents:  SubpassContents,
 }
 
 BufferImageCopy2KHR::struct {
@@ -998,7 +998,7 @@ BufferImageCopy2KHR::struct {
 	bufferImageHeight:  u32,
 	imageSubresource:  ImageSubresourceLayers,
 	imageOffset:  Offset3D,
-	imageExtent:  Extent3D
+	imageExtent:  Extent3D,
 }
 
 CooperativeMatrixPropertiesNV::struct {
@@ -1011,14 +1011,14 @@ CooperativeMatrixPropertiesNV::struct {
 	BType:  ComponentTypeNV,
 	CType:  ComponentTypeNV,
 	DType:  ComponentTypeNV,
-	scope:  ScopeNV
+	scope:  ScopeNV,
 }
 
 ImageFormatListCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	viewFormatCount:  u32,
-	pViewFormats: ^Format
+	pViewFormats: ^Format,
 }
 
 CopyImageInfo2KHR::struct {
@@ -1029,23 +1029,23 @@ CopyImageInfo2KHR::struct {
 	dstImage:  Image,
 	dstImageLayout:  ImageLayout,
 	regionCount:  u32,
-	pRegions: ^ImageCopy2KHR
+	pRegions: ^ImageCopy2KHR,
 }
 
 PhysicalDeviceProtectedMemoryFeatures::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	protectedMemory:  Bool32
+	protectedMemory:  Bool32,
 }
 
 DescriptorPoolSize::struct {
 	type:  DescriptorType,
-	descriptorCount:  u32
+	descriptorCount:  u32,
 }
 
 SubpassSampleLocationsEXT::struct {
 	subpassIndex:  u32,
-	sampleLocationsInfo:  SampleLocationsInfoEXT
+	sampleLocationsInfo:  SampleLocationsInfoEXT,
 }
 
 PipelineDynamicStateCreateInfo::struct {
@@ -1053,11 +1053,11 @@ PipelineDynamicStateCreateInfo::struct {
 	pNext: ^void,
 	flags:  PipelineDynamicStateCreateFlags,
 	dynamicStateCount:  u32,
-	pDynamicStates: ^DynamicState
+	pDynamicStates: ^DynamicState,
 }
 
 SetStateFlagsIndirectCommandNV::struct {
-	data:  u32
+	data:  u32,
 }
 
 StencilOpState::struct {
@@ -1067,19 +1067,19 @@ StencilOpState::struct {
 	compareOp:  CompareOp,
 	compareMask:  u32,
 	writeMask:  u32,
-	reference:  u32
+	reference:  u32,
 }
 
 PhysicalDeviceShaderSubgroupExtendedTypesFeatures::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	shaderSubgroupExtendedTypes:  Bool32
+	shaderSubgroupExtendedTypes:  Bool32,
 }
 
 SamplerYcbcrConversionImageFormatProperties::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	combinedImageSamplerDescriptorCount:  u32
+	combinedImageSamplerDescriptorCount:  u32,
 }
 
 PhysicalDeviceFragmentDensityMapFeaturesEXT::struct {
@@ -1087,14 +1087,14 @@ PhysicalDeviceFragmentDensityMapFeaturesEXT::struct {
 	pNext: ^void,
 	fragmentDensityMap:  Bool32,
 	fragmentDensityMapDynamic:  Bool32,
-	fragmentDensityMapNonSubsampledImages:  Bool32
+	fragmentDensityMapNonSubsampledImages:  Bool32,
 }
 
 PipelineExecutableInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	pipeline:  Pipeline,
-	executableIndex:  u32
+	executableIndex:  u32,
 }
 
 DeviceDeviceMemoryReportCreateInfoEXT::struct {
@@ -1102,42 +1102,42 @@ DeviceDeviceMemoryReportCreateInfoEXT::struct {
 	pNext: ^void,
 	flags:  DeviceMemoryReportFlagsEXT,
 	pfnUserCallback:  PFN_vkDeviceMemoryReportCallbackEXT,
-	pUserData: ^void
+	pUserData: ^void,
 }
 
 PipelineViewportExclusiveScissorStateCreateInfoNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	exclusiveScissorCount:  u32,
-	pExclusiveScissors: ^Rect2D
+	pExclusiveScissors: ^Rect2D,
 }
 
 MemoryDedicatedAllocateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	image:  Image,
-	buffer:  Buffer
+	buffer:  Buffer,
 }
 
 WriteDescriptorSetAccelerationStructureKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	accelerationStructureCount:  u32,
-	pAccelerationStructures: ^AccelerationStructureKHR
+	pAccelerationStructures: ^AccelerationStructureKHR,
 }
 
 PipelineCoverageReductionStateCreateInfoNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  PipelineCoverageReductionStateCreateFlagsNV,
-	coverageReductionMode:  CoverageReductionModeNV
+	coverageReductionMode:  CoverageReductionModeNV,
 }
 
 PipelineExecutableStatisticValueKHR::struct #raw_union {
 	b32:  Bool32,
 	i64:  i64,
 	u64:  u64,
-	f64:  f64
+	f64:  f64,
 }
 
 BufferCopy2KHR::struct {
@@ -1145,25 +1145,25 @@ BufferCopy2KHR::struct {
 	pNext: ^void,
 	srcOffset:  DeviceSize,
 	dstOffset:  DeviceSize,
-	size:  DeviceSize
+	size:  DeviceSize,
 }
 
 CommandBufferInheritanceConditionalRenderingInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	conditionalRenderingEnable:  Bool32
+	conditionalRenderingEnable:  Bool32,
 }
 
 PhysicalDeviceFragmentShadingRateEnumsPropertiesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	maxFragmentShadingRateInvocationCount:  SampleCountFlags
+	maxFragmentShadingRateInvocationCount:  SampleCountFlags,
 }
 
 DescriptorSetVariableDescriptorCountLayoutSupport::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	maxVariableDescriptorCount:  u32
+	maxVariableDescriptorCount:  u32,
 }
 
 PipelineColorBlendStateCreateInfo::struct {
@@ -1174,7 +1174,7 @@ PipelineColorBlendStateCreateInfo::struct {
 	logicOp:  LogicOp,
 	attachmentCount:  u32,
 	pAttachments: ^PipelineColorBlendAttachmentState,
-	blendConstants:  [4]f32
+	blendConstants:  [4]f32,
 }
 
 PhysicalDeviceSparseProperties::struct {
@@ -1182,33 +1182,33 @@ PhysicalDeviceSparseProperties::struct {
 	residencyStandard2DMultisampleBlockShape:  Bool32,
 	residencyStandard3DBlockShape:  Bool32,
 	residencyAlignedMipSize:  Bool32,
-	residencyNonResidentStrict:  Bool32
+	residencyNonResidentStrict:  Bool32,
 }
 
 PhysicalDeviceSurfaceInfo2KHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	surface:  SurfaceKHR
+	surface:  SurfaceKHR,
 }
 
 RenderPassInputAttachmentAspectCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	aspectReferenceCount:  u32,
-	pAspectReferences: ^InputAttachmentAspectReference
+	pAspectReferences: ^InputAttachmentAspectReference,
 }
 
 PhysicalDeviceCoherentMemoryFeaturesAMD::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	deviceCoherentMemory:  Bool32
+	deviceCoherentMemory:  Bool32,
 }
 
 PipelineSampleLocationsStateCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	sampleLocationsEnable:  Bool32,
-	sampleLocationsInfo:  SampleLocationsInfoEXT
+	sampleLocationsInfo:  SampleLocationsInfoEXT,
 }
 
 DisplayPropertiesKHR::struct {
@@ -1218,7 +1218,7 @@ DisplayPropertiesKHR::struct {
 	physicalResolution:  Extent2D,
 	supportedTransforms:  SurfaceTransformFlagsKHR,
 	planeReorderPossible:  Bool32,
-	persistentContent:  Bool32
+	persistentContent:  Bool32,
 }
 
 PipelineRasterizationConservativeStateCreateInfoEXT::struct {
@@ -1226,7 +1226,7 @@ PipelineRasterizationConservativeStateCreateInfoEXT::struct {
 	pNext: ^void,
 	flags:  PipelineRasterizationConservativeStateCreateFlagsEXT,
 	conservativeRasterizationMode:  ConservativeRasterizationModeEXT,
-	extraPrimitiveOverestimationSize:  f32
+	extraPrimitiveOverestimationSize:  f32,
 }
 
 DeviceGroupSubmitInfo::struct {
@@ -1237,42 +1237,42 @@ DeviceGroupSubmitInfo::struct {
 	commandBufferCount:  u32,
 	pCommandBufferDeviceMasks: ^u32,
 	signalSemaphoreCount:  u32,
-	pSignalSemaphoreDeviceIndices: ^u32
+	pSignalSemaphoreDeviceIndices: ^u32,
 }
 
 Extent2D::struct {
 	width:  u32,
-	height:  u32
+	height:  u32,
 }
 
 PhysicalDeviceCooperativeMatrixPropertiesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	cooperativeMatrixSupportedStages:  ShaderStageFlags
+	cooperativeMatrixSupportedStages:  ShaderStageFlags,
 }
 
 StridedDeviceAddressRegionKHR::struct {
 	deviceAddress:  DeviceAddress,
 	stride:  DeviceSize,
-	size:  DeviceSize
+	size:  DeviceSize,
 }
 
 PhysicalDeviceBlendOperationAdvancedFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	advancedBlendCoherentOperations:  Bool32
+	advancedBlendCoherentOperations:  Bool32,
 }
 
 PipelineTessellationDomainOriginStateCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	domainOrigin:  TessellationDomainOrigin
+	domainOrigin:  TessellationDomainOrigin,
 }
 
 PhysicalDeviceYcbcrImageArraysFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	ycbcrImageArrays:  Bool32
+	ycbcrImageArrays:  Bool32,
 }
 
 PhysicalDeviceVulkan11Features::struct {
@@ -1289,7 +1289,7 @@ PhysicalDeviceVulkan11Features::struct {
 	variablePointers:  Bool32,
 	protectedMemory:  Bool32,
 	samplerYcbcrConversion:  Bool32,
-	shaderDrawParameters:  Bool32
+	shaderDrawParameters:  Bool32,
 }
 
 BufferViewCreateInfo::struct {
@@ -1299,7 +1299,7 @@ BufferViewCreateInfo::struct {
 	buffer:  Buffer,
 	format:  Format,
 	offset:  DeviceSize,
-	range:  DeviceSize
+	range:  DeviceSize,
 }
 
 PerformanceValueDataINTEL::struct #raw_union {
@@ -1307,7 +1307,7 @@ PerformanceValueDataINTEL::struct #raw_union {
 	value64:  u64,
 	valueFloat:  f32,
 	valueBool:  Bool32,
-	valueString: cstring
+	valueString: cstring,
 }
 
 CopyAccelerationStructureInfoKHR::struct {
@@ -1315,13 +1315,13 @@ CopyAccelerationStructureInfoKHR::struct {
 	pNext: ^void,
 	src:  AccelerationStructureKHR,
 	dst:  AccelerationStructureKHR,
-	mode:  CopyAccelerationStructureModeKHR
+	mode:  CopyAccelerationStructureModeKHR,
 }
 
 SurfaceFullScreenExclusiveWin32InfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	hmonitor:  HMONITOR
+	hmonitor:  HMONITOR,
 }
 
 PhysicalDevicePortabilitySubsetFeaturesKHR::struct {
@@ -1341,38 +1341,38 @@ PhysicalDevicePortabilitySubsetFeaturesKHR::struct {
 	tessellationIsolines:  Bool32,
 	tessellationPointMode:  Bool32,
 	triangleFans:  Bool32,
-	vertexAttributeAccessBeyondStride:  Bool32
+	vertexAttributeAccessBeyondStride:  Bool32,
 }
 
 DebugUtilsLabelEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	pLabelName: cstring,
-	color:  [4]f32
+	color:  [4]f32,
 }
 
 PhysicalDeviceTexelBufferAlignmentFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	texelBufferAlignment:  Bool32
+	texelBufferAlignment:  Bool32,
 }
 
 PhysicalDeviceImagelessFramebufferFeatures::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	imagelessFramebuffer:  Bool32
+	imagelessFramebuffer:  Bool32,
 }
 
 CoarseSampleLocationNV::struct {
 	pixelX:  u32,
 	pixelY:  u32,
-	sample:  u32
+	sample:  u32,
 }
 
 SurfaceFullScreenExclusiveInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	fullScreenExclusive:  FullScreenExclusiveEXT
+	fullScreenExclusive:  FullScreenExclusiveEXT,
 }
 
 PerformanceCounterResultKHR::struct #raw_union {
@@ -1381,7 +1381,7 @@ PerformanceCounterResultKHR::struct #raw_union {
 	uint32:  u32,
 	uint64:  u64,
 	float32:  f32,
-	float64:  f64
+	float64:  f64,
 }
 
 RenderPassBeginInfo::struct {
@@ -1391,46 +1391,46 @@ RenderPassBeginInfo::struct {
 	framebuffer:  Framebuffer,
 	renderArea:  Rect2D,
 	clearValueCount:  u32,
-	pClearValues: ^ClearValue
+	pClearValues: ^ClearValue,
 }
 
 ExternalImageFormatProperties::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	externalMemoryProperties:  ExternalMemoryProperties
+	externalMemoryProperties:  ExternalMemoryProperties,
 }
 
 DeviceGroupDeviceCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	physicalDeviceCount:  u32,
-	pPhysicalDevices: ^PhysicalDevice
+	pPhysicalDevices: ^PhysicalDevice,
 }
 
 RenderPassAttachmentBeginInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	attachmentCount:  u32,
-	pAttachments: ^ImageView
+	pAttachments: ^ImageView,
 }
 
 ClearColorValue::struct #raw_union {
 	float32:  [4]f32,
 	int32:  [4]i32,
-	uint32:  [4]u32
+	uint32:  [4]u32,
 }
 
 PhysicalDeviceMemoryPriorityFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	memoryPriority:  Bool32
+	memoryPriority:  Bool32,
 }
 
 PipelineLibraryCreateInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	libraryCount:  u32,
-	pLibraries: ^Pipeline
+	pLibraries: ^Pipeline,
 }
 
 ImageDrmFormatModifierExplicitCreateInfoEXT::struct {
@@ -1438,7 +1438,7 @@ ImageDrmFormatModifierExplicitCreateInfoEXT::struct {
 	pNext: ^void,
 	drmFormatModifier:  u64,
 	drmFormatModifierPlaneCount:  u32,
-	pPlaneLayouts: ^SubresourceLayout
+	pPlaneLayouts: ^SubresourceLayout,
 }
 
 RenderPassCreateInfo::struct {
@@ -1450,7 +1450,7 @@ RenderPassCreateInfo::struct {
 	subpassCount:  u32,
 	pSubpasses: ^SubpassDescription,
 	dependencyCount:  u32,
-	pDependencies: ^SubpassDependency
+	pDependencies: ^SubpassDependency,
 }
 
 DeviceCreateInfo::struct {
@@ -1463,13 +1463,13 @@ DeviceCreateInfo::struct {
 	ppEnabledLayerNames: ^^u8,
 	enabledExtensionCount:  u32,
 	ppEnabledExtensionNames: ^^u8,
-	pEnabledFeatures: ^PhysicalDeviceFeatures
+	pEnabledFeatures: ^PhysicalDeviceFeatures,
 }
 
 QueueFamilyCheckpointPropertiesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	checkpointExecutionStageMask:  PipelineStageFlags
+	checkpointExecutionStageMask:  PipelineStageFlags,
 }
 
 ExportFenceWin32HandleInfoKHR::struct {
@@ -1477,7 +1477,7 @@ ExportFenceWin32HandleInfoKHR::struct {
 	pNext: ^void,
 	pAttributes: ^SECURITY_ATTRIBUTES,
 	dwAccess:  DWORD,
-	name:  LPCWSTR
+	name:  LPCWSTR,
 }
 
 PhysicalDevicePCIBusInfoPropertiesEXT::struct {
@@ -1486,14 +1486,14 @@ PhysicalDevicePCIBusInfoPropertiesEXT::struct {
 	pciDomain:  u32,
 	pciBus:  u32,
 	pciDevice:  u32,
-	pciFunction:  u32
+	pciFunction:  u32,
 }
 
 LayerProperties::struct {
 	layerName:  [MAX_EXTENSION_NAME_SIZE]u8,
 	specVersion:  u32,
 	implementationVersion:  u32,
-	description:  [MAX_DESCRIPTION_SIZE]u8
+	description:  [MAX_DESCRIPTION_SIZE]u8,
 }
 
 RenderPassSampleLocationsBeginInfoEXT::struct {
@@ -1502,7 +1502,7 @@ RenderPassSampleLocationsBeginInfoEXT::struct {
 	attachmentInitialSampleLocationsCount:  u32,
 	pAttachmentInitialSampleLocations: ^AttachmentSampleLocationsEXT,
 	postSubpassSampleLocationsCount:  u32,
-	pPostSubpassSampleLocations: ^SubpassSampleLocationsEXT
+	pPostSubpassSampleLocations: ^SubpassSampleLocationsEXT,
 }
 
 CommandBufferAllocateInfo::struct {
@@ -1510,13 +1510,13 @@ CommandBufferAllocateInfo::struct {
 	pNext: ^void,
 	commandPool:  CommandPool,
 	level:  CommandBufferLevel,
-	commandBufferCount:  u32
+	commandBufferCount:  u32,
 }
 
 PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	shaderIntegerFunctions2:  Bool32
+	shaderIntegerFunctions2:  Bool32,
 }
 
 AccelerationStructureInstanceKHR::struct {
@@ -1525,7 +1525,7 @@ AccelerationStructureInstanceKHR::struct {
 	mask:  u8,
 	instanceShaderBindingTableRecordOffset:  [3]u8,
 	flags:  u8,
-	accelerationStructureReference:  u64
+	accelerationStructureReference:  u64,
 }
 
 CopyImageToBufferInfo2KHR::struct {
@@ -1535,20 +1535,20 @@ CopyImageToBufferInfo2KHR::struct {
 	srcImageLayout:  ImageLayout,
 	dstBuffer:  Buffer,
 	regionCount:  u32,
-	pRegions: ^BufferImageCopy2KHR
+	pRegions: ^BufferImageCopy2KHR,
 }
 
 MultisamplePropertiesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	maxSampleLocationGridSize:  Extent2D
+	maxSampleLocationGridSize:  Extent2D,
 }
 
 AcquireProfilingLockInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  AcquireProfilingLockFlagsKHR,
-	timeout:  u64
+	timeout:  u64,
 }
 
 Win32SurfaceCreateInfoKHR::struct {
@@ -1556,14 +1556,14 @@ Win32SurfaceCreateInfoKHR::struct {
 	pNext: ^void,
 	flags:  Win32SurfaceCreateFlagsKHR,
 	hinstance:  HINSTANCE,
-	hwnd:  HWND
+	hwnd:  HWND,
 }
 
 PresentRegionsKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	swapchainCount:  u32,
-	pRegions: ^PresentRegionKHR
+	pRegions: ^PresentRegionKHR,
 }
 
 ImportMemoryWin32HandleInfoKHR::struct {
@@ -1571,7 +1571,7 @@ ImportMemoryWin32HandleInfoKHR::struct {
 	pNext: ^void,
 	handleType:  ExternalMemoryHandleTypeFlags,
 	handle:  HANDLE,
-	name:  LPCWSTR
+	name:  LPCWSTR,
 }
 
 SemaphoreSubmitInfoKHR::struct {
@@ -1580,7 +1580,7 @@ SemaphoreSubmitInfoKHR::struct {
 	semaphore:  Semaphore,
 	value:  u64,
 	stageMask:  PipelineStageFlags2KHR,
-	deviceIndex:  u32
+	deviceIndex:  u32,
 }
 
 GraphicsShaderGroupCreateInfoNV::struct {
@@ -1589,7 +1589,7 @@ GraphicsShaderGroupCreateInfoNV::struct {
 	stageCount:  u32,
 	pStages: ^PipelineShaderStageCreateInfo,
 	pVertexInputState: ^PipelineVertexInputStateCreateInfo,
-	pTessellationState: ^PipelineTessellationStateCreateInfo
+	pTessellationState: ^PipelineTessellationStateCreateInfo,
 }
 
 PipelineRasterizationLineStateCreateInfoEXT::struct {
@@ -1598,7 +1598,7 @@ PipelineRasterizationLineStateCreateInfoEXT::struct {
 	lineRasterizationMode:  LineRasterizationModeEXT,
 	stippledLineEnable:  Bool32,
 	lineStippleFactor:  u32,
-	lineStipplePattern:  u16
+	lineStipplePattern:  u16,
 }
 
 InstanceCreateInfo::struct {
@@ -1609,13 +1609,13 @@ InstanceCreateInfo::struct {
 	enabledLayerCount:  u32,
 	ppEnabledLayerNames: ^^u8,
 	enabledExtensionCount:  u32,
-	ppEnabledExtensionNames: ^^u8
+	ppEnabledExtensionNames: ^^u8,
 }
 
 PhysicalDeviceImageViewImageFormatInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	imageViewType:  ImageViewType
+	imageViewType:  ImageViewType,
 }
 
 SubmitInfo::struct {
@@ -1627,13 +1627,13 @@ SubmitInfo::struct {
 	commandBufferCount:  u32,
 	pCommandBuffers: ^CommandBuffer,
 	signalSemaphoreCount:  u32,
-	pSignalSemaphores: ^Semaphore
+	pSignalSemaphores: ^Semaphore,
 }
 
 DedicatedAllocationBufferCreateInfoNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	dedicatedAllocation:  Bool32
+	dedicatedAllocation:  Bool32,
 }
 
 PhysicalDeviceIDProperties::struct {
@@ -1643,19 +1643,19 @@ PhysicalDeviceIDProperties::struct {
 	driverUUID:  [UUID_SIZE]u8,
 	deviceLUID:  [LUID_SIZE]u8,
 	deviceNodeMask:  u32,
-	deviceLUIDValid:  Bool32
+	deviceLUIDValid:  Bool32,
 }
 
 SurfaceCapabilities2KHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	surfaceCapabilities:  SurfaceCapabilitiesKHR
+	surfaceCapabilities:  SurfaceCapabilitiesKHR,
 }
 
 PhysicalDevicePointClippingProperties::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	pointClippingBehavior:  PointClippingBehavior
+	pointClippingBehavior:  PointClippingBehavior,
 }
 
 SubpassDependency2::struct {
@@ -1668,20 +1668,20 @@ SubpassDependency2::struct {
 	srcAccessMask:  AccessFlags,
 	dstAccessMask:  AccessFlags,
 	dependencyFlags:  DependencyFlags,
-	viewOffset:  i32
+	viewOffset:  i32,
 }
 
 BufferMemoryRequirementsInfo2::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	buffer:  Buffer
+	buffer:  Buffer,
 }
 
 PhysicalDeviceInlineUniformBlockFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	inlineUniformBlock:  Bool32,
-	descriptorBindingInlineUniformBlockUpdateAfterBind:  Bool32
+	descriptorBindingInlineUniformBlockUpdateAfterBind:  Bool32,
 }
 
 AndroidHardwareBufferFormatPropertiesANDROID::struct {
@@ -1694,28 +1694,28 @@ AndroidHardwareBufferFormatPropertiesANDROID::struct {
 	suggestedYcbcrModel:  SamplerYcbcrModelConversion,
 	suggestedYcbcrRange:  SamplerYcbcrRange,
 	suggestedXChromaOffset:  ChromaLocation,
-	suggestedYChromaOffset:  ChromaLocation
+	suggestedYChromaOffset:  ChromaLocation,
 }
 
 DeviceGroupBindSparseInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	resourceDeviceIndex:  u32,
-	memoryDeviceIndex:  u32
+	memoryDeviceIndex:  u32,
 }
 
 ImagePipeSurfaceCreateInfoFUCHSIA::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  ImagePipeSurfaceCreateFlagsFUCHSIA,
-	imagePipeHandle:  zx_handle_t
+	imagePipeHandle:  zx_handle_t,
 }
 
 FenceGetFdInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	fence:  Fence,
-	handleType:  ExternalFenceHandleTypeFlags
+	handleType:  ExternalFenceHandleTypeFlags,
 }
 
 PipelineViewportSwizzleStateCreateInfoNV::struct {
@@ -1723,44 +1723,44 @@ PipelineViewportSwizzleStateCreateInfoNV::struct {
 	pNext: ^void,
 	flags:  PipelineViewportSwizzleStateCreateFlagsNV,
 	viewportCount:  u32,
-	pViewportSwizzles: ^ViewportSwizzleNV
+	pViewportSwizzles: ^ViewportSwizzleNV,
 }
 
 PhysicalDevicePipelineExecutablePropertiesFeaturesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	pipelineExecutableInfo:  Bool32
+	pipelineExecutableInfo:  Bool32,
 }
 
 DisplayModeCreateInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  DisplayModeCreateFlagsKHR,
-	parameters:  DisplayModeParametersKHR
+	parameters:  DisplayModeParametersKHR,
 }
 
 PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	dedicatedAllocationImageAliasing:  Bool32
+	dedicatedAllocationImageAliasing:  Bool32,
 }
 
 ImageDrmFormatModifierPropertiesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	drmFormatModifier:  u64
+	drmFormatModifier:  u64,
 }
 
 PhysicalDeviceExternalMemoryHostPropertiesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	minImportedHostPointerAlignment:  DeviceSize
+	minImportedHostPointerAlignment:  DeviceSize,
 }
 
 ImageStencilUsageCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	stencilUsage:  ImageUsageFlags
+	stencilUsage:  ImageUsageFlags,
 }
 
 PipelineDiscardRectangleStateCreateInfoEXT::struct {
@@ -1769,7 +1769,7 @@ PipelineDiscardRectangleStateCreateInfoEXT::struct {
 	flags:  PipelineDiscardRectangleStateCreateFlagsEXT,
 	discardRectangleMode:  DiscardRectangleModeEXT,
 	discardRectangleCount:  u32,
-	pDiscardRectangles: ^Rect2D
+	pDiscardRectangles: ^Rect2D,
 }
 
 PipelineViewportCoarseSampleOrderStateCreateInfoNV::struct {
@@ -1777,7 +1777,7 @@ PipelineViewportCoarseSampleOrderStateCreateInfoNV::struct {
 	pNext: ^void,
 	sampleOrderType:  CoarseSampleOrderTypeNV,
 	customSampleOrderCount:  u32,
-	pCustomSampleOrders: ^CoarseSampleOrderCustomNV
+	pCustomSampleOrders: ^CoarseSampleOrderCustomNV,
 }
 
 PhysicalDevice16BitStorageFeatures::struct {
@@ -1786,14 +1786,14 @@ PhysicalDevice16BitStorageFeatures::struct {
 	storageBuffer16BitAccess:  Bool32,
 	uniformAndStorageBuffer16BitAccess:  Bool32,
 	storagePushConstant16:  Bool32,
-	storageInputOutput16:  Bool32
+	storageInputOutput16:  Bool32,
 }
 
 ConformanceVersion::struct {
 	major:  u8,
 	minor:  u8,
 	subminor:  u8,
-	patch:  u8
+	patch:  u8,
 }
 
 BufferMemoryBarrier2KHR::struct {
@@ -1807,7 +1807,7 @@ BufferMemoryBarrier2KHR::struct {
 	dstQueueFamilyIndex:  u32,
 	buffer:  Buffer,
 	offset:  DeviceSize,
-	size:  DeviceSize
+	size:  DeviceSize,
 }
 
 PresentInfoKHR::struct {
@@ -1818,7 +1818,7 @@ PresentInfoKHR::struct {
 	swapchainCount:  u32,
 	pSwapchains: ^SwapchainKHR,
 	pImageIndices: ^u32,
-	pResults: ^Result
+	pResults: ^Result,
 }
 
 SubresourceLayout::struct {
@@ -1826,7 +1826,7 @@ SubresourceLayout::struct {
 	size:  DeviceSize,
 	rowPitch:  DeviceSize,
 	arrayPitch:  DeviceSize,
-	depthPitch:  DeviceSize
+	depthPitch:  DeviceSize,
 }
 
 HdrMetadataEXT::struct {
@@ -1839,14 +1839,14 @@ HdrMetadataEXT::struct {
 	maxLuminance:  f32,
 	minLuminance:  f32,
 	maxContentLightLevel:  f32,
-	maxFrameAverageLightLevel:  f32
+	maxFrameAverageLightLevel:  f32,
 }
 
 ImageBlit::struct {
 	srcSubresource:  ImageSubresourceLayers,
 	srcOffsets:  [2]Offset3D,
 	dstSubresource:  ImageSubresourceLayers,
-	dstOffsets:  [2]Offset3D
+	dstOffsets:  [2]Offset3D,
 }
 
 SwapchainCreateInfoKHR::struct {
@@ -1867,20 +1867,20 @@ SwapchainCreateInfoKHR::struct {
 	compositeAlpha:  CompositeAlphaFlagsKHR,
 	presentMode:  PresentModeKHR,
 	clipped:  Bool32,
-	oldSwapchain:  SwapchainKHR
+	oldSwapchain:  SwapchainKHR,
 }
 
 DescriptorPoolInlineUniformBlockCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	maxInlineUniformBlockBindings:  u32
+	maxInlineUniformBlockBindings:  u32,
 }
 
 ImageViewAddressPropertiesNVX::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	deviceAddress:  DeviceAddress,
-	size:  DeviceSize
+	size:  DeviceSize,
 }
 
 PhysicalDeviceLimits::struct {
@@ -1989,20 +1989,20 @@ PhysicalDeviceLimits::struct {
 	standardSampleLocations:  Bool32,
 	optimalBufferCopyOffsetAlignment:  DeviceSize,
 	optimalBufferCopyRowPitchAlignment:  DeviceSize,
-	nonCoherentAtomSize:  DeviceSize
+	nonCoherentAtomSize:  DeviceSize,
 }
 
 QueueFamilyProperties2::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	queueFamilyProperties:  QueueFamilyProperties
+	queueFamilyProperties:  QueueFamilyProperties,
 }
 
 PhysicalDeviceSamplerFilterMinmaxProperties::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	filterMinmaxSingleComponentFormats:  Bool32,
-	filterMinmaxImageComponentMapping:  Bool32
+	filterMinmaxImageComponentMapping:  Bool32,
 }
 
 CopyMemoryToAccelerationStructureInfoKHR::struct {
@@ -2010,26 +2010,26 @@ CopyMemoryToAccelerationStructureInfoKHR::struct {
 	pNext: ^void,
 	src:  DeviceOrHostAddressConstKHR,
 	dst:  AccelerationStructureKHR,
-	mode:  CopyAccelerationStructureModeKHR
+	mode:  CopyAccelerationStructureModeKHR,
 }
 
 PipelineFragmentShadingRateStateCreateInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	fragmentSize:  Extent2D,
-	combinerOps:  [2]FragmentShadingRateCombinerOpKHR
+	combinerOps:  [2]FragmentShadingRateCombinerOpKHR,
 }
 
 PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	requiredSubgroupSize:  u32
+	requiredSubgroupSize:  u32,
 }
 
 SharedPresentSurfaceCapabilitiesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	sharedPresentSupportedUsageFlags:  ImageUsageFlags
+	sharedPresentSupportedUsageFlags:  ImageUsageFlags,
 }
 
 PhysicalDeviceFloatControlsProperties::struct {
@@ -2051,7 +2051,7 @@ PhysicalDeviceFloatControlsProperties::struct {
 	shaderRoundingModeRTEFloat64:  Bool32,
 	shaderRoundingModeRTZFloat16:  Bool32,
 	shaderRoundingModeRTZFloat32:  Bool32,
-	shaderRoundingModeRTZFloat64:  Bool32
+	shaderRoundingModeRTZFloat64:  Bool32,
 }
 
 DebugMarkerObjectTagInfoEXT::struct {
@@ -2061,13 +2061,13 @@ DebugMarkerObjectTagInfoEXT::struct {
 	object:  u64,
 	tagName:  u64,
 	tagSize:  uint,
-	pTag: ^void
+	pTag: ^void,
 }
 
 QueueFamilyCheckpointProperties2NV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	checkpointExecutionStageMask:  PipelineStageFlags2KHR
+	checkpointExecutionStageMask:  PipelineStageFlags2KHR,
 }
 
 ResolveImageInfo2KHR::struct {
@@ -2078,7 +2078,7 @@ ResolveImageInfo2KHR::struct {
 	dstImage:  Image,
 	dstImageLayout:  ImageLayout,
 	regionCount:  u32,
-	pRegions: ^ImageResolve2KHR
+	pRegions: ^ImageResolve2KHR,
 }
 
 DescriptorSetAllocateInfo::struct {
@@ -2086,12 +2086,12 @@ DescriptorSetAllocateInfo::struct {
 	pNext: ^void,
 	descriptorPool:  DescriptorPool,
 	descriptorSetCount:  u32,
-	pSetLayouts: ^DescriptorSetLayout
+	pSetLayouts: ^DescriptorSetLayout,
 }
 
 ClearDepthStencilValue::struct {
 	depth:  f32,
-	stencil:  u32
+	stencil:  u32,
 }
 
 DescriptorUpdateTemplateCreateInfo::struct {
@@ -2104,19 +2104,19 @@ DescriptorUpdateTemplateCreateInfo::struct {
 	descriptorSetLayout:  DescriptorSetLayout,
 	pipelineBindPoint:  PipelineBindPoint,
 	pipelineLayout:  PipelineLayout,
-	set:  u32
+	set:  u32,
 }
 
 PhysicalDeviceExclusiveScissorFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	exclusiveScissor:  Bool32
+	exclusiveScissor:  Bool32,
 }
 
 PhysicalDeviceImageRobustnessFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	robustImageAccess:  Bool32
+	robustImageAccess:  Bool32,
 }
 
 SubmitInfo2KHR::struct {
@@ -2128,7 +2128,7 @@ SubmitInfo2KHR::struct {
 	commandBufferInfoCount:  u32,
 	pCommandBufferInfos: ^CommandBufferSubmitInfoKHR,
 	signalSemaphoreInfoCount:  u32,
-	pSignalSemaphoreInfos: ^SemaphoreSubmitInfoKHR
+	pSignalSemaphoreInfos: ^SemaphoreSubmitInfoKHR,
 }
 
 ImageCopy2KHR::struct {
@@ -2138,7 +2138,7 @@ ImageCopy2KHR::struct {
 	srcOffset:  Offset3D,
 	dstSubresource:  ImageSubresourceLayers,
 	dstOffset:  Offset3D,
-	extent:  Extent3D
+	extent:  Extent3D,
 }
 
 DeviceQueueInfo2::struct {
@@ -2146,26 +2146,26 @@ DeviceQueueInfo2::struct {
 	pNext: ^void,
 	flags:  DeviceQueueCreateFlags,
 	queueFamilyIndex:  u32,
-	queueIndex:  u32
+	queueIndex:  u32,
 }
 
 PhysicalDeviceMutableDescriptorTypeFeaturesVALVE::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	mutableDescriptorType:  Bool32
+	mutableDescriptorType:  Bool32,
 }
 
 BindImageMemorySwapchainInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	swapchain:  SwapchainKHR,
-	imageIndex:  u32
+	imageIndex:  u32,
 }
 
 AndroidHardwareBufferUsageANDROID::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	androidHardwareBufferUsage:  u64
+	androidHardwareBufferUsage:  u64,
 }
 
 AllocationCallbacks::struct {
@@ -2174,7 +2174,7 @@ AllocationCallbacks::struct {
 	pfnReallocation:  PFN_vkReallocationFunction,
 	pfnFree:  PFN_vkFreeFunction,
 	pfnInternalAllocation:  PFN_vkInternalAllocationNotification,
-	pfnInternalFree:  PFN_vkInternalFreeNotification
+	pfnInternalFree:  PFN_vkInternalFreeNotification,
 }
 
 AccelerationStructureBuildSizesInfoKHR::struct {
@@ -2182,20 +2182,20 @@ AccelerationStructureBuildSizesInfoKHR::struct {
 	pNext: ^void,
 	accelerationStructureSize:  DeviceSize,
 	updateScratchSize:  DeviceSize,
-	buildScratchSize:  DeviceSize
+	buildScratchSize:  DeviceSize,
 }
 
 PipelineRasterizationStateRasterizationOrderAMD::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	rasterizationOrder:  RasterizationOrderAMD
+	rasterizationOrder:  RasterizationOrderAMD,
 }
 
 PhysicalDeviceComputeShaderDerivativesFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	computeDerivativeGroupQuads:  Bool32,
-	computeDerivativeGroupLinear:  Bool32
+	computeDerivativeGroupLinear:  Bool32,
 }
 
 ExternalFenceProperties::struct {
@@ -2203,18 +2203,18 @@ ExternalFenceProperties::struct {
 	pNext: ^void,
 	exportFromImportedHandleTypes:  ExternalFenceHandleTypeFlags,
 	compatibleHandleTypes:  ExternalFenceHandleTypeFlags,
-	externalFenceFeatures:  ExternalFenceFeatureFlags
+	externalFenceFeatures:  ExternalFenceFeatureFlags,
 }
 
 PhysicalDeviceSynchronization2FeaturesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	synchronization2:  Bool32
+	synchronization2:  Bool32,
 }
 
 Rect2D::struct {
 	offset:  Offset2D,
-	extent:  Extent2D
+	extent:  Extent2D,
 }
 
 PhysicalDeviceFragmentDensityMap2PropertiesEXT::struct {
@@ -2223,27 +2223,27 @@ PhysicalDeviceFragmentDensityMap2PropertiesEXT::struct {
 	subsampledLoads:  Bool32,
 	subsampledCoarseReconstructionEarlyAccess:  Bool32,
 	maxSubsampledArrayLayers:  u32,
-	maxDescriptorSetSubsampledSamplers:  u32
+	maxDescriptorSetSubsampledSamplers:  u32,
 }
 
 SpecializationMapEntry::struct {
 	constantID:  u32,
 	offset:  u32,
-	size:  uint
+	size:  uint,
 }
 
 PhysicalDeviceShaderFloat16Int8Features::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	shaderFloat16:  Bool32,
-	shaderInt8:  Bool32
+	shaderInt8:  Bool32,
 }
 
 ViewportSwizzleNV::struct {
 	x:  ViewportCoordinateSwizzleNV,
 	y:  ViewportCoordinateSwizzleNV,
 	z:  ViewportCoordinateSwizzleNV,
-	w:  ViewportCoordinateSwizzleNV
+	w:  ViewportCoordinateSwizzleNV,
 }
 
 PhysicalDeviceFragmentShadingRatePropertiesKHR::struct {
@@ -2265,14 +2265,14 @@ PhysicalDeviceFragmentShadingRatePropertiesKHR::struct {
 	fragmentShadingRateWithConservativeRasterization:  Bool32,
 	fragmentShadingRateWithFragmentShaderInterlock:  Bool32,
 	fragmentShadingRateWithCustomSampleLocations:  Bool32,
-	fragmentShadingRateStrictMultiplyCombiner:  Bool32
+	fragmentShadingRateStrictMultiplyCombiner:  Bool32,
 }
 
 DedicatedAllocationMemoryAllocateInfoNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	image:  Image,
-	buffer:  Buffer
+	buffer:  Buffer,
 }
 
 DependencyInfoKHR::struct {
@@ -2284,20 +2284,20 @@ DependencyInfoKHR::struct {
 	bufferMemoryBarrierCount:  u32,
 	pBufferMemoryBarriers: ^BufferMemoryBarrier2KHR,
 	imageMemoryBarrierCount:  u32,
-	pImageMemoryBarriers: ^ImageMemoryBarrier2KHR
+	pImageMemoryBarriers: ^ImageMemoryBarrier2KHR,
 }
 
 PhysicalDeviceShadingRateImageFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	shadingRateImage:  Bool32,
-	shadingRateCoarseSampleOrder:  Bool32
+	shadingRateCoarseSampleOrder:  Bool32,
 }
 
 BufferOpaqueCaptureAddressCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	opaqueCaptureAddress:  u64
+	opaqueCaptureAddress:  u64,
 }
 
 PipelineShaderStageCreateInfo::struct {
@@ -2307,7 +2307,7 @@ PipelineShaderStageCreateInfo::struct {
 	stage:  ShaderStageFlags,
 	module:  ShaderModule,
 	pName: cstring,
-	pSpecializationInfo: ^SpecializationInfo
+	pSpecializationInfo: ^SpecializationInfo,
 }
 
 WaylandSurfaceCreateInfoKHR::struct {
@@ -2315,7 +2315,7 @@ WaylandSurfaceCreateInfoKHR::struct {
 	pNext: ^void,
 	flags:  WaylandSurfaceCreateFlagsKHR,
 	display: ^wl_display,
-	surface: ^wl_surface
+	surface: ^wl_surface,
 }
 
 BindAccelerationStructureMemoryInfoNV::struct {
@@ -2325,7 +2325,7 @@ BindAccelerationStructureMemoryInfoNV::struct {
 	memory:  DeviceMemory,
 	memoryOffset:  DeviceSize,
 	deviceIndexCount:  u32,
-	pDeviceIndices: ^u32
+	pDeviceIndices: ^u32,
 }
 
 PipelineViewportStateCreateInfo::struct {
@@ -2335,7 +2335,7 @@ PipelineViewportStateCreateInfo::struct {
 	viewportCount:  u32,
 	pViewports: ^Viewport,
 	scissorCount:  u32,
-	pScissors: ^Rect2D
+	pScissors: ^Rect2D,
 }
 
 ImportSemaphoreFdInfoKHR::struct {
@@ -2344,7 +2344,7 @@ ImportSemaphoreFdInfoKHR::struct {
 	semaphore:  Semaphore,
 	flags:  SemaphoreImportFlags,
 	handleType:  ExternalSemaphoreHandleTypeFlags,
-	fd:  i32
+	fd:  i32,
 }
 
 GeneratedCommandsInfoNV::struct {
@@ -2362,25 +2362,25 @@ GeneratedCommandsInfoNV::struct {
 	sequencesCountBuffer:  Buffer,
 	sequencesCountOffset:  DeviceSize,
 	sequencesIndexBuffer:  Buffer,
-	sequencesIndexOffset:  DeviceSize
+	sequencesIndexOffset:  DeviceSize,
 }
 
 QueryPoolPerformanceQueryCreateInfoINTEL::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	performanceCountersSampling:  QueryPoolSamplingModeINTEL
+	performanceCountersSampling:  QueryPoolSamplingModeINTEL,
 }
 
 ImageViewUsageCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	usage:  ImageUsageFlags
+	usage:  ImageUsageFlags,
 }
 
 DeviceMemoryOpaqueCaptureAddressInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	memory:  DeviceMemory
+	memory:  DeviceMemory,
 }
 
 PhysicalDeviceVulkan12Features::struct {
@@ -2432,7 +2432,7 @@ PhysicalDeviceVulkan12Features::struct {
 	vulkanMemoryModelAvailabilityVisibilityChains:  Bool32,
 	shaderOutputViewportIndex:  Bool32,
 	shaderOutputLayer:  Bool32,
-	subgroupBroadcastDynamicId:  Bool32
+	subgroupBroadcastDynamicId:  Bool32,
 }
 
 PipelineLayoutCreateInfo::struct {
@@ -2442,14 +2442,14 @@ PipelineLayoutCreateInfo::struct {
 	setLayoutCount:  u32,
 	pSetLayouts: ^DescriptorSetLayout,
 	pushConstantRangeCount:  u32,
-	pPushConstantRanges: ^PushConstantRange
+	pPushConstantRanges: ^PushConstantRange,
 }
 
 MetalSurfaceCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  MetalSurfaceCreateFlagsEXT,
-	pLayer: ^CAMetalLayer
+	pLayer: ^CAMetalLayer,
 }
 
 BindBufferMemoryInfo::struct {
@@ -2457,13 +2457,13 @@ BindBufferMemoryInfo::struct {
 	pNext: ^void,
 	buffer:  Buffer,
 	memory:  DeviceMemory,
-	memoryOffset:  DeviceSize
+	memoryOffset:  DeviceSize,
 }
 
 PerformanceMarkerInfoINTEL::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	marker:  u64
+	marker:  u64,
 }
 
 ImageResolve2KHR::struct {
@@ -2473,18 +2473,18 @@ ImageResolve2KHR::struct {
 	srcOffset:  Offset3D,
 	dstSubresource:  ImageSubresourceLayers,
 	dstOffset:  Offset3D,
-	extent:  Extent3D
+	extent:  Extent3D,
 }
 
 DrmFormatModifierPropertiesEXT::struct {
 	drmFormatModifier:  u64,
 	drmFormatModifierPlaneCount:  u32,
-	drmFormatModifierTilingFeatures:  FormatFeatureFlags
+	drmFormatModifierTilingFeatures:  FormatFeatureFlags,
 }
 
 IndirectCommandsStreamNV::struct {
 	buffer:  Buffer,
-	offset:  DeviceSize
+	offset:  DeviceSize,
 }
 
 PipelineExecutablePropertiesKHR::struct {
@@ -2493,13 +2493,13 @@ PipelineExecutablePropertiesKHR::struct {
 	stages:  ShaderStageFlags,
 	name:  [MAX_DESCRIPTION_SIZE]u8,
 	description:  [MAX_DESCRIPTION_SIZE]u8,
-	subgroupSize:  u32
+	subgroupSize:  u32,
 }
 
 PhysicalDevicePrivateDataFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	privateData:  Bool32
+	privateData:  Bool32,
 }
 
 ExportMemoryWin32HandleInfoKHR::struct {
@@ -2507,7 +2507,7 @@ ExportMemoryWin32HandleInfoKHR::struct {
 	pNext: ^void,
 	pAttributes: ^SECURITY_ATTRIBUTES,
 	dwAccess:  DWORD,
-	name:  LPCWSTR
+	name:  LPCWSTR,
 }
 
 PhysicalDeviceAccelerationStructureFeaturesKHR::struct {
@@ -2517,7 +2517,7 @@ PhysicalDeviceAccelerationStructureFeaturesKHR::struct {
 	accelerationStructureCaptureReplay:  Bool32,
 	accelerationStructureIndirectBuild:  Bool32,
 	accelerationStructureHostCommands:  Bool32,
-	descriptorBindingAccelerationStructureUpdateAfterBind:  Bool32
+	descriptorBindingAccelerationStructureUpdateAfterBind:  Bool32,
 }
 
 ImportSemaphoreWin32HandleInfoKHR::struct {
@@ -2527,7 +2527,7 @@ ImportSemaphoreWin32HandleInfoKHR::struct {
 	flags:  SemaphoreImportFlags,
 	handleType:  ExternalSemaphoreHandleTypeFlags,
 	handle:  HANDLE,
-	name:  LPCWSTR
+	name:  LPCWSTR,
 }
 
 RayTracingShaderGroupCreateInfoKHR::struct {
@@ -2538,7 +2538,7 @@ RayTracingShaderGroupCreateInfoKHR::struct {
 	closestHitShader:  u32,
 	anyHitShader:  u32,
 	intersectionShader:  u32,
-	pShaderGroupCaptureReplayHandle: ^void
+	pShaderGroupCaptureReplayHandle: ^void,
 }
 
 BindImageMemoryDeviceGroupInfo::struct {
@@ -2547,7 +2547,7 @@ BindImageMemoryDeviceGroupInfo::struct {
 	deviceIndexCount:  u32,
 	pDeviceIndices: ^u32,
 	splitInstanceBindRegionCount:  u32,
-	pSplitInstanceBindRegions: ^Rect2D
+	pSplitInstanceBindRegions: ^Rect2D,
 }
 
 DebugUtilsObjectTagInfoEXT::struct {
@@ -2557,14 +2557,14 @@ DebugUtilsObjectTagInfoEXT::struct {
 	objectHandle:  u64,
 	tagName:  u64,
 	tagSize:  uint,
-	pTag: ^void
+	pTag: ^void,
 }
 
 ImageDrmFormatModifierListCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	drmFormatModifierCount:  u32,
-	pDrmFormatModifiers: ^u64
+	pDrmFormatModifiers: ^u64,
 }
 
 ValidationFeaturesEXT::struct {
@@ -2573,51 +2573,51 @@ ValidationFeaturesEXT::struct {
 	enabledValidationFeatureCount:  u32,
 	pEnabledValidationFeatures: ^ValidationFeatureEnableEXT,
 	disabledValidationFeatureCount:  u32,
-	pDisabledValidationFeatures: ^ValidationFeatureDisableEXT
+	pDisabledValidationFeatures: ^ValidationFeatureDisableEXT,
 }
 
 PhysicalDevicePushDescriptorPropertiesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	maxPushDescriptors:  u32
+	maxPushDescriptors:  u32,
 }
 
 DeviceMemoryOverallocationCreateInfoAMD::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	overallocationBehavior:  MemoryOverallocationBehaviorAMD
+	overallocationBehavior:  MemoryOverallocationBehaviorAMD,
 }
 
 PhysicalDeviceExternalSemaphoreInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	handleType:  ExternalSemaphoreHandleTypeFlags
+	handleType:  ExternalSemaphoreHandleTypeFlags,
 }
 
 MemoryRequirements::struct {
 	size:  DeviceSize,
 	alignment:  DeviceSize,
-	memoryTypeBits:  u32
+	memoryTypeBits:  u32,
 }
 
 MemoryGetWin32HandleInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	memory:  DeviceMemory,
-	handleType:  ExternalMemoryHandleTypeFlags
+	handleType:  ExternalMemoryHandleTypeFlags,
 }
 
 BindBufferMemoryDeviceGroupInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	deviceIndexCount:  u32,
-	pDeviceIndices: ^u32
+	pDeviceIndices: ^u32,
 }
 
 MemoryHostPointerPropertiesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	memoryTypeBits:  u32
+	memoryTypeBits:  u32,
 }
 
 PipelineExecutableStatisticKHR::struct {
@@ -2626,19 +2626,19 @@ PipelineExecutableStatisticKHR::struct {
 	name:  [MAX_DESCRIPTION_SIZE]u8,
 	description:  [MAX_DESCRIPTION_SIZE]u8,
 	format:  PipelineExecutableStatisticFormatKHR,
-	value:  PipelineExecutableStatisticValueKHR
+	value:  PipelineExecutableStatisticValueKHR,
 }
 
 MemoryRequirements2::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	memoryRequirements:  MemoryRequirements
+	memoryRequirements:  MemoryRequirements,
 }
 
 PhysicalDeviceFragmentDensityMap2FeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	fragmentDensityMapDeferred:  Bool32
+	fragmentDensityMapDeferred:  Bool32,
 }
 
 PhysicalDeviceDescriptorIndexingFeatures::struct {
@@ -2663,78 +2663,78 @@ PhysicalDeviceDescriptorIndexingFeatures::struct {
 	descriptorBindingUpdateUnusedWhilePending:  Bool32,
 	descriptorBindingPartiallyBound:  Bool32,
 	descriptorBindingVariableDescriptorCount:  Bool32,
-	runtimeDescriptorArray:  Bool32
+	runtimeDescriptorArray:  Bool32,
 }
 
 PipelineVertexInputDivisorStateCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	vertexBindingDivisorCount:  u32,
-	pVertexBindingDivisors: ^VertexInputBindingDivisorDescriptionEXT
+	pVertexBindingDivisors: ^VertexInputBindingDivisorDescriptionEXT,
 }
 
 ImageSparseMemoryRequirementsInfo2::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	image:  Image
+	image:  Image,
 }
 
 ViSurfaceCreateInfoNN::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  ViSurfaceCreateFlagsNN,
-	window: ^void
+	window: ^void,
 }
 
 DisplayPlaneProperties2KHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	displayPlaneProperties:  DisplayPlanePropertiesKHR
+	displayPlaneProperties:  DisplayPlanePropertiesKHR,
 }
 
 CalibratedTimestampInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	timeDomain:  TimeDomainEXT
+	timeDomain:  TimeDomainEXT,
 }
 
 CommandBufferBeginInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  CommandBufferUsageFlags,
-	pInheritanceInfo: ^CommandBufferInheritanceInfo
+	pInheritanceInfo: ^CommandBufferInheritanceInfo,
 }
 
 PhysicalDeviceShaderClockFeaturesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	shaderSubgroupClock:  Bool32,
-	shaderDeviceClock:  Bool32
+	shaderDeviceClock:  Bool32,
 }
 
 PhysicalDeviceRepresentativeFragmentTestFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	representativeFragmentTest:  Bool32
+	representativeFragmentTest:  Bool32,
 }
 
 PhysicalDeviceRobustness2PropertiesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	robustStorageBufferAccessSizeAlignment:  DeviceSize,
-	robustUniformBufferAccessSizeAlignment:  DeviceSize
+	robustUniformBufferAccessSizeAlignment:  DeviceSize,
 }
 
 PhysicalDeviceDeviceGeneratedCommandsFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	deviceGeneratedCommands:  Bool32
+	deviceGeneratedCommands:  Bool32,
 }
 
 MemoryOpaqueCaptureAddressAllocateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	opaqueCaptureAddress:  u64
+	opaqueCaptureAddress:  u64,
 }
 
 ComputePipelineCreateInfo::struct {
@@ -2744,19 +2744,19 @@ ComputePipelineCreateInfo::struct {
 	stage:  PipelineShaderStageCreateInfo,
 	layout:  PipelineLayout,
 	basePipelineHandle:  Pipeline,
-	basePipelineIndex:  i32
+	basePipelineIndex:  i32,
 }
 
 PhysicalDeviceCoverageReductionModeFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	coverageReductionMode:  Bool32
+	coverageReductionMode:  Bool32,
 }
 
 CopyCommandTransformInfoQCOM::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	transform:  SurfaceTransformFlagsKHR
+	transform:  SurfaceTransformFlagsKHR,
 }
 
 AccelerationStructureGeometryTrianglesDataKHR::struct {
@@ -2768,13 +2768,13 @@ AccelerationStructureGeometryTrianglesDataKHR::struct {
 	maxVertex:  u32,
 	indexType:  IndexType,
 	indexData:  DeviceOrHostAddressConstKHR,
-	transformData:  DeviceOrHostAddressConstKHR
+	transformData:  DeviceOrHostAddressConstKHR,
 }
 
 DeviceDiagnosticsConfigCreateInfoNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	flags:  DeviceDiagnosticsConfigFlagsNV
+	flags:  DeviceDiagnosticsConfigFlagsNV,
 }
 
 PhysicalDeviceMultiviewFeatures::struct {
@@ -2782,14 +2782,14 @@ PhysicalDeviceMultiviewFeatures::struct {
 	pNext: ^void,
 	multiview:  Bool32,
 	multiviewGeometryShader:  Bool32,
-	multiviewTessellationShader:  Bool32
+	multiviewTessellationShader:  Bool32,
 }
 
 AccelerationStructureGeometryAabbsDataKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	data:  DeviceOrHostAddressConstKHR,
-	stride:  DeviceSize
+	stride:  DeviceSize,
 }
 
 ShaderModuleCreateInfo::struct {
@@ -2797,13 +2797,13 @@ ShaderModuleCreateInfo::struct {
 	pNext: ^void,
 	flags:  ShaderModuleCreateFlags,
 	codeSize:  uint,
-	pCode: ^u32
+	pCode: ^u32,
 }
 
 PhysicalDeviceTimelineSemaphoreFeatures::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	timelineSemaphore:  Bool32
+	timelineSemaphore:  Bool32,
 }
 
 PhysicalDeviceRayTracingPipelineFeaturesKHR::struct {
@@ -2813,7 +2813,7 @@ PhysicalDeviceRayTracingPipelineFeaturesKHR::struct {
 	rayTracingPipelineShaderGroupHandleCaptureReplay:  Bool32,
 	rayTracingPipelineShaderGroupHandleCaptureReplayMixed:  Bool32,
 	rayTracingPipelineTraceRaysIndirect:  Bool32,
-	rayTraversalPrimitiveCulling:  Bool32
+	rayTraversalPrimitiveCulling:  Bool32,
 }
 
 PhysicalDeviceVulkanMemoryModelFeatures::struct {
@@ -2821,7 +2821,7 @@ PhysicalDeviceVulkanMemoryModelFeatures::struct {
 	pNext: ^void,
 	vulkanMemoryModel:  Bool32,
 	vulkanMemoryModelDeviceScope:  Bool32,
-	vulkanMemoryModelAvailabilityVisibilityChains:  Bool32
+	vulkanMemoryModelAvailabilityVisibilityChains:  Bool32,
 }
 
 GeometryTrianglesNV::struct {
@@ -2837,12 +2837,12 @@ GeometryTrianglesNV::struct {
 	indexCount:  u32,
 	indexType:  IndexType,
 	transformData:  Buffer,
-	transformOffset:  DeviceSize
+	transformOffset:  DeviceSize,
 }
 
 ClearValue::struct #raw_union {
 	color:  ClearColorValue,
-	depthStencil:  ClearDepthStencilValue
+	depthStencil:  ClearDepthStencilValue,
 }
 
 PipelineCreationFeedbackCreateInfoEXT::struct {
@@ -2850,14 +2850,14 @@ PipelineCreationFeedbackCreateInfoEXT::struct {
 	pNext: ^void,
 	pPipelineCreationFeedback: ^PipelineCreationFeedbackEXT,
 	pipelineStageCreationFeedbackCount:  u32,
-	pPipelineStageCreationFeedbacks: ^PipelineCreationFeedbackEXT
+	pPipelineStageCreationFeedbacks: ^PipelineCreationFeedbackEXT,
 }
 
 PhysicalDeviceMemoryProperties::struct {
 	memoryTypeCount:  u32,
 	memoryTypes:  [MAX_MEMORY_TYPES]MemoryType,
 	memoryHeapCount:  u32,
-	memoryHeaps:  [MAX_MEMORY_HEAPS]MemoryHeap
+	memoryHeaps:  [MAX_MEMORY_HEAPS]MemoryHeap,
 }
 
 PhysicalDeviceTexelBufferAlignmentPropertiesEXT::struct {
@@ -2866,14 +2866,14 @@ PhysicalDeviceTexelBufferAlignmentPropertiesEXT::struct {
 	storageTexelBufferOffsetAlignmentBytes:  DeviceSize,
 	storageTexelBufferOffsetSingleTexelAlignment:  Bool32,
 	uniformTexelBufferOffsetAlignmentBytes:  DeviceSize,
-	uniformTexelBufferOffsetSingleTexelAlignment:  Bool32
+	uniformTexelBufferOffsetSingleTexelAlignment:  Bool32,
 }
 
 RayTracingPipelineInterfaceCreateInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	maxPipelineRayPayloadSize:  u32,
-	maxPipelineRayHitAttributeSize:  u32
+	maxPipelineRayHitAttributeSize:  u32,
 }
 
 PhysicalDeviceRayTracingPropertiesNV::struct {
@@ -2886,27 +2886,27 @@ PhysicalDeviceRayTracingPropertiesNV::struct {
 	maxGeometryCount:  u64,
 	maxInstanceCount:  u64,
 	maxTriangleCount:  u64,
-	maxDescriptorSetAccelerationStructures:  u32
+	maxDescriptorSetAccelerationStructures:  u32,
 }
 
 IOSSurfaceCreateInfoMVK::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  IOSSurfaceCreateFlagsMVK,
-	pView: ^void
+	pView: ^void,
 }
 
 PhysicalDevicePortabilitySubsetPropertiesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	minVertexInputBindingStrideAlignment:  u32
+	minVertexInputBindingStrideAlignment:  u32,
 }
 
 CommandBufferSubmitInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	commandBuffer:  CommandBuffer,
-	deviceMask:  u32
+	deviceMask:  u32,
 }
 
 DebugUtilsObjectNameInfoEXT::struct {
@@ -2914,24 +2914,24 @@ DebugUtilsObjectNameInfoEXT::struct {
 	pNext: ^void,
 	objectType:  ObjectType,
 	objectHandle:  u64,
-	pObjectName: cstring
+	pObjectName: cstring,
 }
 
 PushConstantRange::struct {
 	stageFlags:  ShaderStageFlags,
 	offset:  u32,
-	size:  u32
+	size:  u32,
 }
 
 DeviceGroupSwapchainCreateInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	modes:  DeviceGroupPresentModeFlagsKHR
+	modes:  DeviceGroupPresentModeFlagsKHR,
 }
 
 DeviceOrHostAddressKHR::struct #raw_union {
 	deviceAddress:  DeviceAddress,
-	hostAddress: ^void
+	hostAddress: ^void,
 }
 
 QueryPoolCreateInfo::struct {
@@ -2940,23 +2940,23 @@ QueryPoolCreateInfo::struct {
 	flags:  QueryPoolCreateFlags,
 	queryType:  QueryType,
 	queryCount:  u32,
-	pipelineStatistics:  QueryPipelineStatisticFlags
+	pipelineStatistics:  QueryPipelineStatisticFlags,
 }
 
 PhysicalDeviceRayQueryFeaturesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	rayQuery:  Bool32
+	rayQuery:  Bool32,
 }
 
 PerformanceValueINTEL::struct {
 	type:  PerformanceValueTypeINTEL,
-	data:  PerformanceValueDataINTEL
+	data:  PerformanceValueDataINTEL,
 }
 
 DrawMeshTasksIndirectCommandNV::struct {
 	taskCount:  u32,
-	firstTask:  u32
+	firstTask:  u32,
 }
 
 DebugReportCallbackCreateInfoEXT::struct {
@@ -2964,22 +2964,22 @@ DebugReportCallbackCreateInfoEXT::struct {
 	pNext: ^void,
 	flags:  DebugReportFlagsEXT,
 	pfnCallback:  PFN_vkDebugReportCallbackEXT,
-	pUserData: ^void
+	pUserData: ^void,
 }
 
 PipelineRepresentativeFragmentTestStateCreateInfoNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	representativeFragmentTestEnable:  Bool32
+	representativeFragmentTestEnable:  Bool32,
 }
 
 RefreshCycleDurationGOOGLE::struct {
-	refreshDuration:  u64
+	refreshDuration:  u64,
 }
 
 BaseInStructure::struct {
 	sType:  StructureType,
-	pNext: ^BaseInStructure
+	pNext: ^BaseInStructure,
 }
 
 GraphicsPipelineShaderGroupsCreateInfoNV::struct {
@@ -2988,12 +2988,12 @@ GraphicsPipelineShaderGroupsCreateInfoNV::struct {
 	groupCount:  u32,
 	pGroups: ^GraphicsShaderGroupCreateInfoNV,
 	pipelineCount:  u32,
-	pPipelines: ^Pipeline
+	pPipelines: ^Pipeline,
 }
 
 MemoryType::struct {
 	propertyFlags:  MemoryPropertyFlags,
-	heapIndex:  u32
+	heapIndex:  u32,
 }
 
 PipelineCoverageModulationStateCreateInfoNV::struct {
@@ -3003,20 +3003,20 @@ PipelineCoverageModulationStateCreateInfoNV::struct {
 	coverageModulationMode:  CoverageModulationModeNV,
 	coverageModulationTableEnable:  Bool32,
 	coverageModulationTableCount:  u32,
-	pCoverageModulationTable: ^f32
+	pCoverageModulationTable: ^f32,
 }
 
 BufferCopy::struct {
 	srcOffset:  DeviceSize,
 	dstOffset:  DeviceSize,
-	size:  DeviceSize
+	size:  DeviceSize,
 }
 
 PipelineTessellationStateCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  PipelineTessellationStateCreateFlags,
-	patchControlPoints:  u32
+	patchControlPoints:  u32,
 }
 
 PhysicalDeviceProperties::struct {
@@ -3028,13 +3028,13 @@ PhysicalDeviceProperties::struct {
 	deviceName:  [MAX_PHYSICAL_DEVICE_NAME_SIZE]u8,
 	pipelineCacheUUID:  [UUID_SIZE]u8,
 	limits:  PhysicalDeviceLimits,
-	sparseProperties:  PhysicalDeviceSparseProperties
+	sparseProperties:  PhysicalDeviceSparseProperties,
 }
 
 PhysicalDeviceProperties2::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	properties:  PhysicalDeviceProperties
+	properties:  PhysicalDeviceProperties,
 }
 
 PhysicalDeviceTransformFeedbackPropertiesEXT::struct {
@@ -3049,7 +3049,7 @@ PhysicalDeviceTransformFeedbackPropertiesEXT::struct {
 	transformFeedbackQueries:  Bool32,
 	transformFeedbackStreamsLinesTriangles:  Bool32,
 	transformFeedbackRasterizationStreamSelect:  Bool32,
-	transformFeedbackDraw:  Bool32
+	transformFeedbackDraw:  Bool32,
 }
 
 PhysicalDeviceImageDrmFormatModifierInfoEXT::struct {
@@ -3058,7 +3058,7 @@ PhysicalDeviceImageDrmFormatModifierInfoEXT::struct {
 	drmFormatModifier:  u64,
 	sharingMode:  SharingMode,
 	queueFamilyIndexCount:  u32,
-	pQueueFamilyIndices: ^u32
+	pQueueFamilyIndices: ^u32,
 }
 
 SubpassDescription::struct {
@@ -3071,7 +3071,7 @@ SubpassDescription::struct {
 	pResolveAttachments: ^AttachmentReference,
 	pDepthStencilAttachment: ^AttachmentReference,
 	preserveAttachmentCount:  u32,
-	pPreserveAttachments: ^u32
+	pPreserveAttachments: ^u32,
 }
 
 AttachmentDescription2::struct {
@@ -3085,7 +3085,7 @@ AttachmentDescription2::struct {
 	stencilLoadOp:  AttachmentLoadOp,
 	stencilStoreOp:  AttachmentStoreOp,
 	initialLayout:  ImageLayout,
-	finalLayout:  ImageLayout
+	finalLayout:  ImageLayout,
 }
 
 ImageResolve::struct {
@@ -3093,31 +3093,31 @@ ImageResolve::struct {
 	srcOffset:  Offset3D,
 	dstSubresource:  ImageSubresourceLayers,
 	dstOffset:  Offset3D,
-	extent:  Extent3D
+	extent:  Extent3D,
 }
 
 DedicatedAllocationImageCreateInfoNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	dedicatedAllocation:  Bool32
+	dedicatedAllocation:  Bool32,
 }
 
 PhysicalDeviceDiagnosticsConfigFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	diagnosticsConfig:  Bool32
+	diagnosticsConfig:  Bool32,
 }
 
 PhysicalDeviceShaderTerminateInvocationFeaturesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	shaderTerminateInvocation:  Bool32
+	shaderTerminateInvocation:  Bool32,
 }
 
 ImageSubresource::struct {
 	aspectMask:  ImageAspectFlags,
 	mipLevel:  u32,
-	arrayLayer:  u32
+	arrayLayer:  u32,
 }
 
 DescriptorPoolCreateInfo::struct {
@@ -3126,20 +3126,20 @@ DescriptorPoolCreateInfo::struct {
 	flags:  DescriptorPoolCreateFlags,
 	maxSets:  u32,
 	poolSizeCount:  u32,
-	pPoolSizes: ^DescriptorPoolSize
+	pPoolSizes: ^DescriptorPoolSize,
 }
 
 DeviceEventInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	deviceEvent:  DeviceEventTypeEXT
+	deviceEvent:  DeviceEventTypeEXT,
 }
 
 MemoryDedicatedRequirements::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	prefersDedicatedAllocation:  Bool32,
-	requiresDedicatedAllocation:  Bool32
+	requiresDedicatedAllocation:  Bool32,
 }
 
 PhysicalDeviceDescriptorIndexingProperties::struct {
@@ -3167,13 +3167,13 @@ PhysicalDeviceDescriptorIndexingProperties::struct {
 	maxDescriptorSetUpdateAfterBindStorageBuffersDynamic:  u32,
 	maxDescriptorSetUpdateAfterBindSampledImages:  u32,
 	maxDescriptorSetUpdateAfterBindStorageImages:  u32,
-	maxDescriptorSetUpdateAfterBindInputAttachments:  u32
+	maxDescriptorSetUpdateAfterBindInputAttachments:  u32,
 }
 
 TraceRaysIndirectCommandKHR::struct {
 	width:  u32,
 	height:  u32,
-	depth:  u32
+	depth:  u32,
 }
 
 PerformanceOverrideInfoINTEL::struct {
@@ -3181,7 +3181,7 @@ PerformanceOverrideInfoINTEL::struct {
 	pNext: ^void,
 	type:  PerformanceOverrideTypeINTEL,
 	enable:  Bool32,
-	parameter:  u64
+	parameter:  u64,
 }
 
 AabbPositionsKHR::struct {
@@ -3190,13 +3190,13 @@ AabbPositionsKHR::struct {
 	minZ:  f32,
 	maxX:  f32,
 	maxY:  f32,
-	maxZ:  f32
+	maxZ:  f32,
 }
 
 SemaphoreCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	flags:  SemaphoreCreateFlags
+	flags:  SemaphoreCreateFlags,
 }
 
 ShaderStatisticsInfoAMD::struct {
@@ -3206,7 +3206,7 @@ ShaderStatisticsInfoAMD::struct {
 	numPhysicalSgprs:  u32,
 	numAvailableVgprs:  u32,
 	numAvailableSgprs:  u32,
-	computeWorkGroupSize:  [3]u32
+	computeWorkGroupSize:  [3]u32,
 }
 
 MemoryBarrier2KHR::struct {
@@ -3215,7 +3215,7 @@ MemoryBarrier2KHR::struct {
 	srcStageMask:  PipelineStageFlags2KHR,
 	srcAccessMask:  AccessFlags2KHR,
 	dstStageMask:  PipelineStageFlags2KHR,
-	dstAccessMask:  AccessFlags2KHR
+	dstAccessMask:  AccessFlags2KHR,
 }
 
 TimelineSemaphoreSubmitInfo::struct {
@@ -3224,26 +3224,26 @@ TimelineSemaphoreSubmitInfo::struct {
 	waitSemaphoreValueCount:  u32,
 	pWaitSemaphoreValues: ^u64,
 	signalSemaphoreValueCount:  u32,
-	pSignalSemaphoreValues: ^u64
+	pSignalSemaphoreValues: ^u64,
 }
 
 DisplayModePropertiesKHR::struct {
 	displayMode:  DisplayModeKHR,
-	parameters:  DisplayModeParametersKHR
+	parameters:  DisplayModeParametersKHR,
 }
 
 SemaphoreGetFdInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	semaphore:  Semaphore,
-	handleType:  ExternalSemaphoreHandleTypeFlags
+	handleType:  ExternalSemaphoreHandleTypeFlags,
 }
 
 PresentTimesInfoGOOGLE::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	swapchainCount:  u32,
-	pTimes: ^PresentTimeGOOGLE
+	pTimes: ^PresentTimeGOOGLE,
 }
 
 PhysicalDeviceShaderCorePropertiesAMD::struct {
@@ -3262,7 +3262,7 @@ PhysicalDeviceShaderCorePropertiesAMD::struct {
 	vgprsPerSimd:  u32,
 	minVgprAllocation:  u32,
 	maxVgprAllocation:  u32,
-	vgprAllocationGranularity:  u32
+	vgprAllocationGranularity:  u32,
 }
 
 IndirectCommandsLayoutTokenNV::struct {
@@ -3280,26 +3280,26 @@ IndirectCommandsLayoutTokenNV::struct {
 	indirectStateFlags:  IndirectStateFlagsNV,
 	indexTypeCount:  u32,
 	pIndexTypes: ^IndexType,
-	pIndexTypeValues: ^u32
+	pIndexTypeValues: ^u32,
 }
 
 PhysicalDeviceASTCDecodeFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	decodeModeSharedExponent:  Bool32
+	decodeModeSharedExponent:  Bool32,
 }
 
 PhysicalDeviceCooperativeMatrixFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	cooperativeMatrix:  Bool32,
-	cooperativeMatrixRobustBufferAccess:  Bool32
+	cooperativeMatrixRobustBufferAccess:  Bool32,
 }
 
 PhysicalDeviceTimelineSemaphoreProperties::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	maxTimelineSemaphoreValueDifference:  u64
+	maxTimelineSemaphoreValueDifference:  u64,
 }
 
 ImageBlit2KHR::struct {
@@ -3308,7 +3308,7 @@ ImageBlit2KHR::struct {
 	srcSubresource:  ImageSubresourceLayers,
 	srcOffsets:  [2]Offset3D,
 	dstSubresource:  ImageSubresourceLayers,
-	dstOffsets:  [2]Offset3D
+	dstOffsets:  [2]Offset3D,
 }
 
 CopyBufferInfo2KHR::struct {
@@ -3317,20 +3317,20 @@ CopyBufferInfo2KHR::struct {
 	srcBuffer:  Buffer,
 	dstBuffer:  Buffer,
 	regionCount:  u32,
-	pRegions: ^BufferCopy2KHR
+	pRegions: ^BufferCopy2KHR,
 }
 
 ClearAttachment::struct {
 	aspectMask:  ImageAspectFlags,
 	colorAttachment:  u32,
-	clearValue:  ClearValue
+	clearValue:  ClearValue,
 }
 
 ValidationFlagsEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	disabledValidationCheckCount:  u32,
-	pDisabledValidationChecks: ^ValidationCheckEXT
+	pDisabledValidationChecks: ^ValidationCheckEXT,
 }
 
 SamplerCreateInfo::struct {
@@ -3351,13 +3351,13 @@ SamplerCreateInfo::struct {
 	minLod:  f32,
 	maxLod:  f32,
 	borderColor:  BorderColor,
-	unnormalizedCoordinates:  Bool32
+	unnormalizedCoordinates:  Bool32,
 }
 
 SamplerReductionModeCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	reductionMode:  SamplerReductionMode
+	reductionMode:  SamplerReductionMode,
 }
 
 BufferImageCopy::struct {
@@ -3366,7 +3366,7 @@ BufferImageCopy::struct {
 	bufferImageHeight:  u32,
 	imageSubresource:  ImageSubresourceLayers,
 	imageOffset:  Offset3D,
-	imageExtent:  Extent3D
+	imageExtent:  Extent3D,
 }
 
 PhysicalDeviceAccelerationStructurePropertiesKHR::struct {
@@ -3379,7 +3379,7 @@ PhysicalDeviceAccelerationStructurePropertiesKHR::struct {
 	maxPerStageDescriptorUpdateAfterBindAccelerationStructures:  u32,
 	maxDescriptorSetAccelerationStructures:  u32,
 	maxDescriptorSetUpdateAfterBindAccelerationStructures:  u32,
-	minAccelerationStructureScratchOffsetAlignment:  u32
+	minAccelerationStructureScratchOffsetAlignment:  u32,
 }
 
 AccelerationStructureBuildGeometryInfoKHR::struct {
@@ -3393,14 +3393,14 @@ AccelerationStructureBuildGeometryInfoKHR::struct {
 	geometryCount:  u32,
 	pGeometries: ^AccelerationStructureGeometryKHR,
 	ppGeometries: ^^AccelerationStructureGeometryKHR,
-	scratchData:  DeviceOrHostAddressKHR
+	scratchData:  DeviceOrHostAddressKHR,
 }
 
 SemaphoreSignalInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	semaphore:  Semaphore,
-	value:  u64
+	value:  u64,
 }
 
 SamplerYcbcrConversionCreateInfo::struct {
@@ -3413,13 +3413,13 @@ SamplerYcbcrConversionCreateInfo::struct {
 	xChromaOffset:  ChromaLocation,
 	yChromaOffset:  ChromaLocation,
 	chromaFilter:  Filter,
-	forceExplicitReconstruction:  Bool32
+	forceExplicitReconstruction:  Bool32,
 }
 
 PhysicalDeviceUniformBufferStandardLayoutFeatures::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	uniformBufferStandardLayout:  Bool32
+	uniformBufferStandardLayout:  Bool32,
 }
 
 DescriptorSetLayoutCreateInfo::struct {
@@ -3427,13 +3427,13 @@ DescriptorSetLayoutCreateInfo::struct {
 	pNext: ^void,
 	flags:  DescriptorSetLayoutCreateFlags,
 	bindingCount:  u32,
-	pBindings: ^DescriptorSetLayoutBinding
+	pBindings: ^DescriptorSetLayoutBinding,
 }
 
 PhysicalDeviceProtectedMemoryProperties::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	protectedNoFault:  Bool32
+	protectedNoFault:  Bool32,
 }
 
 GeometryNV::struct {
@@ -3441,7 +3441,7 @@ GeometryNV::struct {
 	pNext: ^void,
 	geometryType:  GeometryTypeKHR,
 	geometry:  GeometryDataNV,
-	flags:  GeometryFlagsKHR
+	flags:  GeometryFlagsKHR,
 }
 
 SubpassDescriptionDepthStencilResolve::struct {
@@ -3449,14 +3449,14 @@ SubpassDescriptionDepthStencilResolve::struct {
 	pNext: ^void,
 	depthResolveMode:  ResolveModeFlags,
 	stencilResolveMode:  ResolveModeFlags,
-	pDepthStencilResolveAttachment: ^AttachmentReference2
+	pDepthStencilResolveAttachment: ^AttachmentReference2,
 }
 
 AndroidSurfaceCreateInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  AndroidSurfaceCreateFlagsKHR,
-	window: ^ANativeWindow
+	window: ^ANativeWindow,
 }
 
 ValidationCacheCreateInfoEXT::struct {
@@ -3464,14 +3464,14 @@ ValidationCacheCreateInfoEXT::struct {
 	pNext: ^void,
 	flags:  ValidationCacheCreateFlagsEXT,
 	initialDataSize:  uint,
-	pInitialData: ^void
+	pInitialData: ^void,
 }
 
 PhysicalDeviceMaintenance3Properties::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	maxPerSetDescriptors:  u32,
-	maxMemoryAllocationSize:  DeviceSize
+	maxMemoryAllocationSize:  DeviceSize,
 }
 
 PhysicalDeviceImageFormatInfo2::struct {
@@ -3481,25 +3481,25 @@ PhysicalDeviceImageFormatInfo2::struct {
 	type:  ImageType,
 	tiling:  ImageTiling,
 	usage:  ImageUsageFlags,
-	flags:  ImageCreateFlags
+	flags:  ImageCreateFlags,
 }
 
 SurfaceProtectedCapabilitiesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	supportsProtected:  Bool32
+	supportsProtected:  Bool32,
 }
 
 SparseImageFormatProperties::struct {
 	aspectMask:  ImageAspectFlags,
 	imageGranularity:  Extent3D,
-	flags:  SparseImageFormatFlags
+	flags:  SparseImageFormatFlags,
 }
 
 PrivateDataSlotCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	flags:  PrivateDataSlotCreateFlagsEXT
+	flags:  PrivateDataSlotCreateFlagsEXT,
 }
 
 SampleLocationsInfoEXT::struct {
@@ -3508,13 +3508,13 @@ SampleLocationsInfoEXT::struct {
 	sampleLocationsPerPixel:  SampleCountFlags,
 	sampleLocationGridSize:  Extent2D,
 	sampleLocationsCount:  u32,
-	pSampleLocations: ^SampleLocationEXT
+	pSampleLocations: ^SampleLocationEXT,
 }
 
 MemoryGetAndroidHardwareBufferInfoANDROID::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	memory:  DeviceMemory
+	memory:  DeviceMemory,
 }
 
 CopyAccelerationStructureToMemoryInfoKHR::struct {
@@ -3522,17 +3522,17 @@ CopyAccelerationStructureToMemoryInfoKHR::struct {
 	pNext: ^void,
 	src:  AccelerationStructureKHR,
 	dst:  DeviceOrHostAddressKHR,
-	mode:  CopyAccelerationStructureModeKHR
+	mode:  CopyAccelerationStructureModeKHR,
 }
 
 BindShaderGroupIndirectCommandNV::struct {
-	groupIndex:  u32
+	groupIndex:  u32,
 }
 
 DescriptorImageInfo::struct {
 	sampler:  Sampler,
 	imageView:  ImageView,
-	imageLayout:  ImageLayout
+	imageLayout:  ImageLayout,
 }
 
 BufferCreateInfo::struct {
@@ -3543,19 +3543,19 @@ BufferCreateInfo::struct {
 	usage:  BufferUsageFlags,
 	sharingMode:  SharingMode,
 	queueFamilyIndexCount:  u32,
-	pQueueFamilyIndices: ^u32
+	pQueueFamilyIndices: ^u32,
 }
 
 ImageFormatProperties2::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	imageFormatProperties:  ImageFormatProperties
+	imageFormatProperties:  ImageFormatProperties,
 }
 
 ExportSemaphoreCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	handleTypes:  ExternalSemaphoreHandleTypeFlags
+	handleTypes:  ExternalSemaphoreHandleTypeFlags,
 }
 
 PhysicalDeviceSubgroupProperties::struct {
@@ -3564,7 +3564,7 @@ PhysicalDeviceSubgroupProperties::struct {
 	subgroupSize:  u32,
 	supportedStages:  ShaderStageFlags,
 	supportedOperations:  SubgroupFeatureFlags,
-	quadOperationsInAllStages:  Bool32
+	quadOperationsInAllStages:  Bool32,
 }
 
 PipelineColorBlendAttachmentState::struct {
@@ -3575,13 +3575,13 @@ PipelineColorBlendAttachmentState::struct {
 	srcAlphaBlendFactor:  BlendFactor,
 	dstAlphaBlendFactor:  BlendFactor,
 	alphaBlendOp:  BlendOp,
-	colorWriteMask:  ColorComponentFlags
+	colorWriteMask:  ColorComponentFlags,
 }
 
 DescriptorSetLayoutSupport::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	supported:  Bool32
+	supported:  Bool32,
 }
 
 ExternalSemaphoreProperties::struct {
@@ -3589,7 +3589,7 @@ ExternalSemaphoreProperties::struct {
 	pNext: ^void,
 	exportFromImportedHandleTypes:  ExternalSemaphoreHandleTypeFlags,
 	compatibleHandleTypes:  ExternalSemaphoreHandleTypeFlags,
-	externalSemaphoreFeatures:  ExternalSemaphoreFeatureFlags
+	externalSemaphoreFeatures:  ExternalSemaphoreFeatureFlags,
 }
 
 RayTracingPipelineCreateInfoKHR::struct {
@@ -3606,14 +3606,14 @@ RayTracingPipelineCreateInfoKHR::struct {
 	pDynamicState: ^PipelineDynamicStateCreateInfo,
 	layout:  PipelineLayout,
 	basePipelineHandle:  Pipeline,
-	basePipelineIndex:  i32
+	basePipelineIndex:  i32,
 }
 
 DebugMarkerMarkerInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	pMarkerName: cstring,
-	color:  [4]f32
+	color:  [4]f32,
 }
 
 DeviceGroupPresentInfoKHR::struct {
@@ -3621,52 +3621,52 @@ DeviceGroupPresentInfoKHR::struct {
 	pNext: ^void,
 	swapchainCount:  u32,
 	pDeviceMasks: ^u32,
-	mode:  DeviceGroupPresentModeFlagsKHR
+	mode:  DeviceGroupPresentModeFlagsKHR,
 }
 
 AccelerationStructureBuildRangeInfoKHR::struct {
 	primitiveCount:  u32,
 	primitiveOffset:  u32,
 	firstVertex:  u32,
-	transformOffset:  u32
+	transformOffset:  u32,
 }
 
 MemoryPriorityAllocateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	priority:  f32
+	priority:  f32,
 }
 
 ImportMemoryFdInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	handleType:  ExternalMemoryHandleTypeFlags,
-	fd:  i32
+	fd:  i32,
 }
 
 SpecializationInfo::struct {
 	mapEntryCount:  u32,
 	pMapEntries: ^SpecializationMapEntry,
 	dataSize:  uint,
-	pData: ^void
+	pData: ^void,
 }
 
 DeviceOrHostAddressConstKHR::struct #raw_union {
 	deviceAddress:  DeviceAddress,
-	hostAddress: ^void
+	hostAddress: ^void,
 }
 
 PhysicalDeviceFeatures2::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	features:  PhysicalDeviceFeatures
+	features:  PhysicalDeviceFeatures,
 }
 
 ImportMemoryHostPointerInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	handleType:  ExternalMemoryHandleTypeFlags,
-	pHostPointer: ^void
+	pHostPointer: ^void,
 }
 
 PipelineFragmentShadingRateEnumStateCreateInfoNV::struct {
@@ -3674,7 +3674,7 @@ PipelineFragmentShadingRateEnumStateCreateInfoNV::struct {
 	pNext: ^void,
 	shadingRateType:  FragmentShadingRateTypeNV,
 	shadingRate:  FragmentShadingRateNV,
-	combinerOps:  [2]FragmentShadingRateCombinerOpKHR
+	combinerOps:  [2]FragmentShadingRateCombinerOpKHR,
 }
 
 SparseImageMemoryRequirements::struct {
@@ -3682,12 +3682,12 @@ SparseImageMemoryRequirements::struct {
 	imageMipTailFirstLod:  u32,
 	imageMipTailSize:  DeviceSize,
 	imageMipTailOffset:  DeviceSize,
-	imageMipTailStride:  DeviceSize
+	imageMipTailStride:  DeviceSize,
 }
 
 MemoryHeap::struct {
 	size:  DeviceSize,
-	flags:  MemoryHeapFlags
+	flags:  MemoryHeapFlags,
 }
 
 ConditionalRenderingBeginInfoEXT::struct {
@@ -3695,7 +3695,7 @@ ConditionalRenderingBeginInfoEXT::struct {
 	pNext: ^void,
 	buffer:  Buffer,
 	offset:  DeviceSize,
-	flags:  ConditionalRenderingFlagsEXT
+	flags:  ConditionalRenderingFlagsEXT,
 }
 
 CommandBufferInheritanceInfo::struct {
@@ -3706,7 +3706,7 @@ CommandBufferInheritanceInfo::struct {
 	framebuffer:  Framebuffer,
 	occlusionQueryEnable:  Bool32,
 	queryFlags:  QueryControlFlags,
-	pipelineStatistics:  QueryPipelineStatisticFlags
+	pipelineStatistics:  QueryPipelineStatisticFlags,
 }
 
 QueryPoolPerformanceCreateInfoKHR::struct {
@@ -3714,13 +3714,13 @@ QueryPoolPerformanceCreateInfoKHR::struct {
 	pNext: ^void,
 	queueFamilyIndex:  u32,
 	counterIndexCount:  u32,
-	pCounterIndices: ^u32
+	pCounterIndices: ^u32,
 }
 
 DescriptorBufferInfo::struct {
 	buffer:  Buffer,
 	offset:  DeviceSize,
-	range:  DeviceSize
+	range:  DeviceSize,
 }
 
 ImageCopy::struct {
@@ -3728,7 +3728,7 @@ ImageCopy::struct {
 	srcOffset:  Offset3D,
 	dstSubresource:  ImageSubresourceLayers,
 	dstOffset:  Offset3D,
-	extent:  Extent3D
+	extent:  Extent3D,
 }
 
 GraphicsPipelineCreateInfo::struct {
@@ -3750,35 +3750,35 @@ GraphicsPipelineCreateInfo::struct {
 	renderPass:  RenderPass,
 	subpass:  u32,
 	basePipelineHandle:  Pipeline,
-	basePipelineIndex:  i32
+	basePipelineIndex:  i32,
 }
 
 AccelerationStructureMemoryRequirementsInfoNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	type:  AccelerationStructureMemoryRequirementsTypeNV,
-	accelerationStructure:  AccelerationStructureNV
+	accelerationStructure:  AccelerationStructureNV,
 }
 
 PhysicalDevicePerformanceQueryFeaturesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	performanceCounterQueryPools:  Bool32,
-	performanceCounterMultipleQueryPools:  Bool32
+	performanceCounterMultipleQueryPools:  Bool32,
 }
 
 AttachmentDescriptionStencilLayout::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	stencilInitialLayout:  ImageLayout,
-	stencilFinalLayout:  ImageLayout
+	stencilFinalLayout:  ImageLayout,
 }
 
 MutableDescriptorTypeCreateInfoVALVE::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	mutableDescriptorTypeListCount:  u32,
-	pMutableDescriptorTypeLists: ^MutableDescriptorTypeListVALVE
+	pMutableDescriptorTypeLists: ^MutableDescriptorTypeListVALVE,
 }
 
 PipelineRasterizationStateCreateInfo::struct {
@@ -3794,7 +3794,7 @@ PipelineRasterizationStateCreateInfo::struct {
 	depthBiasConstantFactor:  f32,
 	depthBiasClamp:  f32,
 	depthBiasSlopeFactor:  f32,
-	lineWidth:  f32
+	lineWidth:  f32,
 }
 
 SparseImageMemoryBind::struct {
@@ -3803,25 +3803,25 @@ SparseImageMemoryBind::struct {
 	extent:  Extent3D,
 	memory:  DeviceMemory,
 	memoryOffset:  DeviceSize,
-	flags:  SparseMemoryBindFlags
+	flags:  SparseMemoryBindFlags,
 }
 
 InitializePerformanceApiInfoINTEL::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	pUserData: ^void
+	pUserData: ^void,
 }
 
 PhysicalDeviceIndexTypeUint8FeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	indexTypeUint8:  Bool32
+	indexTypeUint8:  Bool32,
 }
 
 ImageMemoryRequirementsInfo2::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	image:  Image
+	image:  Image,
 }
 
 D3D12FenceSubmitInfoKHR::struct {
@@ -3830,26 +3830,26 @@ D3D12FenceSubmitInfoKHR::struct {
 	waitSemaphoreValuesCount:  u32,
 	pWaitSemaphoreValues: ^u64,
 	signalSemaphoreValuesCount:  u32,
-	pSignalSemaphoreValues: ^u64
+	pSignalSemaphoreValues: ^u64,
 }
 
 DescriptorSetLayoutBindingFlagsCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	bindingCount:  u32,
-	pBindingFlags: ^DescriptorBindingFlags
+	pBindingFlags: ^DescriptorBindingFlags,
 }
 
 PhysicalDeviceLineRasterizationPropertiesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	lineSubPixelPrecisionBits:  u32
+	lineSubPixelPrecisionBits:  u32,
 }
 
 RenderPassTransformBeginInfoQCOM::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	transform:  SurfaceTransformFlagsKHR
+	transform:  SurfaceTransformFlagsKHR,
 }
 
 FramebufferCreateInfo::struct {
@@ -3861,7 +3861,7 @@ FramebufferCreateInfo::struct {
 	pAttachments: ^ImageView,
 	width:  u32,
 	height:  u32,
-	layers:  u32
+	layers:  u32,
 }
 
 PipelineVertexInputStateCreateInfo::struct {
@@ -3871,63 +3871,63 @@ PipelineVertexInputStateCreateInfo::struct {
 	vertexBindingDescriptionCount:  u32,
 	pVertexBindingDescriptions: ^VertexInputBindingDescription,
 	vertexAttributeDescriptionCount:  u32,
-	pVertexAttributeDescriptions: ^VertexInputAttributeDescription
+	pVertexAttributeDescriptions: ^VertexInputAttributeDescription,
 }
 
 PhysicalDeviceDeviceMemoryReportFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	deviceMemoryReport:  Bool32
+	deviceMemoryReport:  Bool32,
 }
 
 PhysicalDeviceDiscardRectanglePropertiesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	maxDiscardRectangles:  u32
+	maxDiscardRectangles:  u32,
 }
 
 SamplerCustomBorderColorCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	customBorderColor:  ClearColorValue,
-	format:  Format
+	format:  Format,
 }
 
 ExportFenceCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	handleTypes:  ExternalFenceHandleTypeFlags
+	handleTypes:  ExternalFenceHandleTypeFlags,
 }
 
 DevicePrivateDataCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	privateDataSlotRequestCount:  u32
+	privateDataSlotRequestCount:  u32,
 }
 
 SparseBufferMemoryBindInfo::struct {
 	buffer:  Buffer,
 	bindCount:  u32,
-	pBinds: ^SparseMemoryBind
+	pBinds: ^SparseMemoryBind,
 }
 
 PerformanceQuerySubmitInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	counterPassIndex:  u32
+	counterPassIndex:  u32,
 }
 
 DrmFormatModifierPropertiesListEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	drmFormatModifierCount:  u32,
-	pDrmFormatModifierProperties: ^DrmFormatModifierPropertiesEXT
+	pDrmFormatModifierProperties: ^DrmFormatModifierPropertiesEXT,
 }
 
 RectLayerKHR::struct {
 	offset:  Offset2D,
 	extent:  Extent2D,
-	layer:  u32
+	layer:  u32,
 }
 
 ExportSemaphoreWin32HandleInfoKHR::struct {
@@ -3935,14 +3935,14 @@ ExportSemaphoreWin32HandleInfoKHR::struct {
 	pNext: ^void,
 	pAttributes: ^SECURITY_ATTRIBUTES,
 	dwAccess:  DWORD,
-	name:  LPCWSTR
+	name:  LPCWSTR,
 }
 
 PhysicalDeviceConditionalRenderingFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	conditionalRendering:  Bool32,
-	inheritedConditionalRendering:  Bool32
+	inheritedConditionalRendering:  Bool32,
 }
 
 ScreenSurfaceCreateInfoQNX::struct {
@@ -3950,32 +3950,32 @@ ScreenSurfaceCreateInfoQNX::struct {
 	pNext: ^void,
 	flags:  ScreenSurfaceCreateFlagsQNX,
 	ctx: ^_screen_context,
-	window: ^_screen_window
+	window: ^_screen_window,
 }
 
 MutableDescriptorTypeListVALVE::struct {
 	descriptorTypeCount:  u32,
-	pDescriptorTypes: ^DescriptorType
+	pDescriptorTypes: ^DescriptorType,
 }
 
 PhysicalDeviceMultiviewProperties::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	maxMultiviewViewCount:  u32,
-	maxMultiviewInstanceIndex:  u32
+	maxMultiviewInstanceIndex:  u32,
 }
 
 MemoryGetFdInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	memory:  DeviceMemory,
-	handleType:  ExternalMemoryHandleTypeFlags
+	handleType:  ExternalMemoryHandleTypeFlags,
 }
 
 AccelerationStructureGeometryDataKHR::struct #raw_union {
 	triangles:  AccelerationStructureGeometryTrianglesDataKHR,
 	aabbs:  AccelerationStructureGeometryAabbsDataKHR,
-	instances:  AccelerationStructureGeometryInstancesDataKHR
+	instances:  AccelerationStructureGeometryInstancesDataKHR,
 }
 
 DirectFBSurfaceCreateInfoEXT::struct {
@@ -3983,13 +3983,13 @@ DirectFBSurfaceCreateInfoEXT::struct {
 	pNext: ^void,
 	flags:  DirectFBSurfaceCreateFlagsEXT,
 	dfb: ^IDirectFB,
-	surface: ^IDirectFBSurface
+	surface: ^IDirectFBSurface,
 }
 
 ExternalMemoryProperties::struct {
 	externalMemoryFeatures:  ExternalMemoryFeatureFlags,
 	exportFromImportedHandleTypes:  ExternalMemoryHandleTypeFlags,
-	compatibleHandleTypes:  ExternalMemoryHandleTypeFlags
+	compatibleHandleTypes:  ExternalMemoryHandleTypeFlags,
 }
 
 ImageFormatProperties::struct {
@@ -3997,25 +3997,25 @@ ImageFormatProperties::struct {
 	maxMipLevels:  u32,
 	maxArrayLayers:  u32,
 	sampleCounts:  SampleCountFlags,
-	maxResourceSize:  DeviceSize
+	maxResourceSize:  DeviceSize,
 }
 
 PresentFrameTokenGGP::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	frameToken:  GgpFrameToken
+	frameToken:  GgpFrameToken,
 }
 
 PhysicalDeviceFragmentShaderBarycentricFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	fragmentShaderBarycentric:  Bool32
+	fragmentShaderBarycentric:  Bool32,
 }
 
 RenderPassFragmentDensityMapCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	fragmentDensityMapAttachment:  AttachmentReference
+	fragmentDensityMapAttachment:  AttachmentReference,
 }
 
 PhysicalDeviceShaderAtomicFloatFeaturesEXT::struct {
@@ -4032,14 +4032,14 @@ PhysicalDeviceShaderAtomicFloatFeaturesEXT::struct {
 	shaderImageFloat32Atomics:  Bool32,
 	shaderImageFloat32AtomicAdd:  Bool32,
 	sparseImageFloat32Atomics:  Bool32,
-	sparseImageFloat32AtomicAdd:  Bool32
+	sparseImageFloat32AtomicAdd:  Bool32,
 }
 
 CheckpointDataNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	stage:  PipelineStageFlags,
-	pCheckpointMarker: ^void
+	pCheckpointMarker: ^void,
 }
 
 DescriptorSetLayoutBinding::struct {
@@ -4047,33 +4047,33 @@ DescriptorSetLayoutBinding::struct {
 	descriptorType:  DescriptorType,
 	descriptorCount:  u32,
 	stageFlags:  ShaderStageFlags,
-	pImmutableSamplers: ^Sampler
+	pImmutableSamplers: ^Sampler,
 }
 
 BindImagePlaneMemoryInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	planeAspect:  ImageAspectFlags
+	planeAspect:  ImageAspectFlags,
 }
 
 SparseImageMemoryRequirements2::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	memoryRequirements:  SparseImageMemoryRequirements
+	memoryRequirements:  SparseImageMemoryRequirements,
 }
 
 PhysicalDeviceShaderAtomicInt64Features::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	shaderBufferInt64Atomics:  Bool32,
-	shaderSharedInt64Atomics:  Bool32
+	shaderSharedInt64Atomics:  Bool32,
 }
 
 PhysicalDeviceMeshShaderFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	taskShader:  Bool32,
-	meshShader:  Bool32
+	meshShader:  Bool32,
 }
 
 PhysicalDeviceFragmentShaderInterlockFeaturesEXT::struct {
@@ -4081,7 +4081,7 @@ PhysicalDeviceFragmentShaderInterlockFeaturesEXT::struct {
 	pNext: ^void,
 	fragmentShaderSampleInterlock:  Bool32,
 	fragmentShaderPixelInterlock:  Bool32,
-	fragmentShaderShadingRateInterlock:  Bool32
+	fragmentShaderShadingRateInterlock:  Bool32,
 }
 
 DeviceMemoryReportCallbackDataEXT::struct {
@@ -4093,12 +4093,12 @@ DeviceMemoryReportCallbackDataEXT::struct {
 	size:  DeviceSize,
 	objectType:  ObjectType,
 	objectHandle:  u64,
-	heapIndex:  u32
+	heapIndex:  u32,
 }
 
 Offset2D::struct {
 	x:  i32,
-	y:  i32
+	y:  i32,
 }
 
 PhysicalDeviceConservativeRasterizationPropertiesEXT::struct {
@@ -4112,7 +4112,7 @@ PhysicalDeviceConservativeRasterizationPropertiesEXT::struct {
 	degenerateTrianglesRasterized:  Bool32,
 	degenerateLinesRasterized:  Bool32,
 	fullyCoveredFragmentShaderInputVariable:  Bool32,
-	conservativeRasterizationPostDepthCoverage:  Bool32
+	conservativeRasterizationPostDepthCoverage:  Bool32,
 }
 
 GeometryAABBNV::struct {
@@ -4121,39 +4121,39 @@ GeometryAABBNV::struct {
 	aabbData:  Buffer,
 	numAABBs:  u32,
 	stride:  u32,
-	offset:  DeviceSize
+	offset:  DeviceSize,
 }
 
 PhysicalDeviceShaderDrawParametersFeatures::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	shaderDrawParameters:  Bool32
+	shaderDrawParameters:  Bool32,
 }
 
 DeviceGroupCommandBufferBeginInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	deviceMask:  u32
+	deviceMask:  u32,
 }
 
 SwapchainDisplayNativeHdrCreateInfoAMD::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	localDimmingEnable:  Bool32
+	localDimmingEnable:  Bool32,
 }
 
 DescriptorSetVariableDescriptorCountAllocateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	descriptorSetCount:  u32,
-	pDescriptorCounts: ^u32
+	pDescriptorCounts: ^u32,
 }
 
 ImageSubresourceLayers::struct {
 	aspectMask:  ImageAspectFlags,
 	mipLevel:  u32,
 	baseArrayLayer:  u32,
-	layerCount:  u32
+	layerCount:  u32,
 }
 
 SparseMemoryBind::struct {
@@ -4161,34 +4161,34 @@ SparseMemoryBind::struct {
 	size:  DeviceSize,
 	memory:  DeviceMemory,
 	memoryOffset:  DeviceSize,
-	flags:  SparseMemoryBindFlags
+	flags:  SparseMemoryBindFlags,
 }
 
 ExternalImageFormatPropertiesNV::struct {
 	imageFormatProperties:  ImageFormatProperties,
 	externalMemoryFeatures:  ExternalMemoryFeatureFlagsNV,
 	exportFromImportedHandleTypes:  ExternalMemoryHandleTypeFlagsNV,
-	compatibleHandleTypes:  ExternalMemoryHandleTypeFlagsNV
+	compatibleHandleTypes:  ExternalMemoryHandleTypeFlagsNV,
 }
 
 ExternalBufferProperties::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	externalMemoryProperties:  ExternalMemoryProperties
+	externalMemoryProperties:  ExternalMemoryProperties,
 }
 
 PhysicalDeviceShaderImageAtomicInt64FeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	shaderImageInt64Atomics:  Bool32,
-	sparseImageInt64Atomics:  Bool32
+	sparseImageInt64Atomics:  Bool32,
 }
 
 PipelineRasterizationDepthClipStateCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  PipelineRasterizationDepthClipStateCreateFlagsEXT,
-	depthClipEnable:  Bool32
+	depthClipEnable:  Bool32,
 }
 
 SubpassDependency::struct {
@@ -4198,7 +4198,7 @@ SubpassDependency::struct {
 	dstStageMask:  PipelineStageFlags,
 	srcAccessMask:  AccessFlags,
 	dstAccessMask:  AccessFlags,
-	dependencyFlags:  DependencyFlags
+	dependencyFlags:  DependencyFlags,
 }
 
 RenderPassMultiviewCreateInfo::struct {
@@ -4209,35 +4209,35 @@ RenderPassMultiviewCreateInfo::struct {
 	dependencyCount:  u32,
 	pViewOffsets: ^i32,
 	correlationMaskCount:  u32,
-	pCorrelationMasks: ^u32
+	pCorrelationMasks: ^u32,
 }
 
 ExportMemoryAllocateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	handleTypes:  ExternalMemoryHandleTypeFlags
+	handleTypes:  ExternalMemoryHandleTypeFlags,
 }
 
 GeometryDataNV::struct {
 	triangles:  GeometryTrianglesNV,
-	aabbs:  GeometryAABBNV
+	aabbs:  GeometryAABBNV,
 }
 
 InputAttachmentAspectReference::struct {
 	subpass:  u32,
 	inputAttachmentIndex:  u32,
-	aspectMask:  ImageAspectFlags
+	aspectMask:  ImageAspectFlags,
 }
 
 ImageSwapchainCreateInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	swapchain:  SwapchainKHR
+	swapchain:  SwapchainKHR,
 }
 
 DisplayPlanePropertiesKHR::struct {
 	currentDisplay:  DisplayKHR,
-	currentStackIndex:  u32
+	currentStackIndex:  u32,
 }
 
 XcbSurfaceCreateInfoKHR::struct {
@@ -4245,20 +4245,20 @@ XcbSurfaceCreateInfoKHR::struct {
 	pNext: ^void,
 	flags:  XcbSurfaceCreateFlagsKHR,
 	connection: ^xcb_connection_t,
-	window:  xcb_window_t
+	window:  xcb_window_t,
 }
 
 ClearRect::struct {
 	rect:  Rect2D,
 	baseArrayLayer:  u32,
-	layerCount:  u32
+	layerCount:  u32,
 }
 
 VertexInputAttributeDescription::struct {
 	location:  u32,
 	binding:  u32,
 	format:  Format,
-	offset:  u32
+	offset:  u32,
 }
 
 SurfaceCapabilitiesKHR::struct {
@@ -4271,7 +4271,7 @@ SurfaceCapabilitiesKHR::struct {
 	supportedTransforms:  SurfaceTransformFlagsKHR,
 	currentTransform:  SurfaceTransformFlagsKHR,
 	supportedCompositeAlpha:  CompositeAlphaFlagsKHR,
-	supportedUsageFlags:  ImageUsageFlags
+	supportedUsageFlags:  ImageUsageFlags,
 }
 
 ImageMemoryBarrier::struct {
@@ -4284,18 +4284,18 @@ ImageMemoryBarrier::struct {
 	srcQueueFamilyIndex:  u32,
 	dstQueueFamilyIndex:  u32,
 	image:  Image,
-	subresourceRange:  ImageSubresourceRange
+	subresourceRange:  ImageSubresourceRange,
 }
 
 SampleLocationEXT::struct {
 	x:  f32,
-	y:  f32
+	y:  f32,
 }
 
 Extent3D::struct {
 	width:  u32,
 	height:  u32,
-	depth:  u32
+	depth:  u32,
 }
 
 ImageCreateInfo::struct {
@@ -4313,13 +4313,13 @@ ImageCreateInfo::struct {
 	sharingMode:  SharingMode,
 	queueFamilyIndexCount:  u32,
 	pQueueFamilyIndices: ^u32,
-	initialLayout:  ImageLayout
+	initialLayout:  ImageLayout,
 }
 
 PhysicalDeviceExternalImageFormatInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	handleType:  ExternalMemoryHandleTypeFlags
+	handleType:  ExternalMemoryHandleTypeFlags,
 }
 
 DebugUtilsMessengerCreateInfoEXT::struct {
@@ -4329,13 +4329,13 @@ DebugUtilsMessengerCreateInfoEXT::struct {
 	messageSeverity:  DebugUtilsMessageSeverityFlagsEXT,
 	messageType:  DebugUtilsMessageTypeFlagsEXT,
 	pfnUserCallback:  PFN_vkDebugUtilsMessengerCallbackEXT,
-	pUserData: ^void
+	pUserData: ^void,
 }
 
 ExternalMemoryImageCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	handleTypes:  ExternalMemoryHandleTypeFlags
+	handleTypes:  ExternalMemoryHandleTypeFlags,
 }
 
 SubpassDescription2::struct {
@@ -4351,24 +4351,24 @@ SubpassDescription2::struct {
 	pResolveAttachments: ^AttachmentReference2,
 	pDepthStencilAttachment: ^AttachmentReference2,
 	preserveAttachmentCount:  u32,
-	pPreserveAttachments: ^u32
+	pPreserveAttachments: ^u32,
 }
 
 DisplayEventInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	displayEvent:  DisplayEventTypeEXT
+	displayEvent:  DisplayEventTypeEXT,
 }
 
 SubpassEndInfo::struct {
 	sType:  StructureType,
-	pNext: ^void
+	pNext: ^void,
 }
 
 PhysicalDevicePipelineCreationCacheControlFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	pipelineCreationCacheControl:  Bool32
+	pipelineCreationCacheControl:  Bool32,
 }
 
 PipelineInputAssemblyStateCreateInfo::struct {
@@ -4376,13 +4376,13 @@ PipelineInputAssemblyStateCreateInfo::struct {
 	pNext: ^void,
 	flags:  PipelineInputAssemblyStateCreateFlags,
 	topology:  PrimitiveTopology,
-	primitiveRestartEnable:  Bool32
+	primitiveRestartEnable:  Bool32,
 }
 
 PhysicalDeviceSeparateDepthStencilLayoutsFeatures::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	separateDepthStencilLayouts:  Bool32
+	separateDepthStencilLayouts:  Bool32,
 }
 
 PhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR::struct {
@@ -4391,26 +4391,26 @@ PhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR::struct {
 	workgroupMemoryExplicitLayout:  Bool32,
 	workgroupMemoryExplicitLayoutScalarBlockLayout:  Bool32,
 	workgroupMemoryExplicitLayout8BitAccess:  Bool32,
-	workgroupMemoryExplicitLayout16BitAccess:  Bool32
+	workgroupMemoryExplicitLayout16BitAccess:  Bool32,
 }
 
 PhysicalDevice4444FormatsFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	formatA4R4G4B4:  Bool32,
-	formatA4B4G4R4:  Bool32
+	formatA4B4G4R4:  Bool32,
 }
 
 AttachmentSampleLocationsEXT::struct {
 	attachmentIndex:  u32,
-	sampleLocationsInfo:  SampleLocationsInfoEXT
+	sampleLocationsInfo:  SampleLocationsInfoEXT,
 }
 
 PhysicalDeviceFragmentShadingRateKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	sampleCounts:  SampleCountFlags,
-	fragmentSize:  Extent2D
+	fragmentSize:  Extent2D,
 }
 
 PastPresentationTimingGOOGLE::struct {
@@ -4418,7 +4418,7 @@ PastPresentationTimingGOOGLE::struct {
 	desiredPresentTime:  u64,
 	actualPresentTime:  u64,
 	earliestPresentTime:  u64,
-	presentMargin:  u64
+	presentMargin:  u64,
 }
 
 PipelineColorBlendAdvancedStateCreateInfoEXT::struct {
@@ -4426,20 +4426,20 @@ PipelineColorBlendAdvancedStateCreateInfoEXT::struct {
 	pNext: ^void,
 	srcPremultiplied:  Bool32,
 	dstPremultiplied:  Bool32,
-	blendOverlap:  BlendOverlapEXT
+	blendOverlap:  BlendOverlapEXT,
 }
 
 FramebufferAttachmentsCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	attachmentImageInfoCount:  u32,
-	pAttachmentImageInfos: ^FramebufferAttachmentImageInfo
+	pAttachmentImageInfos: ^FramebufferAttachmentImageInfo,
 }
 
 ExportMemoryAllocateInfoNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	handleTypes:  ExternalMemoryHandleTypeFlagsNV
+	handleTypes:  ExternalMemoryHandleTypeFlagsNV,
 }
 
 ImportFenceWin32HandleInfoKHR::struct {
@@ -4449,13 +4449,13 @@ ImportFenceWin32HandleInfoKHR::struct {
 	flags:  FenceImportFlags,
 	handleType:  ExternalFenceHandleTypeFlags,
 	handle:  HANDLE,
-	name:  LPCWSTR
+	name:  LPCWSTR,
 }
 
 ProtectedSubmitInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	protectedSubmit:  Bool32
+	protectedSubmit:  Bool32,
 }
 
 FramebufferMixedSamplesCombinationNV::struct {
@@ -4464,7 +4464,7 @@ FramebufferMixedSamplesCombinationNV::struct {
 	coverageReductionMode:  CoverageReductionModeNV,
 	rasterizationSamples:  SampleCountFlags,
 	depthStencilSamples:  SampleCountFlags,
-	colorSamples:  SampleCountFlags
+	colorSamples:  SampleCountFlags,
 }
 
 Win32KeyedMutexAcquireReleaseInfoKHR::struct {
@@ -4476,13 +4476,13 @@ Win32KeyedMutexAcquireReleaseInfoKHR::struct {
 	pAcquireTimeouts: ^u32,
 	releaseCount:  u32,
 	pReleaseSyncs: ^DeviceMemory,
-	pReleaseKeys: ^u64
+	pReleaseKeys: ^u64,
 }
 
 PhysicalDeviceExtendedDynamicStateFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	extendedDynamicState:  Bool32
+	extendedDynamicState:  Bool32,
 }
 
 PhysicalDeviceSparseImageFormatInfo2::struct {
@@ -4492,18 +4492,18 @@ PhysicalDeviceSparseImageFormatInfo2::struct {
 	type:  ImageType,
 	samples:  SampleCountFlags,
 	usage:  ImageUsageFlags,
-	tiling:  ImageTiling
+	tiling:  ImageTiling,
 }
 
 PipelineCreationFeedbackEXT::struct {
 	flags:  PipelineCreationFeedbackFlagsEXT,
-	duration:  u64
+	duration:  u64,
 }
 
 SparseImageOpaqueMemoryBindInfo::struct {
 	image:  Image,
 	bindCount:  u32,
-	pBinds: ^SparseMemoryBind
+	pBinds: ^SparseMemoryBind,
 }
 
 PhysicalDeviceToolPropertiesEXT::struct {
@@ -4513,7 +4513,7 @@ PhysicalDeviceToolPropertiesEXT::struct {
 	version:  [MAX_EXTENSION_NAME_SIZE]u8,
 	purposes:  ToolPurposeFlagsEXT,
 	description:  [MAX_DESCRIPTION_SIZE]u8,
-	layer:  [MAX_EXTENSION_NAME_SIZE]u8
+	layer:  [MAX_EXTENSION_NAME_SIZE]u8,
 }
 
 ImageViewCreateInfo::struct {
@@ -4524,7 +4524,7 @@ ImageViewCreateInfo::struct {
 	viewType:  ImageViewType,
 	format:  Format,
 	components:  ComponentMapping,
-	subresourceRange:  ImageSubresourceRange
+	subresourceRange:  ImageSubresourceRange,
 }
 
 BlitImageInfo2KHR::struct {
@@ -4536,7 +4536,7 @@ BlitImageInfo2KHR::struct {
 	dstImageLayout:  ImageLayout,
 	regionCount:  u32,
 	pRegions: ^ImageBlit2KHR,
-	filter:  Filter
+	filter:  Filter,
 }
 
 RenderPassCreateInfo2::struct {
@@ -4550,13 +4550,13 @@ RenderPassCreateInfo2::struct {
 	dependencyCount:  u32,
 	pDependencies: ^SubpassDependency2,
 	correlatedViewMaskCount:  u32,
-	pCorrelatedViewMasks: ^u32
+	pCorrelatedViewMasks: ^u32,
 }
 
 DisplayProperties2KHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	displayProperties:  DisplayPropertiesKHR
+	displayProperties:  DisplayPropertiesKHR,
 }
 
 PhysicalDeviceShadingRateImagePropertiesNV::struct {
@@ -4564,19 +4564,19 @@ PhysicalDeviceShadingRateImagePropertiesNV::struct {
 	pNext: ^void,
 	shadingRateTexelSize:  Extent2D,
 	shadingRatePaletteSize:  u32,
-	shadingRateMaxCoarseSamples:  u32
+	shadingRateMaxCoarseSamples:  u32,
 }
 
 XYColorEXT::struct {
 	x:  f32,
-	y:  f32
+	y:  f32,
 }
 
 PhysicalDeviceMemoryBudgetPropertiesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	heapBudget:  [MAX_MEMORY_HEAPS]DeviceSize,
-	heapUsage:  [MAX_MEMORY_HEAPS]DeviceSize
+	heapUsage:  [MAX_MEMORY_HEAPS]DeviceSize,
 }
 
 PipelineViewportWScalingStateCreateInfoNV::struct {
@@ -4584,7 +4584,7 @@ PipelineViewportWScalingStateCreateInfoNV::struct {
 	pNext: ^void,
 	viewportWScalingEnable:  Bool32,
 	viewportCount:  u32,
-	pViewportWScalings: ^ViewportWScalingNV
+	pViewportWScalings: ^ViewportWScalingNV,
 }
 
 PipelineDepthStencilStateCreateInfo::struct {
@@ -4599,21 +4599,21 @@ PipelineDepthStencilStateCreateInfo::struct {
 	front:  StencilOpState,
 	back:  StencilOpState,
 	minDepthBounds:  f32,
-	maxDepthBounds:  f32
+	maxDepthBounds:  f32,
 }
 
 PhysicalDeviceShaderSMBuiltinsPropertiesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	shaderSMCount:  u32,
-	shaderWarpsPerSM:  u32
+	shaderWarpsPerSM:  u32,
 }
 
 CommandBufferInheritanceRenderPassTransformInfoQCOM::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	transform:  SurfaceTransformFlagsKHR,
-	renderArea:  Rect2D
+	renderArea:  Rect2D,
 }
 
 BindSparseInfo::struct {
@@ -4628,14 +4628,14 @@ BindSparseInfo::struct {
 	imageBindCount:  u32,
 	pImageBinds: ^SparseImageMemoryBindInfo,
 	signalSemaphoreCount:  u32,
-	pSignalSemaphores: ^Semaphore
+	pSignalSemaphores: ^Semaphore,
 }
 
 AndroidHardwareBufferPropertiesANDROID::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	allocationSize:  DeviceSize,
-	memoryTypeBits:  u32
+	memoryTypeBits:  u32,
 }
 
 SemaphoreWaitInfo::struct {
@@ -4644,7 +4644,7 @@ SemaphoreWaitInfo::struct {
 	flags:  SemaphoreWaitFlags,
 	semaphoreCount:  u32,
 	pSemaphores: ^Semaphore,
-	pValues: ^u64
+	pValues: ^u64,
 }
 
 PhysicalDeviceRobustness2FeaturesEXT::struct {
@@ -4652,26 +4652,26 @@ PhysicalDeviceRobustness2FeaturesEXT::struct {
 	pNext: ^void,
 	robustBufferAccess2:  Bool32,
 	robustImageAccess2:  Bool32,
-	nullDescriptor:  Bool32
+	nullDescriptor:  Bool32,
 }
 
 PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	shaderZeroInitializeWorkgroupMemory:  Bool32
+	shaderZeroInitializeWorkgroupMemory:  Bool32,
 }
 
 ExternalMemoryBufferCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	handleTypes:  ExternalMemoryHandleTypeFlags
+	handleTypes:  ExternalMemoryHandleTypeFlags,
 }
 
 PipelineRasterizationStateStreamCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  PipelineRasterizationStateStreamCreateFlagsEXT,
-	rasterizationStream:  u32
+	rasterizationStream:  u32,
 }
 
 ShaderResourceUsageAMD::struct {
@@ -4679,14 +4679,14 @@ ShaderResourceUsageAMD::struct {
 	numUsedSgprs:  u32,
 	ldsSizePerLocalWorkGroup:  u32,
 	ldsUsageSizeInBytes:  uint,
-	scratchMemUsageInBytes:  uint
+	scratchMemUsageInBytes:  uint,
 }
 
 QueueFamilyProperties::struct {
 	queueFlags:  QueueFlags,
 	queueCount:  u32,
 	timestampValidBits:  u32,
-	minImageTransferGranularity:  Extent3D
+	minImageTransferGranularity:  Extent3D,
 }
 
 AccelerationStructureInfoNV::struct {
@@ -4696,39 +4696,39 @@ AccelerationStructureInfoNV::struct {
 	flags:  BuildAccelerationStructureFlagsNV,
 	instanceCount:  u32,
 	geometryCount:  u32,
-	pGeometries: ^GeometryNV
+	pGeometries: ^GeometryNV,
 }
 
 SurfaceCapabilitiesFullScreenExclusiveEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	fullScreenExclusiveSupported:  Bool32
+	fullScreenExclusiveSupported:  Bool32,
 }
 
 PhysicalDeviceSubgroupSizeControlFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	subgroupSizeControl:  Bool32,
-	computeFullSubgroups:  Bool32
+	computeFullSubgroups:  Bool32,
 }
 
 FilterCubicImageViewImageFormatPropertiesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	filterCubic:  Bool32,
-	filterCubicMinmax:  Bool32
+	filterCubicMinmax:  Bool32,
 }
 
 MemoryWin32HandlePropertiesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	memoryTypeBits:  u32
+	memoryTypeBits:  u32,
 }
 
 PhysicalDeviceDepthClipEnableFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	depthClipEnable:  Bool32
+	depthClipEnable:  Bool32,
 }
 
 BindImageMemoryInfo::struct {
@@ -4736,13 +4736,13 @@ BindImageMemoryInfo::struct {
 	pNext: ^void,
 	image:  Image,
 	memory:  DeviceMemory,
-	memoryOffset:  DeviceSize
+	memoryOffset:  DeviceSize,
 }
 
 SamplerYcbcrConversionInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	conversion:  SamplerYcbcrConversion
+	conversion:  SamplerYcbcrConversion,
 }
 
 PhysicalDeviceBlendOperationAdvancedPropertiesEXT::struct {
@@ -4753,7 +4753,7 @@ PhysicalDeviceBlendOperationAdvancedPropertiesEXT::struct {
 	advancedBlendNonPremultipliedSrcColor:  Bool32,
 	advancedBlendNonPremultipliedDstColor:  Bool32,
 	advancedBlendCorrelatedOverlap:  Bool32,
-	advancedBlendAllOperations:  Bool32
+	advancedBlendAllOperations:  Bool32,
 }
 
 PipelineCoverageToColorStateCreateInfoNV::struct {
@@ -4761,34 +4761,34 @@ PipelineCoverageToColorStateCreateInfoNV::struct {
 	pNext: ^void,
 	flags:  PipelineCoverageToColorStateCreateFlagsNV,
 	coverageToColorEnable:  Bool32,
-	coverageToColorLocation:  u32
+	coverageToColorLocation:  u32,
 }
 
 DisplayPlaneInfo2KHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	mode:  DisplayModeKHR,
-	planeIndex:  u32
+	planeIndex:  u32,
 }
 
 MemoryAllocateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	allocationSize:  DeviceSize,
-	memoryTypeIndex:  u32
+	memoryTypeIndex:  u32,
 }
 
 WriteDescriptorSetInlineUniformBlockEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	dataSize:  u32,
-	pData: ^void
+	pData: ^void,
 }
 
 AccelerationStructureDeviceAddressInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	accelerationStructure:  AccelerationStructureKHR
+	accelerationStructure:  AccelerationStructureKHR,
 }
 
 DeviceGroupRenderPassBeginInfo::struct {
@@ -4796,40 +4796,40 @@ DeviceGroupRenderPassBeginInfo::struct {
 	pNext: ^void,
 	deviceMask:  u32,
 	deviceRenderAreaCount:  u32,
-	pDeviceRenderAreas: ^Rect2D
+	pDeviceRenderAreas: ^Rect2D,
 }
 
 ExportMemoryWin32HandleInfoNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	pAttributes: ^SECURITY_ATTRIBUTES,
-	dwAccess:  DWORD
+	dwAccess:  DWORD,
 }
 
 PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	shaderDemoteToHelperInvocation:  Bool32
+	shaderDemoteToHelperInvocation:  Bool32,
 }
 
 CommandPoolCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  CommandPoolCreateFlags,
-	queueFamilyIndex:  u32
+	queueFamilyIndex:  u32,
 }
 
 PhysicalDeviceVertexAttributeDivisorPropertiesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	maxVertexAttribDivisor:  u32
+	maxVertexAttribDivisor:  u32,
 }
 
 CoarseSampleOrderCustomNV::struct {
 	shadingRate:  ShadingRatePaletteEntryNV,
 	sampleCount:  u32,
 	sampleLocationCount:  u32,
-	pSampleLocations: ^CoarseSampleLocationNV
+	pSampleLocations: ^CoarseSampleLocationNV,
 }
 
 PhysicalDeviceVulkan11Properties::struct {
@@ -4849,7 +4849,7 @@ PhysicalDeviceVulkan11Properties::struct {
 	maxMultiviewInstanceIndex:  u32,
 	protectedNoFault:  Bool32,
 	maxPerSetDescriptors:  u32,
-	maxMemoryAllocationSize:  DeviceSize
+	maxMemoryAllocationSize:  DeviceSize,
 }
 
 PhysicalDeviceDeviceGeneratedCommandsPropertiesNV::struct {
@@ -4863,7 +4863,7 @@ PhysicalDeviceDeviceGeneratedCommandsPropertiesNV::struct {
 	maxIndirectCommandsStreamStride:  u32,
 	minSequencesCountBufferOffsetAlignment:  u32,
 	minSequencesIndexBufferOffsetAlignment:  u32,
-	minIndirectCommandsBufferOffsetAlignment:  u32
+	minIndirectCommandsBufferOffsetAlignment:  u32,
 }
 
 PhysicalDeviceVulkan12Properties::struct {
@@ -4920,18 +4920,18 @@ PhysicalDeviceVulkan12Properties::struct {
 	filterMinmaxSingleComponentFormats:  Bool32,
 	filterMinmaxImageComponentMapping:  Bool32,
 	maxTimelineSemaphoreValueDifference:  u64,
-	framebufferIntegerColorSampleCounts:  SampleCountFlags
+	framebufferIntegerColorSampleCounts:  SampleCountFlags,
 }
 
 PresentTimeGOOGLE::struct {
 	presentID:  u32,
-	desiredPresentTime:  u64
+	desiredPresentTime:  u64,
 }
 
 FenceCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	flags:  FenceCreateFlags
+	flags:  FenceCreateFlags,
 }
 
 PhysicalDeviceBufferDeviceAddressFeaturesEXT::struct {
@@ -4939,14 +4939,14 @@ PhysicalDeviceBufferDeviceAddressFeaturesEXT::struct {
 	pNext: ^void,
 	bufferDeviceAddress:  Bool32,
 	bufferDeviceAddressCaptureReplay:  Bool32,
-	bufferDeviceAddressMultiDevice:  Bool32
+	bufferDeviceAddressMultiDevice:  Bool32,
 }
 
 DeviceGroupPresentCapabilitiesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	presentMask:  [MAX_DEVICE_GROUP_SIZE]u32,
-	modes:  DeviceGroupPresentModeFlagsKHR
+	modes:  DeviceGroupPresentModeFlagsKHR,
 }
 
 PhysicalDeviceFeatures::struct {
@@ -5004,27 +5004,27 @@ PhysicalDeviceFeatures::struct {
 	sparseResidency16Samples:  Bool32,
 	sparseResidencyAliased:  Bool32,
 	variableMultisampleRate:  Bool32,
-	inheritedQueries:  Bool32
+	inheritedQueries:  Bool32,
 }
 
 DrawIndirectCommand::struct {
 	vertexCount:  u32,
 	instanceCount:  u32,
 	firstVertex:  u32,
-	firstInstance:  u32
+	firstInstance:  u32,
 }
 
 BindIndexBufferIndirectCommandNV::struct {
 	bufferAddress:  DeviceAddress,
 	size:  u32,
-	indexType:  IndexType
+	indexType:  IndexType,
 }
 
 SemaphoreGetWin32HandleInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	semaphore:  Semaphore,
-	handleType:  ExternalSemaphoreHandleTypeFlags
+	handleType:  ExternalSemaphoreHandleTypeFlags,
 }
 
 PerformanceCounterKHR::struct {
@@ -5033,7 +5033,7 @@ PerformanceCounterKHR::struct {
 	unit:  PerformanceCounterUnitKHR,
 	scope:  PerformanceCounterScopeKHR,
 	storage:  PerformanceCounterStorageKHR,
-	uuid:  [UUID_SIZE]u8
+	uuid:  [UUID_SIZE]u8,
 }
 
 Viewport::struct {
@@ -5042,7 +5042,7 @@ Viewport::struct {
 	width:  f32,
 	height:  f32,
 	minDepth:  f32,
-	maxDepth:  f32
+	maxDepth:  f32,
 }
 
 ImageMemoryBarrier2KHR::struct {
@@ -5057,44 +5057,44 @@ ImageMemoryBarrier2KHR::struct {
 	srcQueueFamilyIndex:  u32,
 	dstQueueFamilyIndex:  u32,
 	image:  Image,
-	subresourceRange:  ImageSubresourceRange
+	subresourceRange:  ImageSubresourceRange,
 }
 
 BindVertexBufferIndirectCommandNV::struct {
 	bufferAddress:  DeviceAddress,
 	size:  u32,
-	stride:  u32
+	stride:  u32,
 }
 
 VertexInputBindingDivisorDescriptionEXT::struct {
 	binding:  u32,
-	divisor:  u32
+	divisor:  u32,
 }
 
 PhysicalDeviceSamplerYcbcrConversionFeatures::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	samplerYcbcrConversion:  Bool32
+	samplerYcbcrConversion:  Bool32,
 }
 
 PhysicalDevicePerformanceQueryPropertiesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	allowCommandBufferQueryCopies:  Bool32
+	allowCommandBufferQueryCopies:  Bool32,
 }
 
 WriteDescriptorSetAccelerationStructureNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	accelerationStructureCount:  u32,
-	pAccelerationStructures: ^AccelerationStructureNV
+	pAccelerationStructures: ^AccelerationStructureNV,
 }
 
 AccelerationStructureCreateInfoNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	compactedSize:  DeviceSize,
-	info:  AccelerationStructureInfoNV
+	info:  AccelerationStructureInfoNV,
 }
 
 PhysicalDevice8BitStorageFeatures::struct {
@@ -5102,7 +5102,7 @@ PhysicalDevice8BitStorageFeatures::struct {
 	pNext: ^void,
 	storageBuffer8BitAccess:  Bool32,
 	uniformAndStorageBuffer8BitAccess:  Bool32,
-	storagePushConstant8:  Bool32
+	storagePushConstant8:  Bool32,
 }
 
 PerformanceCounterDescriptionKHR::struct {
@@ -5111,7 +5111,7 @@ PerformanceCounterDescriptionKHR::struct {
 	flags:  PerformanceCounterDescriptionFlagsKHR,
 	name:  [MAX_DESCRIPTION_SIZE]u8,
 	category:  [MAX_DESCRIPTION_SIZE]u8,
-	description:  [MAX_DESCRIPTION_SIZE]u8
+	description:  [MAX_DESCRIPTION_SIZE]u8,
 }
 
 CopyBufferToImageInfo2KHR::struct {
@@ -5121,14 +5121,14 @@ CopyBufferToImageInfo2KHR::struct {
 	dstImage:  Image,
 	dstImageLayout:  ImageLayout,
 	regionCount:  u32,
-	pRegions: ^BufferImageCopy2KHR
+	pRegions: ^BufferImageCopy2KHR,
 }
 
 ImportMemoryWin32HandleInfoNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	handleType:  ExternalMemoryHandleTypeFlagsNV,
-	handle:  HANDLE
+	handle:  HANDLE,
 }
 
 GeneratedCommandsMemoryRequirementsInfoNV::struct {
@@ -5137,7 +5137,7 @@ GeneratedCommandsMemoryRequirementsInfoNV::struct {
 	pipelineBindPoint:  PipelineBindPoint,
 	pipeline:  Pipeline,
 	indirectCommandsLayout:  IndirectCommandsLayoutNV,
-	maxSequencesCount:  u32
+	maxSequencesCount:  u32,
 }
 
 MappedMemoryRange::struct {
@@ -5145,14 +5145,14 @@ MappedMemoryRange::struct {
 	pNext: ^void,
 	memory:  DeviceMemory,
 	offset:  DeviceSize,
-	size:  DeviceSize
+	size:  DeviceSize,
 }
 
 PhysicalDeviceVariablePointersFeatures::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	variablePointersStorageBuffer:  Bool32,
-	variablePointers:  Bool32
+	variablePointers:  Bool32,
 }
 
 RayTracingShaderGroupCreateInfoNV::struct {
@@ -5162,25 +5162,25 @@ RayTracingShaderGroupCreateInfoNV::struct {
 	generalShader:  u32,
 	closestHitShader:  u32,
 	anyHitShader:  u32,
-	intersectionShader:  u32
+	intersectionShader:  u32,
 }
 
 PerformanceStreamMarkerInfoINTEL::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	marker:  u32
+	marker:  u32,
 }
 
 DisplayPlaneCapabilities2KHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	capabilities:  DisplayPlaneCapabilitiesKHR
+	capabilities:  DisplayPlaneCapabilitiesKHR,
 }
 
 ExternalMemoryImageCreateInfoNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	handleTypes:  ExternalMemoryHandleTypeFlagsNV
+	handleTypes:  ExternalMemoryHandleTypeFlagsNV,
 }
 
 DrawIndexedIndirectCommand::struct {
@@ -5188,42 +5188,42 @@ DrawIndexedIndirectCommand::struct {
 	instanceCount:  u32,
 	firstIndex:  u32,
 	vertexOffset:  i32,
-	firstInstance:  u32
+	firstInstance:  u32,
 }
 
 PhysicalDeviceTextureCompressionASTCHDRFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	textureCompressionASTC_HDR:  Bool32
+	textureCompressionASTC_HDR:  Bool32,
 }
 
 PhysicalDeviceShaderSMBuiltinsFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	shaderSMBuiltins:  Bool32
+	shaderSMBuiltins:  Bool32,
 }
 
 PipelineInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	pipeline:  Pipeline
+	pipeline:  Pipeline,
 }
 
 AttachmentReference::struct {
 	attachment:  u32,
-	layout:  ImageLayout
+	layout:  ImageLayout,
 }
 
 PhysicalDeviceExternalFenceInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	handleType:  ExternalFenceHandleTypeFlags
+	handleType:  ExternalFenceHandleTypeFlags,
 }
 
 Offset3D::struct {
 	x:  i32,
 	y:  i32,
-	z:  i32
+	z:  i32,
 }
 
 PhysicalDeviceRayTracingPipelinePropertiesKHR::struct {
@@ -5236,21 +5236,21 @@ PhysicalDeviceRayTracingPipelinePropertiesKHR::struct {
 	shaderGroupHandleCaptureReplaySize:  u32,
 	maxRayDispatchInvocationCount:  u32,
 	shaderGroupHandleAlignment:  u32,
-	maxRayHitAttributeSize:  u32
+	maxRayHitAttributeSize:  u32,
 }
 
 CheckpointData2NV::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	stage:  PipelineStageFlags2KHR,
-	pCheckpointMarker: ^void
+	pCheckpointMarker: ^void,
 }
 
 PhysicalDeviceShaderCoreProperties2AMD::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	shaderCoreFeatures:  ShaderCorePropertiesFlagsAMD,
-	activeComputeUnitCount:  u32
+	activeComputeUnitCount:  u32,
 }
 
 DisplaySurfaceCreateInfoKHR::struct {
@@ -5263,24 +5263,24 @@ DisplaySurfaceCreateInfoKHR::struct {
 	transform:  SurfaceTransformFlagsKHR,
 	globalAlpha:  f32,
 	alphaMode:  DisplayPlaneAlphaFlagsKHR,
-	imageExtent:  Extent2D
+	imageExtent:  Extent2D,
 }
 
 TextureLODGatherFormatPropertiesAMD::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	supportsTextureGatherLODBiasAMD:  Bool32
+	supportsTextureGatherLODBiasAMD:  Bool32,
 }
 
 PhysicalDeviceScalarBlockLayoutFeatures::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	scalarBlockLayout:  Bool32
+	scalarBlockLayout:  Bool32,
 }
 
 ShadingRatePaletteNV::struct {
 	shadingRatePaletteEntryCount:  u32,
-	pShadingRatePaletteEntries: ^ShadingRatePaletteEntryNV
+	pShadingRatePaletteEntries: ^ShadingRatePaletteEntryNV,
 }
 
 DebugUtilsMessengerCallbackDataEXT::struct {
@@ -5295,13 +5295,13 @@ DebugUtilsMessengerCallbackDataEXT::struct {
 	cmdBufLabelCount:  u32,
 	pCmdBufLabels: ^DebugUtilsLabelEXT,
 	objectCount:  u32,
-	pObjects: ^DebugUtilsObjectNameInfoEXT
+	pObjects: ^DebugUtilsObjectNameInfoEXT,
 }
 
 DeviceQueueGlobalPriorityCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	globalPriority:  QueueGlobalPriorityEXT
+	globalPriority:  QueueGlobalPriorityEXT,
 }
 
 Win32KeyedMutexAcquireReleaseInfoNV::struct {
@@ -5313,13 +5313,13 @@ Win32KeyedMutexAcquireReleaseInfoNV::struct {
 	pAcquireTimeoutMilliseconds: ^u32,
 	releaseCount:  u32,
 	pReleaseSyncs: ^DeviceMemory,
-	pReleaseKeys: ^u64
+	pReleaseKeys: ^u64,
 }
 
 PipelineCompilerControlCreateInfoAMD::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	compilerControlFlags:  PipelineCompilerControlFlagsAMD
+	compilerControlFlags:  PipelineCompilerControlFlagsAMD,
 }
 
 PipelineExecutableInternalRepresentationKHR::struct {
@@ -5329,37 +5329,37 @@ PipelineExecutableInternalRepresentationKHR::struct {
 	description:  [MAX_DESCRIPTION_SIZE]u8,
 	isText:  Bool32,
 	dataSize:  uint,
-	pData: ^void
+	pData: ^void,
 }
 
 TransformMatrixKHR::struct {
-	matrix:  [4][3]f32
+	matrix:  [4][3]f32,
 }
 
 FragmentShadingRateAttachmentInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	pFragmentShadingRateAttachment: ^AttachmentReference2,
-	shadingRateAttachmentTexelSize:  Extent2D
+	shadingRateAttachmentTexelSize:  Extent2D,
 }
 
 PhysicalDeviceCornerSampledImageFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	cornerSampledImage:  Bool32
+	cornerSampledImage:  Bool32,
 }
 
 EventCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	flags:  EventCreateFlags
+	flags:  EventCreateFlags,
 }
 
 FenceGetWin32HandleInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	fence:  Fence,
-	handleType:  ExternalFenceHandleTypeFlags
+	handleType:  ExternalFenceHandleTypeFlags,
 }
 
 DeviceQueueCreateInfo::struct {
@@ -5368,12 +5368,12 @@ DeviceQueueCreateInfo::struct {
 	flags:  DeviceQueueCreateFlags,
 	queueFamilyIndex:  u32,
 	queueCount:  u32,
-	pQueuePriorities: ^f32
+	pQueuePriorities: ^f32,
 }
 
 SurfaceFormatKHR::struct {
 	format:  Format,
-	colorSpace:  ColorSpaceKHR
+	colorSpace:  ColorSpaceKHR,
 }
 
 SurfaceCapabilities2EXT::struct {
@@ -5389,13 +5389,13 @@ SurfaceCapabilities2EXT::struct {
 	currentTransform:  SurfaceTransformFlagsKHR,
 	supportedCompositeAlpha:  CompositeAlphaFlagsKHR,
 	supportedUsageFlags:  ImageUsageFlags,
-	supportedSurfaceCounters:  SurfaceCounterFlagsEXT
+	supportedSurfaceCounters:  SurfaceCounterFlagsEXT,
 }
 
 SparseImageFormatProperties2::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	properties:  SparseImageFormatProperties
+	properties:  SparseImageFormatProperties,
 }
 
 ImageSubresourceRange::struct {
@@ -5403,13 +5403,13 @@ ImageSubresourceRange::struct {
 	baseMipLevel:  u32,
 	levelCount:  u32,
 	baseArrayLayer:  u32,
-	layerCount:  u32
+	layerCount:  u32,
 }
 
 SparseImageMemoryBindInfo::struct {
 	image:  Image,
 	bindCount:  u32,
-	pBinds: ^SparseImageMemoryBind
+	pBinds: ^SparseImageMemoryBind,
 }
 
 DisplayPlaneCapabilitiesKHR::struct {
@@ -5421,7 +5421,7 @@ DisplayPlaneCapabilitiesKHR::struct {
 	minDstPosition:  Offset2D,
 	maxDstPosition:  Offset2D,
 	minDstExtent:  Extent2D,
-	maxDstExtent:  Extent2D
+	maxDstExtent:  Extent2D,
 }
 
 PhysicalDeviceMeshShaderPropertiesNV::struct {
@@ -5439,12 +5439,12 @@ PhysicalDeviceMeshShaderPropertiesNV::struct {
 	maxMeshOutputPrimitives:  u32,
 	maxMeshMultiviewViewCount:  u32,
 	meshOutputPerVertexGranularity:  u32,
-	meshOutputPerPrimitiveGranularity:  u32
+	meshOutputPerPrimitiveGranularity:  u32,
 }
 
 ViewportWScalingNV::struct {
 	xcoeff:  f32,
-	ycoeff:  f32
+	ycoeff:  f32,
 }
 
 RayTracingPipelineCreateInfoNV::struct {
@@ -5458,7 +5458,7 @@ RayTracingPipelineCreateInfoNV::struct {
 	maxRecursionDepth:  u32,
 	layout:  PipelineLayout,
 	basePipelineHandle:  Pipeline,
-	basePipelineIndex:  i32
+	basePipelineIndex:  i32,
 }
 
 AttachmentDescription::struct {
@@ -5470,13 +5470,13 @@ AttachmentDescription::struct {
 	stencilLoadOp:  AttachmentLoadOp,
 	stencilStoreOp:  AttachmentStoreOp,
 	initialLayout:  ImageLayout,
-	finalLayout:  ImageLayout
+	finalLayout:  ImageLayout,
 }
 
 ImageViewASTCDecodeModeEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	decodeMode:  Format
+	decodeMode:  Format,
 }
 
 AccelerationStructureGeometryKHR::struct {
@@ -5484,37 +5484,37 @@ AccelerationStructureGeometryKHR::struct {
 	pNext: ^void,
 	geometryType:  GeometryTypeKHR,
 	geometry:  AccelerationStructureGeometryDataKHR,
-	flags:  GeometryFlagsKHR
+	flags:  GeometryFlagsKHR,
 }
 
 AccelerationStructureGeometryInstancesDataKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	arrayOfPointers:  Bool32,
-	data:  DeviceOrHostAddressConstKHR
+	data:  DeviceOrHostAddressConstKHR,
 }
 
 HeadlessSurfaceCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	flags:  HeadlessSurfaceCreateFlagsEXT
+	flags:  HeadlessSurfaceCreateFlagsEXT,
 }
 
 PhysicalDeviceMemoryProperties2::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	memoryProperties:  PhysicalDeviceMemoryProperties
+	memoryProperties:  PhysicalDeviceMemoryProperties,
 }
 
 SwapchainCounterCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	surfaceCounters:  SurfaceCounterFlagsEXT
+	surfaceCounters:  SurfaceCounterFlagsEXT,
 }
 
 ExtensionProperties::struct {
 	extensionName:  [MAX_EXTENSION_NAME_SIZE]u8,
-	specVersion:  u32
+	specVersion:  u32,
 }
 
 FramebufferAttachmentImageInfo::struct {
@@ -5526,7 +5526,7 @@ FramebufferAttachmentImageInfo::struct {
 	height:  u32,
 	layerCount:  u32,
 	viewFormatCount:  u32,
-	pViewFormats: ^Format
+	pViewFormats: ^Format,
 }
 
 XlibSurfaceCreateInfoKHR::struct {
@@ -5534,7 +5534,7 @@ XlibSurfaceCreateInfoKHR::struct {
 	pNext: ^void,
 	flags:  XlibSurfaceCreateFlagsKHR,
 	dpy: ^Display,
-	window:  Window
+	window:  Window,
 }
 
 PhysicalDeviceSubgroupSizeControlPropertiesEXT::struct {
@@ -5543,13 +5543,13 @@ PhysicalDeviceSubgroupSizeControlPropertiesEXT::struct {
 	minSubgroupSize:  u32,
 	maxSubgroupSize:  u32,
 	maxComputeWorkgroupSubgroups:  u32,
-	requiredSubgroupSizeStages:  ShaderStageFlags
+	requiredSubgroupSizeStages:  ShaderStageFlags,
 }
 
 BufferDeviceAddressCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	deviceAddress:  DeviceAddress
+	deviceAddress:  DeviceAddress,
 }
 
 PhysicalDeviceDriverProperties::struct {
@@ -5558,7 +5558,7 @@ PhysicalDeviceDriverProperties::struct {
 	driverID:  DriverId,
 	driverName:  [MAX_DRIVER_NAME_SIZE]u8,
 	driverInfo:  [MAX_DRIVER_INFO_SIZE]u8,
-	conformanceVersion:  ConformanceVersion
+	conformanceVersion:  ConformanceVersion,
 }
 
 PhysicalDeviceInlineUniformBlockPropertiesEXT::struct {
@@ -5568,13 +5568,13 @@ PhysicalDeviceInlineUniformBlockPropertiesEXT::struct {
 	maxPerStageDescriptorInlineUniformBlocks:  u32,
 	maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks:  u32,
 	maxDescriptorSetInlineUniformBlocks:  u32,
-	maxDescriptorSetUpdateAfterBindInlineUniformBlocks:  u32
+	maxDescriptorSetUpdateAfterBindInlineUniformBlocks:  u32,
 }
 
 DisplayNativeHdrSurfaceCapabilitiesAMD::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	localDimmingSupport:  Bool32
+	localDimmingSupport:  Bool32,
 }
 
 CopyDescriptorSet::struct {
@@ -5586,7 +5586,7 @@ CopyDescriptorSet::struct {
 	dstSet:  DescriptorSet,
 	dstBinding:  u32,
 	dstArrayElement:  u32,
-	descriptorCount:  u32
+	descriptorCount:  u32,
 }
 
 PhysicalDeviceExternalBufferInfo::struct {
@@ -5594,19 +5594,19 @@ PhysicalDeviceExternalBufferInfo::struct {
 	pNext: ^void,
 	flags:  BufferCreateFlags,
 	usage:  BufferUsageFlags,
-	handleType:  ExternalMemoryHandleTypeFlags
+	handleType:  ExternalMemoryHandleTypeFlags,
 }
 
 PhysicalDeviceHostQueryResetFeatures::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	hostQueryReset:  Bool32
+	hostQueryReset:  Bool32,
 }
 
 VertexInputBindingDescription::struct {
 	binding:  u32,
 	stride:  u32,
-	inputRate:  VertexInputRate
+	inputRate:  VertexInputRate,
 }
 
 ApplicationInfo::struct {
@@ -5616,7 +5616,7 @@ ApplicationInfo::struct {
 	applicationVersion:  u32,
 	pEngineName: cstring,
 	engineVersion:  u32,
-	apiVersion:  u32
+	apiVersion:  u32,
 }
 
 AcquireNextImageInfoKHR::struct {
@@ -5626,14 +5626,14 @@ AcquireNextImageInfoKHR::struct {
 	timeout:  u64,
 	semaphore:  Semaphore,
 	fence:  Fence,
-	deviceMask:  u32
+	deviceMask:  u32,
 }
 
 PhysicalDeviceTransformFeedbackFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	transformFeedback:  Bool32,
-	geometryStreams:  Bool32
+	geometryStreams:  Bool32,
 }
 
 ImportFenceFdInfoKHR::struct {
@@ -5642,12 +5642,12 @@ ImportFenceFdInfoKHR::struct {
 	fence:  Fence,
 	flags:  FenceImportFlags,
 	handleType:  ExternalFenceHandleTypeFlags,
-	fd:  i32
+	fd:  i32,
 }
 
 DisplayModeParametersKHR::struct {
 	visibleRegion:  Extent2D,
-	refreshRate:  u32
+	refreshRate:  u32,
 }
 
 PipelineViewportShadingRateImageStateCreateInfoNV::struct {
@@ -5655,13 +5655,13 @@ PipelineViewportShadingRateImageStateCreateInfoNV::struct {
 	pNext: ^void,
 	shadingRateImageEnable:  Bool32,
 	viewportCount:  u32,
-	pShadingRatePalettes: ^ShadingRatePaletteNV
+	pShadingRatePalettes: ^ShadingRatePaletteNV,
 }
 
 DisplayPowerInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	powerState:  DisplayPowerStateEXT
+	powerState:  DisplayPowerStateEXT,
 }
 
 PipelineCacheCreateInfo::struct {
@@ -5669,13 +5669,13 @@ PipelineCacheCreateInfo::struct {
 	pNext: ^void,
 	flags:  PipelineCacheCreateFlags,
 	initialDataSize:  uint,
-	pInitialData: ^void
+	pInitialData: ^void,
 }
 
 DispatchIndirectCommand::struct {
 	x:  u32,
 	y:  u32,
-	z:  u32
+	z:  u32,
 }
 
 DebugMarkerObjectNameInfoEXT::struct {
@@ -5683,31 +5683,31 @@ DebugMarkerObjectNameInfoEXT::struct {
 	pNext: ^void,
 	objectType:  DebugReportObjectTypeEXT,
 	object:  u64,
-	pObjectName: cstring
+	pObjectName: cstring,
 }
 
 PresentRegionKHR::struct {
 	rectangleCount:  u32,
-	pRectangles: ^RectLayerKHR
+	pRectangles: ^RectLayerKHR,
 }
 
 MemoryAllocateFlagsInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  MemoryAllocateFlags,
-	deviceMask:  u32
+	deviceMask:  u32,
 }
 
 SurfaceFormat2KHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	surfaceFormat:  SurfaceFormatKHR
+	surfaceFormat:  SurfaceFormatKHR,
 }
 
 ExternalFormatANDROID::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	externalFormat:  u64
+	externalFormat:  u64,
 }
 
 PhysicalDeviceBufferDeviceAddressFeatures::struct {
@@ -5715,7 +5715,7 @@ PhysicalDeviceBufferDeviceAddressFeatures::struct {
 	pNext: ^void,
 	bufferDeviceAddress:  Bool32,
 	bufferDeviceAddressCaptureReplay:  Bool32,
-	bufferDeviceAddressMultiDevice:  Bool32
+	bufferDeviceAddressMultiDevice:  Bool32,
 }
 
 PhysicalDeviceFragmentDensityMapPropertiesEXT::struct {
@@ -5723,13 +5723,13 @@ PhysicalDeviceFragmentDensityMapPropertiesEXT::struct {
 	pNext: ^void,
 	minFragmentDensityTexelSize:  Extent2D,
 	maxFragmentDensityTexelSize:  Extent2D,
-	fragmentDensityInvocations:  Bool32
+	fragmentDensityInvocations:  Bool32,
 }
 
 FormatProperties2::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	formatProperties:  FormatProperties
+	formatProperties:  FormatProperties,
 }
 
 PhysicalDeviceSampleLocationsPropertiesEXT::struct {
@@ -5739,13 +5739,13 @@ PhysicalDeviceSampleLocationsPropertiesEXT::struct {
 	maxSampleLocationGridSize:  Extent2D,
 	sampleLocationCoordinateRange:  [2]f32,
 	sampleLocationSubPixelBits:  u32,
-	variableSampleLocations:  Bool32
+	variableSampleLocations:  Bool32,
 }
 
 BufferDeviceAddressInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	buffer:  Buffer
+	buffer:  Buffer,
 }
 
 PhysicalDeviceLineRasterizationFeaturesEXT::struct {
@@ -5756,14 +5756,14 @@ PhysicalDeviceLineRasterizationFeaturesEXT::struct {
 	smoothLines:  Bool32,
 	stippledRectangularLines:  Bool32,
 	stippledBresenhamLines:  Bool32,
-	stippledSmoothLines:  Bool32
+	stippledSmoothLines:  Bool32,
 }
 
 PhysicalDeviceCustomBorderColorFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	customBorderColors:  Bool32,
-	customBorderColorWithoutFormat:  Bool32
+	customBorderColorWithoutFormat:  Bool32,
 }
 
 PhysicalDeviceFragmentShadingRateFeaturesKHR::struct {
@@ -5771,7 +5771,7 @@ PhysicalDeviceFragmentShadingRateFeaturesKHR::struct {
 	pNext: ^void,
 	pipelineFragmentShadingRate:  Bool32,
 	primitiveFragmentShadingRate:  Bool32,
-	attachmentFragmentShadingRate:  Bool32
+	attachmentFragmentShadingRate:  Bool32,
 }
 
 WriteDescriptorSet::struct {
@@ -5784,7 +5784,7 @@ WriteDescriptorSet::struct {
 	descriptorType:  DescriptorType,
 	pImageInfo: ^DescriptorImageInfo,
 	pBufferInfo: ^DescriptorBufferInfo,
-	pTexelBufferView: ^BufferView
+	pTexelBufferView: ^BufferView,
 }
 
 BufferMemoryBarrier::struct {
@@ -5796,7 +5796,7 @@ BufferMemoryBarrier::struct {
 	dstQueueFamilyIndex:  u32,
 	buffer:  Buffer,
 	offset:  DeviceSize,
-	size:  DeviceSize
+	size:  DeviceSize,
 }
 
 DescriptorUpdateTemplateEntry::struct {
@@ -5805,32 +5805,32 @@ DescriptorUpdateTemplateEntry::struct {
 	descriptorCount:  u32,
 	descriptorType:  DescriptorType,
 	offset:  uint,
-	stride:  uint
+	stride:  uint,
 }
 
 ComponentMapping::struct {
 	r:  ComponentSwizzle,
 	g:  ComponentSwizzle,
 	b:  ComponentSwizzle,
-	a:  ComponentSwizzle
+	a:  ComponentSwizzle,
 }
 
 FormatProperties::struct {
 	linearTilingFeatures:  FormatFeatureFlags,
 	optimalTilingFeatures:  FormatFeatureFlags,
-	bufferFeatures:  FormatFeatureFlags
+	bufferFeatures:  FormatFeatureFlags,
 }
 
 BaseOutStructure::struct {
 	sType:  StructureType,
-	pNext: ^BaseOutStructure
+	pNext: ^BaseOutStructure,
 }
 
 SemaphoreTypeCreateInfo::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	semaphoreType:  SemaphoreType,
-	initialValue:  u64
+	initialValue:  u64,
 }
 
 PipelineMultisampleStateCreateInfo::struct {
@@ -5842,13 +5842,13 @@ PipelineMultisampleStateCreateInfo::struct {
 	minSampleShading:  f32,
 	pSampleMask: ^SampleMask,
 	alphaToCoverageEnable:  Bool32,
-	alphaToOneEnable:  Bool32
+	alphaToOneEnable:  Bool32,
 }
 
 PhysicalDeviceShaderImageFootprintFeaturesNV::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	imageFootprint:  Bool32
+	imageFootprint:  Bool32,
 }
 
 ImageViewHandleInfoNVX::struct {
@@ -5856,7 +5856,7 @@ ImageViewHandleInfoNVX::struct {
 	pNext: ^void,
 	imageView:  ImageView,
 	descriptorType:  DescriptorType,
-	sampler:  Sampler
+	sampler:  Sampler,
 }
 
 PhysicalDeviceFragmentShadingRateEnumsFeaturesNV::struct {
@@ -5864,27 +5864,27 @@ PhysicalDeviceFragmentShadingRateEnumsFeaturesNV::struct {
 	pNext: ^void,
 	fragmentShadingRateEnums:  Bool32,
 	supersampleFragmentShadingRates:  Bool32,
-	noInvocationFragmentShadingRates:  Bool32
+	noInvocationFragmentShadingRates:  Bool32,
 }
 
 PhysicalDeviceVertexAttributeDivisorFeaturesEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	vertexAttributeInstanceRateDivisor:  Bool32,
-	vertexAttributeInstanceRateZeroDivisor:  Bool32
+	vertexAttributeInstanceRateZeroDivisor:  Bool32,
 }
 
 ShaderModuleValidationCacheCreateInfoEXT::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	validationCache:  ValidationCacheEXT
+	validationCache:  ValidationCacheEXT,
 }
 
 MacOSSurfaceCreateInfoMVK::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  MacOSSurfaceCreateFlagsMVK,
-	pView: ^void
+	pView: ^void,
 }
 
 AccelerationStructureCreateInfoKHR::struct {
@@ -5895,7 +5895,7 @@ AccelerationStructureCreateInfoKHR::struct {
 	offset:  DeviceSize,
 	size:  DeviceSize,
 	type:  AccelerationStructureTypeKHR,
-	deviceAddress:  DeviceAddress
+	deviceAddress:  DeviceAddress,
 }
 
 AttachmentReference2::struct {
@@ -5903,39 +5903,39 @@ AttachmentReference2::struct {
 	pNext: ^void,
 	attachment:  u32,
 	layout:  ImageLayout,
-	aspectMask:  ImageAspectFlags
+	aspectMask:  ImageAspectFlags,
 }
 
 AccelerationStructureVersionInfoKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	pVersionData: ^u8
+	pVersionData: ^u8,
 }
 
 StreamDescriptorSurfaceCreateInfoGGP::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	flags:  StreamDescriptorSurfaceCreateFlagsGGP,
-	streamDescriptor:  GgpStreamDescriptor
+	streamDescriptor:  GgpStreamDescriptor,
 }
 
 MemoryBarrier::struct {
 	sType:  StructureType,
 	pNext: ^void,
 	srcAccessMask:  AccessFlags,
-	dstAccessMask:  AccessFlags
+	dstAccessMask:  AccessFlags,
 }
 
 DisplayModeProperties2KHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	displayModeProperties:  DisplayModePropertiesKHR
+	displayModeProperties:  DisplayModePropertiesKHR,
 }
 
 MemoryFdPropertiesKHR::struct {
 	sType:  StructureType,
 	pNext: ^void,
-	memoryTypeBits:  u32
+	memoryTypeBits:  u32,
 }
 
 CommandBuffer::distinct uint;
@@ -6208,53 +6208,53 @@ SamplerAddressMode::enum u32 {
 	MirroredRepeat = 1,
 	ClampToEdge = 2,
 	ClampToBorder = 3,
-	MirrorClampToEdge = 4
+	MirrorClampToEdge = 4,
 }
 
 SparseImageFormatFlags::enum u32 {
 	SingleMiptailBit = 0x1,
 	AlignedMipSizeBit = 0x2,
-	NonstandardBlockSizeBit = 0x4
+	NonstandardBlockSizeBit = 0x4,
 }
 
 SemaphoreWaitFlags::enum u32 {
-	AnyBit = 0x1
+	AnyBit = 0x1,
 }
 
 ConservativeRasterizationModeEXT::enum u32 {
 	DisabledExt = 0,
 	OverestimateExt = 1,
-	UnderestimateExt = 2
+	UnderestimateExt = 2,
 }
 
 SubpassDescriptionFlags::enum u32 {
 	PerViewAttributesBitNvx = 0x1,
 	PerViewPositionXOnlyBitNvx = 0x2,
 	FragmentRegionBitQcom = 0x4,
-	ShaderResolveBitQcom = 0x8
+	ShaderResolveBitQcom = 0x8,
 }
 
 MemoryHeapFlags::enum u32 {
 	DeviceLocalBit = 0x1,
-	MultiInstanceBit = 0x2
+	MultiInstanceBit = 0x2,
 }
 
 DisplayPlaneAlphaFlagsKHR::enum u32 {
 	OpaqueBitKhr = 0x1,
 	GlobalBitKhr = 0x2,
 	PerPixelBitKhr = 0x4,
-	PerPixelPremultipliedBitKhr = 0x8
+	PerPixelPremultipliedBitKhr = 0x8,
 }
 
 SwapchainImageUsageFlagsANDROID::enum u32 {
-	SharedBitAndroid = 0x1
+	SharedBitAndroid = 0x1,
 }
 
 ExternalFenceHandleTypeFlags::enum u32 {
 	OpaqueFdBit = 0x1,
 	OpaqueWin32Bit = 0x2,
 	OpaqueWin32KmtBit = 0x4,
-	SyncFdBit = 0x8
+	SyncFdBit = 0x8,
 }
 
 QueryPipelineStatisticFlags::enum u32 {
@@ -6268,7 +6268,7 @@ QueryPipelineStatisticFlags::enum u32 {
 	FragmentShaderInvocationsBit = 0x80,
 	TessellationControlShaderPatchesBit = 0x100,
 	TessellationEvaluationShaderInvocationsBit = 0x200,
-	ComputeShaderInvocationsBit = 0x400
+	ComputeShaderInvocationsBit = 0x400,
 }
 
 VendorId::enum u32 {
@@ -6277,14 +6277,14 @@ VendorId::enum u32 {
 	Kazan = 65539,
 	Codeplay = 65540,
 	Mesa = 65541,
-	Pocl = 65542
+	Pocl = 65542,
 }
 
 GeometryInstanceFlagsKHR::enum u32 {
 	TriangleFacingCullDisableBitKhr = 0x1,
 	TriangleFrontCounterclockwiseBitKhr = 0x2,
 	ForceOpaqueBitKhr = 0x4,
-	ForceNoOpaqueBitKhr = 0x8
+	ForceNoOpaqueBitKhr = 0x8,
 }
 
 BlendFactor::enum u32 {
@@ -6306,7 +6306,7 @@ BlendFactor::enum u32 {
 	Src1Color = 15,
 	OneMinusSrc1Color = 16,
 	Src1Alpha = 17,
-	OneMinusSrc1Alpha = 18
+	OneMinusSrc1Alpha = 18,
 }
 
 LogicOp::enum u32 {
@@ -6325,20 +6325,20 @@ LogicOp::enum u32 {
 	CopyInverted = 12,
 	OrInverted = 13,
 	Nand = 14,
-	Set = 15
+	Set = 15,
 }
 
 DeviceDiagnosticsConfigFlagsNV::enum u32 {
 	EnableShaderDebugInfoBitNv = 0x1,
 	EnableResourceTrackingBitNv = 0x2,
-	EnableAutomaticCheckpointsBitNv = 0x4
+	EnableAutomaticCheckpointsBitNv = 0x4,
 }
 
 DebugUtilsMessageSeverityFlagsEXT::enum u32 {
 	VerboseBitExt = 0x1,
 	InfoBitExt = 0x10,
 	WarningBitExt = 0x100,
-	ErrorBitExt = 0x1000
+	ErrorBitExt = 0x1000,
 }
 
 PerformanceValueTypeINTEL::enum u32 {
@@ -6346,11 +6346,11 @@ PerformanceValueTypeINTEL::enum u32 {
 	Uint64Intel = 1,
 	FloatIntel = 2,
 	BoolIntel = 3,
-	StringIntel = 4
+	StringIntel = 4,
 }
 
 QueryPoolSamplingModeINTEL::enum u32 {
-	ManualIntel = 0
+	ManualIntel = 0,
 }
 
 QueryType::enum u32 {
@@ -6362,21 +6362,21 @@ QueryType::enum u32 {
 	AccelerationStructureCompactedSizeKhr = 1000150000,
 	AccelerationStructureSerializationSizeKhr = 1000150001,
 	AccelerationStructureCompactedSizeNv = 1000165000,
-	PerformanceQueryIntel = 1000210000
+	PerformanceQueryIntel = 1000210000,
 }
 
 PipelineCacheCreateFlags::enum u32 {
-	ExternallySynchronizedBitExt = 0x1
+	ExternallySynchronizedBitExt = 0x1,
 }
 
 SamplerCreateFlags::enum u32 {
 	SubsampledBitExt = 0x1,
-	SubsampledCoarseReconstructionBitExt = 0x2
+	SubsampledCoarseReconstructionBitExt = 0x2,
 }
 
 SemaphoreType::enum u32 {
 	Binary = 0,
-	Timeline = 1
+	Timeline = 1,
 }
 
 SystemAllocationScope::enum u32 {
@@ -6384,16 +6384,16 @@ SystemAllocationScope::enum u32 {
 	Object = 1,
 	Cache = 2,
 	Device = 3,
-	Instance = 4
+	Instance = 4,
 }
 
 IndirectStateFlagsNV::enum u32 {
-	FlagFrontfaceBitNv = 0x1
+	FlagFrontfaceBitNv = 0x1,
 }
 
 SubpassContents::enum u32 {
 	Inline = 0,
-	SecondaryCommandBuffers = 1
+	SecondaryCommandBuffers = 1,
 }
 
 PipelineCreateFlags::enum u32 {
@@ -6415,18 +6415,18 @@ PipelineCreateFlags::enum u32 {
 	RayTracingNoNullMissShadersBitKhr = 0x10000,
 	RayTracingNoNullIntersectionShadersBitKhr = 0x20000,
 	IndirectBindableBitNv = 0x40000,
-	RayTracingShaderGroupHandleCaptureReplayBitKhr = 0x80000
+	RayTracingShaderGroupHandleCaptureReplayBitKhr = 0x80000,
 }
 
 ConditionalRenderingFlagsEXT::enum u32 {
-	InvertedBitExt = 0x1
+	InvertedBitExt = 0x1,
 }
 
 LineRasterizationModeEXT::enum u32 {
 	DefaultExt = 0,
 	RectangularExt = 1,
 	BresenhamExt = 2,
-	RectangularSmoothExt = 3
+	RectangularSmoothExt = 3,
 }
 
 BuildAccelerationStructureFlagsKHR::enum u32 {
@@ -6434,26 +6434,26 @@ BuildAccelerationStructureFlagsKHR::enum u32 {
 	AllowCompactionBitKhr = 0x2,
 	PreferFastTraceBitKhr = 0x4,
 	PreferFastBuildBitKhr = 0x8,
-	LowMemoryBitKhr = 0x10
+	LowMemoryBitKhr = 0x10,
 }
 
 DescriptorUpdateTemplateType::enum u32 {
 	DescriptorSet = 0,
-	PushDescriptorsKhr = 1
+	PushDescriptorsKhr = 1,
 }
 
 FrontFace::enum u32 {
 	CounterClockwise = 0,
-	Clockwise = 1
+	Clockwise = 1,
 }
 
 PerformanceParameterTypeINTEL::enum u32 {
 	HwCountersSupportedIntel = 0,
-	StreamMarkerValidBitsIntel = 1
+	StreamMarkerValidBitsIntel = 1,
 }
 
 SurfaceCounterFlagsEXT::enum u32 {
-	VblankBitExt = 0x1
+	VblankBitExt = 0x1,
 }
 
 BufferCreateFlags::enum u32 {
@@ -6461,34 +6461,34 @@ BufferCreateFlags::enum u32 {
 	SparseResidencyBit = 0x2,
 	SparseAliasedBit = 0x4,
 	ProtectedBit = 0x8,
-	DeviceAddressCaptureReplayBit = 0x10
+	DeviceAddressCaptureReplayBit = 0x10,
 }
 
 CompositeAlphaFlagsKHR::enum u32 {
 	OpaqueBitKhr = 0x1,
 	PreMultipliedBitKhr = 0x2,
 	PostMultipliedBitKhr = 0x4,
-	InheritBitKhr = 0x8
+	InheritBitKhr = 0x8,
 }
 
 MemoryOverallocationBehaviorAMD::enum u32 {
 	DefaultAmd = 0,
 	AllowedAmd = 1,
-	DisallowedAmd = 2
+	DisallowedAmd = 2,
 }
 
 EventCreateFlags::enum u32 {
-	DeviceOnlyBitKhr = 0x1
+	DeviceOnlyBitKhr = 0x1,
 }
 
 SemaphoreImportFlags::enum u32 {
-	TemporaryBit = 0x1
+	TemporaryBit = 0x1,
 }
 
 StencilFaceFlags::enum u32 {
 	FrontBit = 0x1,
 	BackBit = 0x2,
-	FrontAndBack = 0x3
+	FrontAndBack = 0x3,
 }
 
 Result::enum u32 {
@@ -6529,15 +6529,15 @@ Result::enum u32 {
 	VkThreadDoneKhr = 1000268001,
 	VkOperationDeferredKhr = 1000268002,
 	VkOperationNotDeferredKhr = 1000268003,
-	VkPipelineCompileRequiredExt = 1000297000
+	VkPipelineCompileRequiredExt = 1000297000,
 }
 
 DeviceQueueCreateFlags::enum u32 {
-	ProtectedBit = 0x1
+	ProtectedBit = 0x1,
 }
 
 ValidationCacheHeaderVersionEXT::enum u32 {
-	OneExt = 1
+	OneExt = 1,
 }
 
 ShaderStageFlags::enum u32 {
@@ -6556,7 +6556,7 @@ ShaderStageFlags::enum u32 {
 	MissBitKhr = 0x800,
 	IntersectionBitKhr = 0x1000,
 	CallableBitKhr = 0x2000,
-	All = 0x7FFFFFFF
+	All = 0x7FFFFFFF,
 }
 
 DeviceMemoryReportEventTypeEXT::enum u32 {
@@ -6564,7 +6564,7 @@ DeviceMemoryReportEventTypeEXT::enum u32 {
 	FreeExt = 1,
 	ImportExt = 2,
 	UnimportExt = 3,
-	AllocationFailedExt = 4
+	AllocationFailedExt = 4,
 }
 
 ImageViewType::enum u32 {
@@ -6574,29 +6574,29 @@ ImageViewType::enum u32 {
 	Cube = 3,
 	_1DArray = 4,
 	_2DArray = 5,
-	CubeArray = 6
+	CubeArray = 6,
 }
 
 DiscardRectangleModeEXT::enum u32 {
 	InclusiveExt = 0,
-	ExclusiveExt = 1
+	ExclusiveExt = 1,
 }
 
 PipelineCacheHeaderVersion::enum u32 {
-	One = 1
+	One = 1,
 }
 
 IndirectCommandsLayoutUsageFlagsNV::enum u32 {
 	ExplicitPreprocessBitNv = 0x1,
 	IndexedSequencesBitNv = 0x2,
-	UnorderedSequencesBitNv = 0x4
+	UnorderedSequencesBitNv = 0x4,
 }
 
 PolygonMode::enum u32 {
 	Fill = 0,
 	Line = 1,
 	Point = 2,
-	FillRectangleNv = 1000153000
+	FillRectangleNv = 1000153000,
 }
 
 Format::enum u32 {
@@ -6842,58 +6842,58 @@ Format::enum u32 {
 	G16B16R162Plane422Unorm = 1000156032,
 	G16B16R163Plane444Unorm = 1000156033,
 	A4R4G4B4UnormPack16Ext = 1000340000,
-	A4B4G4R4UnormPack16Ext = 1000340001
+	A4B4G4R4UnormPack16Ext = 1000340001,
 }
 
 IndexType::enum u32 {
 	Uint16 = 0,
 	Uint32 = 1,
 	NoneKhr = 1000150000,
-	Uint8Ext = 1000265000
+	Uint8Ext = 1000265000,
 }
 
 DeviceEventTypeEXT::enum u32 {
-	DisplayHotplugExt = 0
+	DisplayHotplugExt = 0,
 }
 
 CoverageModulationModeNV::enum u32 {
 	NoneNv = 0,
 	RgbNv = 1,
 	AlphaNv = 2,
-	RgbaNv = 3
+	RgbaNv = 3,
 }
 
 GeometryFlagsKHR::enum u32 {
 	OpaqueBitKhr = 0x1,
-	NoDuplicateAnyHitInvocationBitKhr = 0x2
+	NoDuplicateAnyHitInvocationBitKhr = 0x2,
 }
 
 ScopeNV::enum u32 {
 	DeviceNv = 1,
 	WorkgroupNv = 2,
 	SubgroupNv = 3,
-	QueueFamilyNv = 5
+	QueueFamilyNv = 5,
 }
 
 FenceCreateFlags::enum u32 {
-	SignaledBit = 0x1
+	SignaledBit = 0x1,
 }
 
 AccelerationStructureBuildTypeKHR::enum u32 {
 	HostKhr = 0,
 	DeviceKhr = 1,
-	HostOrDeviceKhr = 2
+	HostOrDeviceKhr = 2,
 }
 
 FullScreenExclusiveEXT::enum u32 {
 	DefaultExt = 0,
 	AllowedExt = 1,
 	DisallowedExt = 2,
-	ApplicationControlledExt = 3
+	ApplicationControlledExt = 3,
 }
 
 PipelineCompilerControlFlagsAMD::enum u32 {
-	__
+	__,
 }
 
 IndirectCommandsTokenTypeNV::enum u32 {
@@ -6904,11 +6904,11 @@ IndirectCommandsTokenTypeNV::enum u32 {
 	PushConstantNv = 4,
 	DrawIndexedNv = 5,
 	DrawNv = 6,
-	DrawTasksNv = 7
+	DrawTasksNv = 7,
 }
 
 ShaderModuleCreateFlags::enum u32 {
-	__
+	__,
 }
 
 FragmentShadingRateNV::enum u32 {
@@ -6923,7 +6923,7 @@ FragmentShadingRateNV::enum u32 {
 	_4InvocationsPerPixelNv = 12,
 	_8InvocationsPerPixelNv = 13,
 	_16InvocationsPerPixelNv = 14,
-	NoInvocationsNv = 15
+	NoInvocationsNv = 15,
 }
 
 AccessFlags2KHR::enum u32 {
@@ -6958,27 +6958,27 @@ AccessFlags2KHR::enum u32 {
 	TransformFeedbackCounterWriteBitExt = 0x8000000,
 	// ShaderSampledReadBitKhr = 0x100000000,
 	// ShaderStorageReadBitKhr = 0x200000000,
-	// ShaderStorageWriteBitKhr = 0x400000000
+	// ShaderStorageWriteBitKhr = 0x400000000,
 }
 
 RenderPassCreateFlags::enum u32 {
-	TransformBitQcom = 0x2
+	TransformBitQcom = 0x2,
 }
 
 BuildAccelerationStructureModeKHR::enum u32 {
 	BuildKhr = 0,
-	UpdateKhr = 1
+	UpdateKhr = 1,
 }
 
 PipelineShaderStageCreateFlags::enum u32 {
 	AllowVaryingSubgroupSizeBitExt = 0x1,
-	RequireFullSubgroupsBitExt = 0x2
+	RequireFullSubgroupsBitExt = 0x2,
 }
 
 ImageType::enum u32 {
 	_1D = 0,
 	_2D = 1,
-	_3D = 2
+	_3D = 2,
 }
 
 StructureType::enum u32 {
@@ -7467,7 +7467,7 @@ StructureType::enum u32 {
 	PhysicalDeviceRayQueryFeaturesKhr = 1000348013,
 	PhysicalDeviceMutableDescriptorTypeFeaturesValve = 1000351000,
 	MutableDescriptorTypeCreateInfoValve = 1000351002,
-	ScreenSurfaceCreateInfoQnx = 1000378000
+	ScreenSurfaceCreateInfoQnx = 1000378000,
 }
 
 ExternalMemoryHandleTypeFlags::enum u32 {
@@ -7481,12 +7481,12 @@ ExternalMemoryHandleTypeFlags::enum u32 {
 	HostAllocationBitExt = 0x80,
 	HostMappedForeignMemoryBitExt = 0x100,
 	DmaBufBitExt = 0x200,
-	AndroidHardwareBufferBitAndroid = 0x400
+	AndroidHardwareBufferBitAndroid = 0x400,
 }
 
 RasterizationOrderAMD::enum u32 {
 	StrictAmd = 0,
-	RelaxedAmd = 1
+	RelaxedAmd = 1,
 }
 
 ComponentSwizzle::enum u32 {
@@ -7496,26 +7496,26 @@ ComponentSwizzle::enum u32 {
 	R = 3,
 	G = 4,
 	B = 5,
-	A = 6
+	A = 6,
 }
 
 DisplayPowerStateEXT::enum u32 {
 	OffExt = 0,
 	SuspendExt = 1,
-	OnExt = 2
+	OnExt = 2,
 }
 
 ImageTiling::enum u32 {
 	Optimal = 0,
 	Linear = 1,
-	DrmFormatModifierExt = 1000158000
+	DrmFormatModifierExt = 1000158000,
 }
 
 PeerMemoryFeatureFlags::enum u32 {
 	CopySrcBit = 0x1,
 	CopyDstBit = 0x2,
 	GenericSrcBit = 0x4,
-	GenericDstBit = 0x8
+	GenericDstBit = 0x8,
 }
 
 ObjectType::enum u32 {
@@ -7559,7 +7559,7 @@ ObjectType::enum u32 {
 	PerformanceConfigurationIntel = 1000210000,
 	DeferredOperationKhr = 1000268000,
 	IndirectCommandsLayoutNv = 1000277000,
-	PrivateDataSlotExt = 1000295000
+	PrivateDataSlotExt = 1000295000,
 }
 
 ValidationFeatureEnableEXT::enum u32 {
@@ -7567,14 +7567,14 @@ ValidationFeatureEnableEXT::enum u32 {
 	GpuAssistedReserveBindingSlotExt = 1,
 	BestPracticesExt = 2,
 	DebugPrintfExt = 3,
-	SynchronizationValidationExt = 4
+	SynchronizationValidationExt = 4,
 }
 
 CullModeFlags::enum u32 {
 	None = 0x0,
 	FrontBit = 0x1,
 	BackBit = 0x2,
-	FrontAndBack = 0x3
+	FrontAndBack = 0x3,
 }
 
 PhysicalDeviceType::enum u32 {
@@ -7582,12 +7582,12 @@ PhysicalDeviceType::enum u32 {
 	IntegratedGpu = 1,
 	DiscreteGpu = 2,
 	VirtualGpu = 3,
-	Cpu = 4
+	Cpu = 4,
 }
 
 AccelerationStructureCompatibilityKHR::enum u32 {
 	CompatibleKhr = 0,
-	IncompatibleKhr = 1
+	IncompatibleKhr = 1,
 }
 
 DebugReportObjectTypeEXT::enum u32 {
@@ -7626,17 +7626,17 @@ DebugReportObjectTypeEXT::enum u32 {
 	DescriptorUpdateTemplateExt = 1000011000,
 	AccelerationStructureKhrExt = 1000150000,
 	SamplerYcbcrConversionExt = 1000156000,
-	AccelerationStructureNvExt = 1000165000
+	AccelerationStructureNvExt = 1000165000,
 }
 
 CommandBufferResetFlags::enum u32 {
-	ReleaseResourcesBit = 0x1
+	ReleaseResourcesBit = 0x1,
 }
 
 ShaderFloatControlsIndependence::enum u32 {
 	_32BitOnly = 0,
 	All = 1,
-	None = 2
+	None = 2,
 }
 
 SamplerYcbcrModelConversion::enum u32 {
@@ -7644,42 +7644,42 @@ SamplerYcbcrModelConversion::enum u32 {
 	YcbcrIdentity = 1,
 	Ycbcr709 = 2,
 	Ycbcr601 = 3,
-	Ycbcr2020 = 4
+	Ycbcr2020 = 4,
 }
 
 AcquireProfilingLockFlagsKHR::enum u32 {
-	__
+	__,
 }
 
 SparseMemoryBindFlags::enum u32 {
-	MetadataBit = 0x1
+	MetadataBit = 0x1,
 }
 
 PerformanceConfigurationTypeINTEL::enum u32 {
-	CommandQueueMetricsDiscoveryActivatedIntel = 0
+	CommandQueueMetricsDiscoveryActivatedIntel = 0,
 }
 
 MemoryAllocateFlags::enum u32 {
 	DeviceMaskBit = 0x1,
 	DeviceAddressBit = 0x2,
-	DeviceAddressCaptureReplayBit = 0x4
+	DeviceAddressCaptureReplayBit = 0x4,
 }
 
 AttachmentStoreOp::enum u32 {
 	Store = 0,
 	DontCare = 1,
-	NoneQcom = 1000301000
+	NoneQcom = 1000301000,
 }
 
 ImageViewCreateFlags::enum u32 {
 	FragmentDensityMapDynamicBitExt = 0x1,
-	FragmentDensityMapDeferredBitExt = 0x2
+	FragmentDensityMapDeferredBitExt = 0x2,
 }
 
 DependencyFlags::enum u32 {
 	ByRegionBit = 0x1,
 	ViewLocalBit = 0x2,
-	DeviceGroupBit = 0x4
+	DeviceGroupBit = 0x4,
 }
 
 FormatFeatureFlags::enum u32 {
@@ -7709,13 +7709,13 @@ FormatFeatureFlags::enum u32 {
 	CositedChromaSamplesBit = 0x800000,
 	FragmentDensityMapBitExt = 0x1000000,
 	AccelerationStructureVertexBufferBitKhr = 0x20000000,
-	FragmentShadingRateAttachmentBitKhr = 0x40000000
+	FragmentShadingRateAttachmentBitKhr = 0x40000000,
 }
 
 PipelineBindPoint::enum u32 {
 	Graphics = 0,
 	Compute = 1,
-	RayTracingKhr = 1000347000
+	RayTracingKhr = 1000347000,
 }
 
 QueueFlags::enum u32 {
@@ -7723,36 +7723,36 @@ QueueFlags::enum u32 {
 	ComputeBit = 0x2,
 	TransferBit = 0x4,
 	SparseBindingBit = 0x8,
-	ProtectedBit = 0x10
+	ProtectedBit = 0x10,
 }
 
 AccelerationStructureTypeKHR::enum u32 {
 	TopLevelKhr = 0,
 	BottomLevelKhr = 1,
-	GenericKhr = 2
+	GenericKhr = 2,
 }
 
 Filter::enum u32 {
 	Nearest = 0,
 	Linear = 1,
-	CubicImg = 1000015000
+	CubicImg = 1000015000,
 }
 
 DescriptorSetLayoutCreateFlags::enum u32 {
 	PushDescriptorBitKhr = 0x1,
 	UpdateAfterBindPoolBit = 0x2,
-	HostOnlyPoolBitValve = 0x4
+	HostOnlyPoolBitValve = 0x4,
 }
 
 VertexInputRate::enum u32 {
 	Vertex = 0,
-	Instance = 1
+	Instance = 1,
 }
 
 SwapchainCreateFlagsKHR::enum u32 {
 	SplitInstanceBindRegionsBitKhr = 0x1,
 	ProtectedBitKhr = 0x2,
-	MutableFormatBitKhr = 0x4
+	MutableFormatBitKhr = 0x4,
 }
 
 DriverId::enum u32 {
@@ -7769,27 +7769,27 @@ DriverId::enum u32 {
 	GgpProprietary = 11,
 	BroadcomProprietary = 12,
 	MesaLlvmpipe = 13,
-	Moltenvk = 14
+	Moltenvk = 14,
 }
 
 SamplerYcbcrRange::enum u32 {
 	ItuFull = 0,
-	ItuNarrow = 1
+	ItuNarrow = 1,
 }
 
 PerformanceOverrideTypeINTEL::enum u32 {
 	NullHardwareIntel = 0,
-	FlushGpuCachesIntel = 1
+	FlushGpuCachesIntel = 1,
 }
 
 RayTracingShaderGroupTypeKHR::enum u32 {
 	GeneralKhr = 0,
 	TrianglesHitGroupKhr = 1,
-	ProceduralHitGroupKhr = 2
+	ProceduralHitGroupKhr = 2,
 }
 
 DisplayEventTypeEXT::enum u32 {
-	FirstPixelOutExt = 0
+	FirstPixelOutExt = 0,
 }
 
 StencilOp::enum u32 {
@@ -7800,26 +7800,26 @@ StencilOp::enum u32 {
 	DecrementAndClamp = 4,
 	Invert = 5,
 	IncrementAndWrap = 6,
-	DecrementAndWrap = 7
+	DecrementAndWrap = 7,
 }
 
 QueueGlobalPriorityEXT::enum u32 {
 	LowExt = 128,
 	MediumExt = 256,
 	HighExt = 512,
-	RealtimeExt = 1024
+	RealtimeExt = 1024,
 }
 
 PipelineCreationFeedbackFlagsEXT::enum u32 {
 	ValidBitExt = 0x1,
 	ApplicationPipelineCacheHitBitExt = 0x2,
-	BasePipelineAccelerationBitExt = 0x4
+	BasePipelineAccelerationBitExt = 0x4,
 }
 
 SamplerReductionMode::enum u32 {
 	WeightedAverage = 0,
 	Min = 1,
-	Max = 2
+	Max = 2,
 }
 
 DescriptorType::enum u32 {
@@ -7837,28 +7837,28 @@ DescriptorType::enum u32 {
 	InlineUniformBlockExt = 1000138000,
 	AccelerationStructureKhr = 1000150000,
 	AccelerationStructureNv = 1000165000,
-	MutableValve = 1000351000
+	MutableValve = 1000351000,
 }
 
 ShaderInfoTypeAMD::enum u32 {
 	StatisticsAmd = 0,
 	BinaryAmd = 1,
-	DisassemblyAmd = 2
+	DisassemblyAmd = 2,
 }
 
 CoarseSampleOrderTypeNV::enum u32 {
 	DefaultNv = 0,
 	CustomNv = 1,
 	PixelMajorNv = 2,
-	SampleMajorNv = 3
+	SampleMajorNv = 3,
 }
 
 AccelerationStructureCreateFlagsKHR::enum u32 {
-	DeviceAddressCaptureReplayBitKhr = 0x1
+	DeviceAddressCaptureReplayBitKhr = 0x1,
 }
 
 SubmitFlagsKHR::enum u32 {
-	ProtectedBitKhr = 0x1
+	ProtectedBitKhr = 0x1,
 }
 
 CompareOp::enum u32 {
@@ -7869,13 +7869,13 @@ CompareOp::enum u32 {
 	Greater = 4,
 	NotEqual = 5,
 	GreaterOrEqual = 6,
-	Always = 7
+	Always = 7,
 }
 
 ExternalMemoryFeatureFlagsNV::enum u32 {
 	DedicatedOnlyBitNv = 0x1,
 	ExportableBitNv = 0x2,
-	ImportableBitNv = 0x4
+	ImportableBitNv = 0x4,
 }
 
 ColorSpaceKHR::enum u32 {
@@ -7894,7 +7894,7 @@ ColorSpaceKHR::enum u32 {
 	AdobergbNonlinearExt = 1000104012,
 	PassThroughExt = 1000104013,
 	ExtendedSrgbNonlinearExt = 1000104014,
-	DisplayNativeAmd = 1000213000
+	DisplayNativeAmd = 1000213000,
 }
 
 DynamicState::enum u32 {
@@ -7927,18 +7927,18 @@ DynamicState::enum u32 {
 	DepthBoundsTestEnableExt = 1000267009,
 	StencilTestEnableExt = 1000267010,
 	StencilOpExt = 1000267011,
-	RayTracingPipelineStackSizeKhr = 1000347000
+	RayTracingPipelineStackSizeKhr = 1000347000,
 }
 
 PrivateDataSlotCreateFlagsEXT::enum u32 {
-	__
+	__,
 }
 
 DeviceGroupPresentModeFlagsKHR::enum u32 {
 	LocalBitKhr = 0x1,
 	RemoteBitKhr = 0x2,
 	SumBitKhr = 0x4,
-	LocalMultiDeviceBitKhr = 0x8
+	LocalMultiDeviceBitKhr = 0x8,
 }
 
 MemoryPropertyFlags::enum u32 {
@@ -7949,12 +7949,12 @@ MemoryPropertyFlags::enum u32 {
 	LazilyAllocatedBit = 0x10,
 	ProtectedBit = 0x20,
 	DeviceCoherentBitAmd = 0x40,
-	DeviceUncachedBitAmd = 0x80
+	DeviceUncachedBitAmd = 0x80,
 }
 
 SamplerMipmapMode::enum u32 {
 	Nearest = 0,
-	Linear = 1
+	Linear = 1,
 }
 
 SubgroupFeatureFlags::enum u32 {
@@ -7966,17 +7966,17 @@ SubgroupFeatureFlags::enum u32 {
 	ShuffleRelativeBit = 0x20,
 	ClusteredBit = 0x40,
 	QuadBit = 0x80,
-	PartitionedBitNv = 0x100
+	PartitionedBitNv = 0x100,
 }
 
 TessellationDomainOrigin::enum u32 {
 	UpperLeft = 0,
-	LowerLeft = 1
+	LowerLeft = 1,
 }
 
 ExternalFenceFeatureFlags::enum u32 {
 	ExportableBit = 0x1,
-	ImportableBit = 0x2
+	ImportableBit = 0x2,
 }
 
 DebugReportFlagsEXT::enum u32 {
@@ -7984,13 +7984,13 @@ DebugReportFlagsEXT::enum u32 {
 	WarningBitExt = 0x2,
 	PerformanceWarningBitExt = 0x4,
 	ErrorBitExt = 0x8,
-	DebugBitExt = 0x10
+	DebugBitExt = 0x10,
 }
 
 CommandPoolCreateFlags::enum u32 {
 	TransientBit = 0x1,
 	ResetCommandBufferBit = 0x2,
-	ProtectedBit = 0x4
+	ProtectedBit = 0x4,
 }
 
 SurfaceTransformFlagsKHR::enum u32 {
@@ -8002,18 +8002,18 @@ SurfaceTransformFlagsKHR::enum u32 {
 	HorizontalMirrorRotate90BitKhr = 0x20,
 	HorizontalMirrorRotate180BitKhr = 0x40,
 	HorizontalMirrorRotate270BitKhr = 0x80,
-	InheritBitKhr = 0x100
+	InheritBitKhr = 0x100,
 }
 
 TimeDomainEXT::enum u32 {
 	DeviceExt = 0,
 	ClockMonotonicExt = 1,
 	ClockMonotonicRawExt = 2,
-	QueryPerformanceCounterExt = 3
+	QueryPerformanceCounterExt = 3,
 }
 
 FramebufferCreateFlags::enum u32 {
-	ImagelessBit = 0x1
+	ImagelessBit = 0x1,
 }
 
 ImageCreateFlags::enum u32 {
@@ -8031,7 +8031,7 @@ ImageCreateFlags::enum u32 {
 	ProtectedBit = 0x800,
 	SampleLocationsCompatibleDepthBitExt = 0x1000,
 	CornerSampledBitNv = 0x2000,
-	SubsampledBitExt = 0x4000
+	SubsampledBitExt = 0x4000,
 }
 
 ShadingRatePaletteEntryNV::enum u32 {
@@ -8046,7 +8046,7 @@ ShadingRatePaletteEntryNV::enum u32 {
 	_1InvocationPer2X2PixelsNv = 8,
 	_1InvocationPer4X2PixelsNv = 9,
 	_1InvocationPer2X4PixelsNv = 10,
-	_1InvocationPer4X4PixelsNv = 11
+	_1InvocationPer4X4PixelsNv = 11,
 }
 
 ComponentTypeNV::enum u32 {
@@ -8060,14 +8060,14 @@ ComponentTypeNV::enum u32 {
 	Uint8Nv = 7,
 	Uint16Nv = 8,
 	Uint32Nv = 9,
-	Uint64Nv = 10
+	Uint64Nv = 10,
 }
 
 CopyAccelerationStructureModeKHR::enum u32 {
 	CloneKhr = 0,
 	CompactKhr = 1,
 	SerializeKhr = 2,
-	DeserializeKhr = 3
+	DeserializeKhr = 3,
 }
 
 BufferUsageFlags::enum u32 {
@@ -8086,28 +8086,28 @@ BufferUsageFlags::enum u32 {
 	TransformFeedbackCounterBufferBitExt = 0x1000,
 	ShaderDeviceAddressBit = 0x20000,
 	AccelerationStructureBuildInputReadOnlyBitKhr = 0x80000,
-	AccelerationStructureStorageBitKhr = 0x100000
+	AccelerationStructureStorageBitKhr = 0x100000,
 }
 
 ColorComponentFlags::enum u32 {
 	RBit = 0x1,
 	GBit = 0x2,
 	BBit = 0x4,
-	ABit = 0x8
+	ABit = 0x8,
 }
 
 AttachmentDescriptionFlags::enum u32 {
-	MayAliasBit = 0x1
+	MayAliasBit = 0x1,
 }
 
 FragmentShadingRateTypeNV::enum u32 {
 	FragmentSizeNv = 0,
-	EnumsNv = 1
+	EnumsNv = 1,
 }
 
 CommandBufferLevel::enum u32 {
 	Primary = 0,
-	Secondary = 1
+	Secondary = 1,
 }
 
 BorderColor::enum u32 {
@@ -8118,7 +8118,7 @@ BorderColor::enum u32 {
 	FloatOpaqueWhite = 4,
 	IntOpaqueWhite = 5,
 	FloatCustomExt = 1000287003,
-	IntCustomExt = 1000287004
+	IntCustomExt = 1000287004,
 }
 
 ValidationFeatureDisableEXT::enum u32 {
@@ -8128,24 +8128,24 @@ ValidationFeatureDisableEXT::enum u32 {
 	ApiParametersExt = 3,
 	ObjectLifetimesExt = 4,
 	CoreChecksExt = 5,
-	UniqueHandlesExt = 6
+	UniqueHandlesExt = 6,
 }
 
 ExternalSemaphoreFeatureFlags::enum u32 {
 	ExportableBit = 0x1,
-	ImportableBit = 0x2
+	ImportableBit = 0x2,
 }
 
 BlendOverlapEXT::enum u32 {
 	UncorrelatedExt = 0,
 	DisjointExt = 1,
-	ConjointExt = 2
+	ConjointExt = 2,
 }
 
 PerformanceCounterScopeKHR::enum u32 {
 	CommandBufferKhr = 0,
 	RenderPassKhr = 1,
-	CommandKhr = 2
+	CommandKhr = 2,
 }
 
 SampleCountFlags::enum u32 {
@@ -8155,25 +8155,25 @@ SampleCountFlags::enum u32 {
 	_8Bit = 0x8,
 	_16Bit = 0x10,
 	_32Bit = 0x20,
-	_64Bit = 0x40
+	_64Bit = 0x40,
 }
 
 DescriptorPoolCreateFlags::enum u32 {
 	FreeDescriptorSetBit = 0x1,
 	UpdateAfterBindBit = 0x2,
-	HostOnlyBitValve = 0x4
+	HostOnlyBitValve = 0x4,
 }
 
 AccelerationStructureMemoryRequirementsTypeNV::enum u32 {
 	ObjectNv = 0,
 	BuildScratchNv = 1,
-	UpdateScratchNv = 2
+	UpdateScratchNv = 2,
 }
 
 CommandBufferUsageFlags::enum u32 {
 	OneTimeSubmitBit = 0x1,
 	RenderPassContinueBit = 0x2,
-	SimultaneousUseBit = 0x4
+	SimultaneousUseBit = 0x4,
 }
 
 ImageLayout::enum u32 {
@@ -8197,12 +8197,12 @@ ImageLayout::enum u32 {
 	StencilAttachmentOptimal = 1000241002,
 	StencilReadOnlyOptimal = 1000241003,
 	ReadOnlyOptimalKhr = 1000314000,
-	AttachmentOptimalKhr = 1000314001
+	AttachmentOptimalKhr = 1000314001,
 }
 
 ValidationCheckEXT::enum u32 {
 	AllExt = 0,
-	ShadersExt = 1
+	ShadersExt = 1,
 }
 
 ResolveModeFlags::enum u32 {
@@ -8210,7 +8210,7 @@ ResolveModeFlags::enum u32 {
 	SampleZeroBit = 0x1,
 	AverageBit = 0x2,
 	MinBit = 0x4,
-	MaxBit = 0x8
+	MaxBit = 0x8,
 }
 
 ImageAspectFlags::enum u32 {
@@ -8224,7 +8224,7 @@ ImageAspectFlags::enum u32 {
 	MemoryPlane0BitExt = 0x80,
 	MemoryPlane1BitExt = 0x100,
 	MemoryPlane2BitExt = 0x200,
-	MemoryPlane3BitExt = 0x400
+	MemoryPlane3BitExt = 0x400,
 }
 
 AccessFlags::enum u32 {
@@ -8256,7 +8256,7 @@ AccessFlags::enum u32 {
 	FragmentDensityMapReadBitExt = 0x1000000,
 	TransformFeedbackWriteBitExt = 0x2000000,
 	TransformFeedbackCounterReadBitExt = 0x4000000,
-	TransformFeedbackCounterWriteBitExt = 0x8000000
+	TransformFeedbackCounterWriteBitExt = 0x8000000,
 }
 
 PrimitiveTopology::enum u32 {
@@ -8270,7 +8270,7 @@ PrimitiveTopology::enum u32 {
 	LineStripWithAdjacency = 7,
 	TriangleListWithAdjacency = 8,
 	TriangleStripWithAdjacency = 9,
-	PatchList = 10
+	PatchList = 10,
 }
 
 ViewportCoordinateSwizzleNV::enum u32 {
@@ -8281,7 +8281,7 @@ ViewportCoordinateSwizzleNV::enum u32 {
 	PositiveZNv = 4,
 	NegativeZNv = 5,
 	PositiveWNv = 6,
-	NegativeWNv = 7
+	NegativeWNv = 7,
 }
 
 PresentModeKHR::enum u32 {
@@ -8290,7 +8290,7 @@ PresentModeKHR::enum u32 {
 	FifoKhr = 2,
 	FifoRelaxedKhr = 3,
 	SharedDemandRefreshKhr = 1000111000,
-	SharedContinuousRefreshKhr = 1000111001
+	SharedContinuousRefreshKhr = 1000111001,
 }
 
 ExternalSemaphoreHandleTypeFlags::enum u32 {
@@ -8298,44 +8298,44 @@ ExternalSemaphoreHandleTypeFlags::enum u32 {
 	OpaqueWin32Bit = 0x2,
 	OpaqueWin32KmtBit = 0x4,
 	D3D12FenceBit = 0x8,
-	SyncFdBit = 0x10
+	SyncFdBit = 0x10,
 }
 
 ShaderGroupShaderKHR::enum u32 {
 	GeneralKhr = 0,
 	ClosestHitKhr = 1,
 	AnyHitKhr = 2,
-	IntersectionKhr = 3
+	IntersectionKhr = 3,
 }
 
 InternalAllocationType::enum u32 {
-	Executable = 0
+	Executable = 0,
 }
 
 ExternalMemoryFeatureFlags::enum u32 {
 	DedicatedOnlyBit = 0x1,
 	ExportableBit = 0x2,
-	ImportableBit = 0x4
+	ImportableBit = 0x4,
 }
 
 ShaderCorePropertiesFlagsAMD::enum u32 {
-	__
+	__,
 }
 
 ChromaLocation::enum u32 {
 	CositedEven = 0,
-	Midpoint = 1
+	Midpoint = 1,
 }
 
 GeometryTypeKHR::enum u32 {
 	TrianglesKhr = 0,
 	AabbsKhr = 1,
-	InstancesKhr = 2
+	InstancesKhr = 2,
 }
 
 PointClippingBehavior::enum u32 {
 	AllClipPlanes = 0,
-	UserClipPlanesOnly = 1
+	UserClipPlanesOnly = 1,
 }
 
 PerformanceCounterStorageKHR::enum u32 {
@@ -8344,7 +8344,7 @@ PerformanceCounterStorageKHR::enum u32 {
 	Uint32Khr = 2,
 	Uint64Khr = 3,
 	Float32Khr = 4,
-	Float64Khr = 5
+	Float64Khr = 5,
 }
 
 ImageUsageFlags::enum u32 {
@@ -8357,7 +8357,7 @@ ImageUsageFlags::enum u32 {
 	TransientAttachmentBit = 0x40,
 	InputAttachmentBit = 0x80,
 	ShadingRateImageBitNv = 0x100,
-	FragmentDensityMapBitExt = 0x200
+	FragmentDensityMapBitExt = 0x200,
 }
 
 PipelineStageFlags2KHR::enum u32 {
@@ -8394,7 +8394,7 @@ PipelineStageFlags2KHR::enum u32 {
 	// ClearBitKhr = 0x800000000,
 	// IndexInputBitKhr = 0x1000000000,
 	// VertexAttributeInputBitKhr = 0x2000000000,
-	// PreRasterizationShadersBitKhr = 0x4000000000
+	// PreRasterizationShadersBitKhr = 0x4000000000,
 }
 
 BlendOp::enum u32 {
@@ -8448,7 +8448,7 @@ BlendOp::enum u32 {
 	InvertOvgExt = 1000148042,
 	RedExt = 1000148043,
 	GreenExt = 1000148044,
-	BlueExt = 1000148045
+	BlueExt = 1000148045,
 }
 
 PerformanceCounterUnitKHR::enum u32 {
@@ -8462,30 +8462,30 @@ PerformanceCounterUnitKHR::enum u32 {
 	VoltsKhr = 7,
 	AmpsKhr = 8,
 	HertzKhr = 9,
-	CyclesKhr = 10
+	CyclesKhr = 10,
 }
 
 SharingMode::enum u32 {
 	Exclusive = 0,
-	Concurrent = 1
+	Concurrent = 1,
 }
 
 CommandPoolResetFlags::enum u32 {
-	ReleaseResourcesBit = 0x1
+	ReleaseResourcesBit = 0x1,
 }
 
 PipelineExecutableStatisticFormatKHR::enum u32 {
 	Bool32Khr = 0,
 	Int64Khr = 1,
 	Uint64Khr = 2,
-	Float64Khr = 3
+	Float64Khr = 3,
 }
 
 DescriptorBindingFlags::enum u32 {
 	UpdateAfterBindBit = 0x1,
 	UpdateUnusedWhilePendingBit = 0x2,
 	PartiallyBoundBit = 0x4,
-	VariableDescriptorCountBit = 0x8
+	VariableDescriptorCountBit = 0x8,
 }
 
 ToolPurposeFlagsEXT::enum u32 {
@@ -8495,7 +8495,7 @@ ToolPurposeFlagsEXT::enum u32 {
 	AdditionalFeaturesBitExt = 0x8,
 	ModifyingFeaturesBitExt = 0x10,
 	DebugReportingBitExt = 0x20,
-	DebugMarkersBitExt = 0x40
+	DebugMarkersBitExt = 0x40,
 }
 
 FragmentShadingRateCombinerOpKHR::enum u32 {
@@ -8503,41 +8503,41 @@ FragmentShadingRateCombinerOpKHR::enum u32 {
 	ReplaceKhr = 1,
 	MinKhr = 2,
 	MaxKhr = 3,
-	MulKhr = 4
+	MulKhr = 4,
 }
 
 PerformanceCounterDescriptionFlagsKHR::enum u32 {
 	PerformanceImpactingBitKhr = 0x1,
-	ConcurrentlyImpactedBitKhr = 0x2
+	ConcurrentlyImpactedBitKhr = 0x2,
 }
 
 CoverageReductionModeNV::enum u32 {
 	MergeNv = 0,
-	TruncateNv = 1
+	TruncateNv = 1,
 }
 
 QueryControlFlags::enum u32 {
-	PreciseBit = 0x1
+	PreciseBit = 0x1,
 }
 
 QueryResultFlags::enum u32 {
 	_64Bit = 0x1,
 	WaitBit = 0x2,
 	WithAvailabilityBit = 0x4,
-	PartialBit = 0x8
+	PartialBit = 0x8,
 }
 
 DebugUtilsMessageTypeFlagsEXT::enum u32 {
 	GeneralBitExt = 0x1,
 	ValidationBitExt = 0x2,
-	PerformanceBitExt = 0x4
+	PerformanceBitExt = 0x4,
 }
 
 ExternalMemoryHandleTypeFlagsNV::enum u32 {
 	OpaqueWin32BitNv = 0x1,
 	OpaqueWin32KmtBitNv = 0x2,
 	D3D11ImageBitNv = 0x4,
-	D3D11ImageKmtBitNv = 0x8
+	D3D11ImageKmtBitNv = 0x8,
 }
 
 PipelineStageFlags::enum u32 {
@@ -8567,16 +8567,16 @@ PipelineStageFlags::enum u32 {
 	ShadingRateImageBitNv = 0x400000,
 	FragmentDensityProcessBitExt = 0x800000,
 	TransformFeedbackBitExt = 0x1000000,
-	AccelerationStructureBuildBitKhr = 0x2000000
+	AccelerationStructureBuildBitKhr = 0x2000000,
 }
 
 FenceImportFlags::enum u32 {
-	TemporaryBit = 0x1
+	TemporaryBit = 0x1,
 }
 
 AttachmentLoadOp::enum u32 {
 	Load = 0,
 	Clear = 1,
-	DontCare = 2
+	DontCare = 2,
 }
 

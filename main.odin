@@ -95,7 +95,7 @@ Texture::struct {
 init_resources::proc() {
   pool_info: vk.CommandPoolCreateInfo = {
       sType = .CommandPoolCreateInfo,
-      flags = .TransientBit | .ResetCommandBufferBit
+      flags = .TransientBit | .ResetCommandBufferBit,
   };  
   
 
@@ -186,7 +186,7 @@ init_resources::proc() {
       storeOp = .DontCare,
       initialLayout = .Undefined,
       finalLayout = .DepthStencilReadOnlyOptimal,
-    }
+    },
   };
 
   ref:[2]vk.AttachmentReference = {
@@ -197,7 +197,7 @@ init_resources::proc() {
     {
       attachment = 1,
       layout = .DepthStencilAttachmentOptimal,  
-    }
+    },
   };
 
   subpass := vk.SubpassDescription {
@@ -236,7 +236,7 @@ init_resources::proc() {
 
     fence_info := vk.FenceCreateInfo {
       sType = .FenceCreateInfo,
-      flags = .SignaledBit
+      flags = .SignaledBit,
     };
 
     semaphore_info := vk.SemaphoreCreateInfo{ sType = .SemaphoreCreateInfo };
@@ -330,7 +330,7 @@ main::proc() {
     qinfo := vk.DeviceQueueCreateInfo{
       sType = .DeviceQueueCreateInfo,
       queueCount = 1,
-      pQueuePriorities = &prio
+      pQueuePriorities = &prio,
     };
     dev_ext: cstring = "VK_KHR_swapchain";
     info := vk.DeviceCreateInfo {
@@ -401,7 +401,7 @@ main::proc() {
     dstBinding = 0,
     descriptorCount = 1,
     descriptorType = texture.type,
-    pImageInfo = &img_info
+    pImageInfo = &img_info,
   };
 
   vk.update_descriptor_sets(dev, 1, &write_info, 0, nil);
@@ -490,7 +490,7 @@ create_buffer::proc(size: u64, usage: vk.BufferUsageFlags) -> (buffer:vk.Buffer)
   info := vk.BufferCreateInfo {
     sType = .BufferCreateInfo,
     size  = auto_cast size,
-    usage = auto_cast usage
+    usage = auto_cast usage,
   };
   
   check_result(vma_create_buffer(&info, &buffer, nil));
@@ -501,7 +501,7 @@ create_mapped_buffer::proc(size: u64, usage: vk.BufferUsageFlags) -> (buffer:vk.
   info := vk.BufferCreateInfo {
     sType = .BufferCreateInfo,
     size  = auto_cast size,
-    usage = auto_cast usage
+    usage = auto_cast usage,
   };
   
   check_result(vma_create_buffer(&info, &buffer, &mapping));
@@ -570,7 +570,7 @@ create_image::proc(info: ^vk.ImageCreateInfo) -> (re:Image) {
       r = .R,
       g = .G,
       b = .B,
-      a = .A
+      a = .A,
     },
   };
 
@@ -611,7 +611,7 @@ load_shader::proc(src: string) -> vk.ShaderModule {
   info := vk.ShaderModuleCreateInfo {
     sType = .ShaderModuleCreateInfo,
     codeSize = uint(len(buf)),
-    pCode = auto_cast &buf[0]
+    pCode = auto_cast &buf[0],
   };
 
   module: vk.ShaderModule;
@@ -634,7 +634,7 @@ create_pipeline::proc() {
       stage = .FragmentBit,
       module = load_shader("shader.frag.spv"),
       pName = "main",
-    }
+    },
   };
 
   binding := vk.VertexInputBindingDescription {
@@ -719,7 +719,7 @@ create_pipeline::proc() {
     sType = .PipelineRasterizationStateCreateInfo,
     polygonMode = .Fill,
     cullMode = .None,
-    lineWidth = 1.0
+    lineWidth = 1.0,
   };
 
 
@@ -740,14 +740,14 @@ create_pipeline::proc() {
   
   pool_size := vk.DescriptorPoolSize { 
     type = .CombinedImageSampler, 
-    descriptorCount = 1024 
+    descriptorCount = 1024, 
   };
 
   pool_info := vk.DescriptorPoolCreateInfo {
 	  sType =  .DescriptorPoolCreateInfo,
 	  maxSets =  1024,
 	  poolSizeCount = 1,
-	  pPoolSizes = &pool_size
+	  pPoolSizes = &pool_size,
   };
 
   check_result(vk.create_descriptor_pool(dev, &pool_info, nil, &desc_pool));
@@ -832,7 +832,7 @@ copy_texture::proc(cmd: vk.CommandBuffer,
   
   region := vk.BufferImageCopy {
 	  imageSubresource = {  aspectMask = .ColorBit, layerCount = 1 },
-	  imageExtent = { width = extent.width,height = extent.height, depth = 1 }
+	  imageExtent = { width = extent.width,height = extent.height, depth = 1 },
   };
 
   vk.cmd_copy_buffer_to_image(cmd, src, image, .TransferDstOptimal, 1, &region);
@@ -854,13 +854,13 @@ generate_mip_maps::proc(cmd: vk.CommandBuffer,
     image_blit.srcOffsets[1] = {
       x = cast(i32)max(extent.width >> (i - 1), 1),
       y = cast(i32)max(extent.height >> (i - 1), 1),
-      z = 1
+      z = 1,
     };
 
     image_blit.dstOffsets[1] = {
       x = cast(i32)max(extent.width >> i, 1),
       y = cast(i32)max(extent.height >> i, 1),
-      z = 1
+      z = 1,
     };
 
     subrange := vk.ImageSubresourceRange {
@@ -928,7 +928,7 @@ create_texture::proc(file: cstring) -> (re: Texture) {
     proc(cmd: vk.CommandBuffer, t: arg) {
       copy_texture(cmd,  t.src, t.dst.img.image, t.dst.extent);
       generate_mip_maps(cmd, t.mip, t.dst.img.image, t.dst.extent); }, 
-    arg{src=staging, dst = &re, mip=mip}
+    arg{src=staging, dst = &re, mip=mip},
   );
 
   return;
@@ -951,7 +951,7 @@ execute::proc(fn: proc(vk.CommandBuffer, $T), data: T) {
 
   begin_info := vk.CommandBufferBeginInfo{
     sType = .CommandBufferBeginInfo,
-    flags = .OneTimeSubmitBit
+    flags = .OneTimeSubmitBit,
   };
 
   check_result(vk.begin_command_buffer(cmd, &begin_info));
