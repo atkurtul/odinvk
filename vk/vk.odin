@@ -46,7 +46,13 @@ load_sym::proc(name: string) -> rawptr {
   return sym;
 }
 init::proc() {
-  tmp, _ := dynlib.load_library("libvulkan.so.1");
+  when ODIN_OS == "linux" {
+    libname :: "libvulkan.so.1";
+  }
+  when ODIN_OS == "windows"  {
+    libname :: "vulkan-1.dll";
+  }
+  tmp, _ := dynlib.load_library(libname);
   lib = tmp;
         
   create_instance = auto_cast load_sym("vkCreateInstance");
@@ -2844,7 +2850,6 @@ ClearValue::struct #raw_union {
 	color:  ClearColorValue,
 	depthStencil:  ClearDepthStencilValue,
 }
-
 
 PipelineCreationFeedbackCreateInfoEXT::struct {
 	sType:  StructureType,
